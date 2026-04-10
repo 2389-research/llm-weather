@@ -7,7 +7,7 @@ from pathlib import Path
 
 import click
 
-from llm_weather.config import load_models, load_prompts
+from llm_weather.config import filter_available_models, load_models, load_prompts
 from llm_weather.hugo import generate_hugo_content, write_hugo_page
 from llm_weather.judge import judge_all
 from llm_weather.report import (
@@ -75,6 +75,19 @@ def run(ctx, prompts, models):
     prompts_config = load_prompts(prompts_path)
     models_config = load_models(models_path)
 
+    contestants, skipped_contestants = filter_available_models(models_config.contestants)
+    judges, skipped_judges = filter_available_models(models_config.judges)
+
+    if not contestants:
+        click.echo("No contestants have API keys configured. Nothing to run.")
+        ctx.exit(1)
+        return
+
+    if not judges:
+        click.echo("No judges have API keys configured. Nothing to run.")
+        ctx.exit(1)
+        return
+
     run_id = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
     runs_dir = root / "runs"
     run_dir = runs_dir / run_id
@@ -82,16 +95,20 @@ def run(ctx, prompts, models):
 
     click.echo(f"Starting run {run_id}")
     click.echo(f"  Prompts: {len(prompts_config)}")
-    click.echo(f"  Contestants: {len(models_config.contestants)}")
-    click.echo(f"  Judges: {len(models_config.judges)}")
+    click.echo(f"  Contestants: {len(contestants)}")
+    click.echo(f"  Judges: {len(judges)}")
+    if skipped_contestants:
+        click.echo(f"  Skipped (no API key): {', '.join(skipped_contestants)}")
+    if skipped_judges:
+        click.echo(f"  Skipped judges (no API key): {', '.join(skipped_judges)}")
 
     # Step 1: Run prompts
     click.echo("\nRunning prompts...")
-    responses = run_all(prompts_config, models_config.contestants, run_dir)
+    responses = run_all(prompts_config, contestants, run_dir)
 
     # Step 2: Judge
     click.echo("Judging responses...")
-    judgments = judge_all(responses, models_config.judges, run_dir)
+    judgments = judge_all(responses, judges, run_dir)
 
     # Step 3: Reports
     click.echo("Generating reports...")
