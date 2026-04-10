@@ -1,0 +1,24 @@
+{{ define "main" }}
+<h1>LLM Weather Report</h1>
+<p>Tracking reasoning capability drift across LLM models.</p>
+
+{{ $runs := where .Site.RegularPages "Section" "runs" }}
+{{ $latest := index (sort $runs "Date" "desc") 0 }}
+
+{{ with $latest }}
+<h2>Current Forecast</h2>
+<p>Latest run: <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+
+{{ .Content }}
+{{ end }}
+
+<h2>Past Reports</h2>
+<ul>
+{{ range sort $runs "Date" "desc" }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    — Top model: {{ .Params.top_model }}
+  </li>
+{{ end }}
+</ul>
+{{ end }}
