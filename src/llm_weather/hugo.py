@@ -13,7 +13,7 @@ def generate_hugo_content(
 ) -> str:
     frontmatter = {
         "title": run_id,
-        "date": run_id.replace("T", " ").replace("-", ":", 3),
+        "date": run_id.split("T")[0] + "T" + run_id.split("T")[1].replace("-", ":"),
         "top_model": leaderboard[0]["model"] if leaderboard else "none",
         "leaderboard": leaderboard,
         "drift": drift,

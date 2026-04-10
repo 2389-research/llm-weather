@@ -29,6 +29,18 @@ def test_generate_hugo_content_has_frontmatter():
     assert frontmatter["top_model"] == "model-a"
 
 
+def test_generate_hugo_content_date_is_valid_iso():
+    content = generate_hugo_content(
+        run_id="2026-04-10T19-11-30",
+        leaderboard=SAMPLE_LEADERBOARD,
+        drift=[],
+    )
+    parts = content.split("---\n", 2)
+    raw = parts[1]
+    # The date should be ISO 8601 parseable — date dashes kept, time dashes become colons
+    assert "2026-04-10T19:11:30" in raw
+
+
 def test_generate_hugo_content_has_leaderboard_in_body():
     content = generate_hugo_content(
         run_id="2026-04-10T14-00-00",
