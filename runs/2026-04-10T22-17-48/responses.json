@@ -1,0 +1,279 @@
+{
+  "run_id": "2026-04-10T22-17-48",
+  "timestamp": "2026-04-10T22:17:48.082546+00:00",
+  "prompts": {
+    "logic-1": {
+      "prompt": "If all bloops are razzies and all razzies are lazzies, are all bloops lazzies?",
+      "category": "logic",
+      "responses": {
+        "openai/gpt-4.1": {
+          "content": "Let's break this down step by step:\n\n1. **Premise 1:** All bloops are razzies.  \n   This means: If something is a bloop, then it is also a razzie.\n\n2. **Premise 2:** All razzies are lazzies.  \n   This means: If something is a razzie, then it is also a lazzie.\n\n**Question:** Are all bloops lazzies?\n\nLet's use logical reasoning:\n\n- Take any object, X, that is a bloop.\n    - Because all bloops are razzies, X is a razzie.\n    - Because all razzies are lazzies, X is a lazzie.\n\n**Conclusion:**  \nYes, all bloops are lazzies.",
+          "latency_ms": 2827,
+          "input_tokens": 47,
+          "output_tokens": 161
+        },
+        "openai/o4-mini": {
+          "content": "Yes. Here\u2019s a concise reasoning without revealing every private inference step:\n\n1. Premise 1: Every bloop is a razzie.  \n2. Premise 2: Every razzie is a lazzie.  \n3. Conclusion: Therefore, every bloop is a lazzie (by transitivity of \u201call \u2026 are\u201d).",
+          "latency_ms": 3369,
+          "input_tokens": 46,
+          "output_tokens": 219
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "content": "## Step-by-Step Reasoning\n\n1. **Premise 1:** All bloops are razzies.\n2. **Premise 2:** All razzies are lazzies.\n3. **Conclusion:** Since every bloop is a razzie, and every razzie is a lazzie, then every bloop must also be a lazzie.\n\n**Yes**, \u2014 all bloops are lazzies. This follows from the **transitive** nature of the logical relationship: if A \u2192 B and B \u2192 C, then A \u2192 C.",
+          "latency_ms": 3809,
+          "input_tokens": 44,
+          "output_tokens": 123
+        },
+        "anthropic/claude-haiku-4-5": {
+          "content": "# Yes, all bloops are lazzies.\n\nHere's the logical chain:\n\n1. All bloops are razzies (given)\n2. All razzies are lazzies (given)\n3. Therefore, all bloops are lazzies (by transitivity)\n\nThis follows the logical principle that if A \u2286 B and B \u2286 C, then A \u2286 C.",
+          "latency_ms": 1495,
+          "input_tokens": 43,
+          "output_tokens": 98
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "google/gemini-2.5-flash": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-flash\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "ollama/llama3": {
+          "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+        }
+      }
+    },
+    "math-1": {
+      "prompt": "A bat and a ball cost $1.10 together. The bat costs $1 more than the ball. How much does the ball cost?",
+      "category": "math",
+      "responses": {
+        "openai/gpt-4.1": {
+          "content": "Let's break down the problem step by step:\n\nLet  \n- **x** = cost of the ball (in dollars)\n- The bat costs $1 more than the ball, so the cost of the bat = **x + $1**\n\nGiven:  \nBall + Bat = $1.10\n\nSo:  \nx (ball) + (x + $1) (bat) = $1.10\n\nSimplify:  \nx + x + 1 = 1.10  \n2x + 1 = 1.10\n\nSubtract 1 from both sides:  \n2x = 1.10 - 1  \n2x = 0.10\n\nDivide both sides by 2:  \nx = 0.10 / 2  \nx = 0.05\n\n**Answer:**  \nThe ball costs **$0.05** (5 cents).",
+          "latency_ms": 1966,
+          "input_tokens": 50,
+          "output_tokens": 179
+        },
+        "openai/o4-mini": {
+          "content": "Step 1. Let the price of the ball be x dollars.  \nStep 2. Then the price of the bat is (x + 1) dollars, since it costs \\$1 more than the ball.  \nStep 3. Together they cost  \n\u2003x + (x + 1) = 1.10.  \nStep 4. Simplify:  \n\u20032x + 1 = 1.10  \n\u20032x = 0.10  \n\u2003x = 0.05.  \n\nAnswer: The ball costs \\$0.05.",
+          "latency_ms": 2498,
+          "input_tokens": 49,
+          "output_tokens": 207
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "content": "## Solving the Problem\n\nLet me define variables and set up equations.\n\n**Let:**\n- Ball = x\n- Bat = y\n\n**Equations:**\n1. x + y = 1.10 (together they cost $1.10)\n2. y = x + 1.00 (bat costs $1 more than the ball)\n\n**Substituting equation 2 into equation 1:**\n\nx + (x + 1.00) = 1.10\n\n2x + 1.00 = 1.10\n\n2x = 0.10\n\nx = **$0.05**\n\n## Answer\n\n**The ball costs $0.05 (5 cents).**\n\n*(The bat costs $1.05, and together they cost $1.10 \u2713)*\n\n> **Note:** The intuitive answer of $0.10 is a common wrong answer \u2014 but if the ball cost $0.10, the bat would cost $1.10, making the total $1.20, not $1.10.",
+          "latency_ms": 4971,
+          "input_tokens": 49,
+          "output_tokens": 239
+        },
+        "anthropic/claude-haiku-4-5": {
+          "content": "# Finding the Cost of the Ball\n\nLet me set up equations based on the given information.\n\nLet **b** = cost of the ball\n\n**Given information:**\n- Bat + Ball = $1.10\n- Bat = Ball + $1.00\n\n**Solving:**\n\nSubstitute the second equation into the first:\n- (Ball + $1.00) + Ball = $1.10\n- 2(Ball) + $1.00 = $1.10\n- 2(Ball) = $0.10\n- Ball = **$0.05**\n\n**Verification:**\n- Ball: $0.05\n- Bat: $0.05 + $1.00 = $1.05\n- Total: $0.05 + $1.05 = $1.10 \u2713\n\n**The ball costs $0.05 (5 cents).**",
+          "latency_ms": 1751,
+          "input_tokens": 48,
+          "output_tokens": 205
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "google/gemini-2.5-flash": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-flash\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "ollama/llama3": {
+          "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+        }
+      }
+    },
+    "spatial-1": {
+      "prompt": "I'm facing north. I turn right. I turn right again. I turn left. What direction am I facing?",
+      "category": "spatial",
+      "responses": {
+        "openai/gpt-4.1": {
+          "content": "Let's break it down step by step:\n\n1. **Facing North**  \n   (Original direction)\n\n2. **Turn right:**  \n   From North, a right turn points you **East**.\n\n3. **Turn right again:**  \n   From East, a right turn points you **South**.\n\n4. **Turn left:**  \n   From South, a left turn points you **East**.\n\n**Final answer:**  \nYou are facing **East**.",
+          "latency_ms": 889,
+          "input_tokens": 44,
+          "output_tokens": 93
+        },
+        "openai/o4-mini": {
+          "content": "Let\u2019s track each turn step by step:\n\n1. Start facing North.  \n2. Turn right \u2192 now facing East.  \n3. Turn right again \u2192 now facing South.  \n4. Turn left \u2192 now facing East.  \n\nYou end up facing East.",
+          "latency_ms": 2870,
+          "input_tokens": 43,
+          "output_tokens": 199
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "content": "Let me work through this step by step.\n\n1. Start: Facing **North**\n2. Turn right: Facing **East**\n3. Turn right again: Facing **South**\n4. Turn left: Facing **East**\n\nYou are facing **East**.",
+          "latency_ms": 2216,
+          "input_tokens": 42,
+          "output_tokens": 63
+        },
+        "anthropic/claude-haiku-4-5": {
+          "content": "# Step-by-step:\n\n1. **Start:** Facing north\n2. **Turn right:** Now facing east\n3. **Turn right again:** Now facing south\n4. **Turn left:** Now facing east\n\n**You are facing east.**",
+          "latency_ms": 854,
+          "input_tokens": 41,
+          "output_tokens": 57
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "google/gemini-2.5-flash": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-flash\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "ollama/llama3": {
+          "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+        }
+      }
+    },
+    "causality-1": {
+      "prompt": "A man pushes his car to a hotel and loses his fortune. What happened?",
+      "category": "causality",
+      "responses": {
+        "openai/gpt-4.1": {
+          "content": "Let's think through this step by step:\n\n1. **Literal Interpretation**: A man physically pushes his car to a hotel and somehow loses his money or fortune. That seems odd and doesn't fit any typical real-life scenario.\n\n2. **Possible Figurative or Puzzle Context**: This question is a classic riddle and not meant to be taken literally. It asks for the scenario where \"pushing a car to a hotel\" leads to \"losing fortune\".\n\n3. **Key Clues**:\n    - \"Pushes car\": Not just driving, but pushing, which may indicate some kind of game or metaphor.\n    - \"Hotel\": Not a random place, possibly a special meaning.\n    - \"Loses fortune\": Term associated with losing money.\n\n4. **Popular Riddles with Similar Structure**: There is a famous riddle that goes like this: \"A man pushes his car to a hotel and tells the owner that he\u2019s bankrupt. Why?\" The answer usually involves the game **Monopoly**.\n\n5. **Monopoly Context**:\n    - In Monopoly, players move small tokens (often shaped like a car) around a board, landing on different properties (some called 'hotel').\n    - If someone lands on a property with a hotel and can\u2019t afford the rent, they may go bankrupt or lose their fortune.\n\n6. **Final Answer**:\n    - **He is playing Monopoly. The 'car' is his token. The 'hotel' is a property on the game board. He lands there, cannot pay the rent (high if there is a hotel), and thus loses all his money (goes bankrupt or 'loses his fortune').**\n\n**Summary answer:**\nHe is playing the game Monopoly. He pushes his car token to a hotel space on the board, can\u2019t afford the rent, and loses all his money\u2014so he \u2018loses his fortune\u2019.",
+          "latency_ms": 3831,
+          "input_tokens": 37,
+          "output_tokens": 385
+        },
+        "openai/o4-mini": {
+          "content": "Here\u2019s the step-by-step reasoning:\n\n1. The \u201ccar\u201d isn\u2019t a real automobile but the little car token used in a board game.  \n2. The \u201chotel\u201d isn\u2019t a real building but the hotel piece you place on properties in the game.  \n3. When he \u201cpushes his car to a hotel,\u201d he\u2019s simply moving his token around the Monopoly board and has just landed on a space with a hotel.  \n4. Landing on another player\u2019s hotel space requires him to pay a hefty rent.  \n5. Paying that rent wipes out his money\u2014he \u201closes his fortune.\u201d  \n\nWhat happened? He was playing Monopoly.",
+          "latency_ms": 3539,
+          "input_tokens": 36,
+          "output_tokens": 346
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "content": "This is a classic lateral thinking puzzle / riddle!\n\nThe answer is: **He was playing Monopoly.**\n\nHe pushed his toy car (the car game piece) to the hotel square on the board, which meant he had to pay the rent on that hotel, and it cost him all his money (his fortune in the game).",
+          "latency_ms": 2550,
+          "input_tokens": 35,
+          "output_tokens": 73
+        },
+        "anthropic/claude-haiku-4-5": {
+          "content": "# The Answer: Monopoly\n\nThis is a riddle! The man was playing Monopoly, the board game where:\n\n- Players move their pieces around the board by pushing them\n- Landing on certain properties (like a hotel) requires paying rent\n- This payment causes players to lose their money/fortune in the game\n\nThe riddle plays on the double meaning of \"pushes his car\" (moving a game piece) and \"hotel\" (a property on the Monopoly board) to make it sound like a real-world scenario when it's actually describing a board game situation.",
+          "latency_ms": 1928,
+          "input_tokens": 34,
+          "output_tokens": 127
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "google/gemini-2.5-flash": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-flash\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "ollama/llama3": {
+          "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+        }
+      }
+    },
+    "code-1": {
+      "prompt": "What does this function return for input 5? def f(n): return n if n <= 1 else f(n-1) + f(n-2)",
+      "category": "code",
+      "responses": {
+        "openai/gpt-4.1": {
+          "content": "Let's break down the function step by step:\n\n```python\ndef f(n):\n    return n if n <= 1 else f(n-1) + f(n-2)\n```\n\nThis is a **recursive function**.  \nThe return value is:\n- `n` if `n <= 1`\n- otherwise, `f(n-1) + f(n-2)`\n\nThis is the **Fibonacci sequence**, except for the base case: instead of `f(0) = 0` and `f(1) = 1`, this function returns `n` when `n <= 1` (so `f(0) = 0`, `f(1) = 1`).\n\nLet's calculate `f(5)` step by step:\n\n```\nf(5) = f(4) + f(3)\n```\nLet's calculate `f(4)`:\n```\nf(4) = f(3) + f(2)\n```\nCalculate `f(3)`:\n```\nf(3) = f(2) + f(1)`\n```\nCalculate `f(2)`:\n```\nf(2) = f(1) + f(0)\nf(1) = 1\nf(0) = 0\nSo, f(2) = 1 + 0 = 1\n```\nNow,\n```\nf(3) = f(2) + f(1) = 1 + 1 = 2\n```\n```\nf(4) = f(3) + f(2) = 2 + 1 = 3\n```\nNow, calculate `f(3)` (already done above):\n```\nf(3) = 2\n```\nSo,\n```\nf(5) = f(4) + f(3) = 3 + 2 = 5\n```\n\n**Final answer:**\n\n```\nf(5) = 5\n```",
+          "latency_ms": 2988,
+          "input_tokens": 54,
+          "output_tokens": 414
+        },
+        "openai/o4-mini": {
+          "content": "Here\u2019s a step-by-step \u201cunrolling\u201d of f(5):\n\n1. f(5) = f(4) + f(3)  \n2.   f(4) = f(3) + f(2)  \n3.     f(3) = f(2) + f(1)  \n4.       f(2) = f(1) + f(0)  \n5.         f(1) = 1  (base case)  \n6.         f(0) = 0  (base case)  \n7.       \u21d2 f(2) = 1 + 0 = 1  \n8.       \u21d2 f(3) = f(2)+f(1) = 1 + 1 = 2  \n9.     f(2) (again) = 1  \n10.   \u21d2 f(4) = f(3)+f(2) = 2 + 1 = 3  \n11.  f(3) (again) = 2  \n12. \u21d2 f(5) = f(4)+f(3) = 3 + 2 = 5  \n\nSo f(5) returns 5.",
+          "latency_ms": 6090,
+          "input_tokens": 53,
+          "output_tokens": 657
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "content": "## Tracing the Function\n\nThis is a **recursive Fibonacci function**. Let me trace it for input `5`:\n\n```\nf(5) = f(4) + f(3)\nf(4) = f(3) + f(2)\nf(3) = f(2) + f(1)\nf(2) = f(1) + f(0)\nf(1) = 1\nf(0) = 0\n```\n\n**Building back up:**\n```\nf(2) = 1 + 0 = 1\nf(3) = 1 + 1 = 2\nf(4) = 2 + 1 = 3\nf(5) = 3 + 2 = 5\n```\n\n## Result: **5**",
+          "latency_ms": 2846,
+          "input_tokens": 55,
+          "output_tokens": 190
+        },
+        "anthropic/claude-haiku-4-5": {
+          "content": "# Tracing f(5)\n\nThis is the Fibonacci function. Let me trace through it step by step:\n\n```\nf(5) = f(4) + f(3)\n  f(4) = f(3) + f(2)\n    f(3) = f(2) + f(1)\n      f(2) = f(1) + f(0)\n        f(1) = 1\n        f(0) = 0\n      f(2) = 1 + 0 = 1\n    f(3) = 1 + 1 = 2\n  f(4) = 2 + f(2)\n    f(2) = 1 (already calculated)\n  f(4) = 2 + 1 = 3\nf(5) = 3 + f(3)\n  f(3) = 2 (already calculated)\nf(5) = 3 + 2 = 5\n```\n\n**The function returns 5**",
+          "latency_ms": 1648,
+          "input_tokens": 54,
+          "output_tokens": 245
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "google/gemini-2.5-flash": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-flash\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "ollama/llama3": {
+          "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+        }
+      }
+    },
+    "ambiguity-1": {
+      "prompt": "The trophy doesn't fit in the suitcase because it's too big. What is too big?",
+      "category": "ambiguity",
+      "responses": {
+        "openai/gpt-4.1": {
+          "content": "Let's break down the sentence step by step:\n\n- \"The trophy doesn't fit in the suitcase because it's too big.\"\n\nThe word \"it\" refers to an object whose size is being described as \"too big.\"\nLet's consider the two objects: \"the trophy\" and \"the suitcase.\"\n\n**Step-by-step reasoning:**\n\n1. The trophy does not fit inside the suitcase.\n2. The reason given is \"because it's too big.\"\n3. If the trophy doesn't fit, is it because:\n    - The trophy is too big (for the suitcase)? or\n    - The suitcase is too big (for the trophy)?\n\nLet's substitute:\n\n- \"The trophy doesn't fit in the suitcase because the trophy is too big.\"\n- \"The trophy doesn't fit in the suitcase because the suitcase is too big.\"\n\nThe first sentence makes sense: The trophy is too big to fit in the suitcase.\nThe second sentence does **not** make sense: If the suitcase is too big, the trophy should fit.\n\n**Conclusion:**  \nThe thing that is \"too big\" is the **trophy**.",
+          "latency_ms": 2929,
+          "input_tokens": 38,
+          "output_tokens": 218
+        },
+        "openai/o4-mini": {
+          "content": "We resolve \u201cit\u201d by asking which interpretation makes sense:\n\n1. Candidates for \u201cit\u201d: the trophy or the suitcase.  \n2. If \u201cit\u201d were the suitcase, \u201cthe suitcase is too big\u201d would explain why the trophy doesn\u2019t fit\u2014yet a bigger suitcase would make fitting easier, not harder.  \n3. If \u201cit\u201d is the trophy, \u201cthe trophy is too big\u201d directly explains why it won\u2019t fit into the suitcase.  \n\nTherefore, \u201cit\u201d refers to the trophy.",
+          "latency_ms": 4392,
+          "input_tokens": 37,
+          "output_tokens": 314
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "content": "The word \"it's\" in this sentence refers to **the trophy**. The trophy is too big to fit in the suitcase.",
+          "latency_ms": 2598,
+          "input_tokens": 39,
+          "output_tokens": 32
+        },
+        "anthropic/claude-haiku-4-5": {
+          "content": "The **trophy** is too big.\n\nThe pronoun \"it's\" refers to the trophy, which is the subject of the sentence and the thing being described as not fitting in the suitcase due to its size.",
+          "latency_ms": 1023,
+          "input_tokens": 38,
+          "output_tokens": 49
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "google/gemini-2.5-flash": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-flash\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "ollama/llama3": {
+          "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+        }
+      }
+    },
+    "common-sense-1": {
+      "prompt": "How many times can you subtract 5 from 25?",
+      "category": "common_sense",
+      "responses": {
+        "openai/gpt-4.1": {
+          "content": "Let\u2019s think step by step:\n\n1. **First subtraction:** \n   - Start with 25.\n   - Subtract 5 \u2192 25 - 5 = 20\n\n2. **What does the question mean?**\n   - The key is in the wording: **\u201cHow many times can you subtract 5 from 25?\u201d**\n\n3. **Trick in the wording:** \n   - After you subtract 5 once, you no longer have 25. \n   - The question is not asking \u201cHow many times can you subtract 5 from the result each time,\u201d but **specifically \u201cfrom 25\u201d**.\n\n4. **Final answer:**  \n   - You can only subtract 5 from 25 **once** before you no longer have 25.\n\n**Answer:**  \nYou can subtract 5 from 25 **only once** (because after the first subtraction, you\u2019re no longer subtracting from 25, but from 20, then 15, etc.).",
+          "latency_ms": 3034,
+          "input_tokens": 33,
+          "output_tokens": 204
+        },
+        "openai/o4-mini": {
+          "content": "Here\u2019s the step-by-step reasoning for the classic riddle:\n\n1. The question asks, \u201cHow many times can you subtract 5 from 25?\u201d  \n2. You subtract 5 from 25 once: 25 \u2013 5 = 20.  \n3. After that subtraction, you\u2019re no longer subtracting from 25 (you\u2019re subtracting from 20).  \n\nSo in the literal sense of \u201csubtracting 5 from 25,\u201d you can do it only once.",
+          "latency_ms": 4141,
+          "input_tokens": 32,
+          "output_tokens": 377
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "content": "Let me think about this step by step.\n\n- 25 - 5 = 20 (1st time)\n- 20 - 5 = 15 (2nd time)\n- 15 - 5 = 10 (3rd time)\n- 10 - 5 = 5 (4th time)\n- 5 - 5 = 0 (5th time)\n\nYou can subtract 5 from 25 **5 times**.\n\n*(Though the classic trick answer is \"only once,\" because after the first subtraction you're no longer subtracting from 25 \u2014 but mathematically, the answer is 5.)*",
+          "latency_ms": 3475,
+          "input_tokens": 31,
+          "output_tokens": 159
+        },
+        "anthropic/claude-haiku-4-5": {
+          "content": "# Subtracting 5 from 25\n\nLet me work through this step by step:\n\n- 25 - 5 = 20\n- 20 - 5 = 15\n- 15 - 5 = 10\n- 10 - 5 = 5\n- 5 - 5 = 0\n\n**You can subtract 5 from 25 a total of 5 times.**\n\n(This is the same as dividing: 25 \u00f7 5 = 5)",
+          "latency_ms": 1274,
+          "input_tokens": 30,
+          "output_tokens": 128
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "google/gemini-2.5-flash": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-flash\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        },
+        "ollama/llama3": {
+          "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+        }
+      }
+    }
+  }
+}
