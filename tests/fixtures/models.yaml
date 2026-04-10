@@ -1,0 +1,6 @@
+contestants:
+  - model: openai/gpt-4.1
+  - model: anthropic/claude-sonnet-4-6
+
+judges:
+  - model: openai/gpt-4.1

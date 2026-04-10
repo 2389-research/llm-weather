@@ -1,0 +1,8 @@
+prompts:
+  - id: test-logic
+    category: logic
+    prompt: "Is A greater than B if A is 5 and B is 3?"
+
+  - id: test-math
+    category: math
+    prompt: "What is 2 + 2?"
