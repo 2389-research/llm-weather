@@ -29,17 +29,10 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: uv run llm-weather run
 
-      - name: Build Hugo site
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: 'latest'
-
-      - run: cd site && hugo --minify
-
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add runs/ site/content/ site/public/
+          git add runs/ site/content/
           git diff --cached --quiet || git commit -m "chore: weather report $(date -u +%Y-%m-%dT%H-%M-%S)"
           git push
