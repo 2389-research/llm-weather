@@ -1,0 +1,45 @@
+name: LLM Weather Report
+
+on:
+  schedule:
+    # 5am, 8am, 12pm, 5pm, 8pm, 12am CT (UTC-5 CDT)
+    - cron: '0 1,5,10,13,17,22 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  weather:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+
+      - run: uv python install
+
+      - run: uv sync --locked
+
+      - name: Run LLM Weather
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: uv run llm-weather run
+
+      - name: Build Hugo site
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+
+      - run: cd site && hugo --minify
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add runs/ site/content/ site/public/
+          git diff --cached --quiet || git commit -m "chore: weather report $(date -u +%Y-%m-%dT%H-%M-%S)"
+          git push
