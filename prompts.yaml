@@ -1,0 +1,28 @@
+prompts:
+  - id: logic-1
+    category: logic
+    prompt: "If all bloops are razzies and all razzies are lazzies, are all bloops lazzies?"
+
+  - id: math-1
+    category: math
+    prompt: "A bat and a ball cost $1.10 together. The bat costs $1 more than the ball. How much does the ball cost?"
+
+  - id: spatial-1
+    category: spatial
+    prompt: "I'm facing north. I turn right. I turn right again. I turn left. What direction am I facing?"
+
+  - id: causality-1
+    category: causality
+    prompt: "A man pushes his car to a hotel and loses his fortune. What happened?"
+
+  - id: code-1
+    category: code
+    prompt: "What does this function return for input 5? def f(n): return n if n <= 1 else f(n-1) + f(n-2)"
+
+  - id: ambiguity-1
+    category: ambiguity
+    prompt: "The trophy doesn't fit in the suitcase because it's too big. What is too big?"
+
+  - id: common-sense-1
+    category: common_sense
+    prompt: "How many times can you subtract 5 from 25?"

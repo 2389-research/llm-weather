@@ -1,0 +1,26 @@
+[project]
+name = "llm-weather"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Harper Reed", email = "harper@nata2.org" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.3.2",
+    "litellm>=1.83.0",
+    "pyyaml>=6.0.3",
+]
+
+[project.scripts]
+llm-weather = "llm_weather.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.25,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]

@@ -1,0 +1,14 @@
+contestants:
+  - model: openai/gpt-4.1
+  - model: openai/o4-mini
+  - model: anthropic/claude-sonnet-4-6
+  - model: anthropic/claude-haiku-4-5
+  - model: google/gemini-2.5-pro
+  - model: google/gemini-2.5-flash
+  - model: ollama/llama3
+  - model: groq/llama-3.3-70b-versatile
+
+judges:
+  - model: openai/gpt-4.1
+  - model: anthropic/claude-sonnet-4-6
+  - model: google/gemini-2.5-pro
