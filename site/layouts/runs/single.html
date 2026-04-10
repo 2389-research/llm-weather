@@ -1,0 +1,19 @@
+{{ define "main" }}
+<h1>Run: {{ .Title }}</h1>
+
+{{ .Content }}
+
+{{ with .Params.drift }}
+<h2>Drift</h2>
+<ul>
+{{ range . }}
+  <li>
+    <span class="{{ if eq .direction "↑" }}drift-up{{ else }}drift-down{{ end }}">
+      {{ .direction }}
+    </span>
+    {{ .model }}: moved {{ .change }} (was #{{ .was }}, now #{{ .now }})
+  </li>
+{{ end }}
+</ul>
+{{ end }}
+{{ end }}
