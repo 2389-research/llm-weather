@@ -46,26 +46,31 @@ def test_generate_hugo_content_date_is_valid_iso():
     assert "2026-04-10T19:11:30" in raw
 
 
-def test_generate_hugo_content_has_scorecard_in_body():
+def test_generate_hugo_content_has_scorecard_in_frontmatter():
     content = generate_hugo_content(
         run_id="2026-04-10T14-00-00",
         scorecard=SAMPLE_SCORECARD,
         drift=[],
     )
-    assert "model-a" in content
-    assert "model-b" in content
-    assert "✓" in content
-    assert "✗" in content
+    parts = content.split("---\n", 2)
+    frontmatter = yaml.safe_load(parts[1])
+    assert "model-a" in frontmatter["scorecard"]
+    assert "model-b" in frontmatter["scorecard"]
+    assert frontmatter["scorecard"]["model-a"]["logic-1"]["correct"] is True
+    assert frontmatter["scorecard"]["model-b"]["logic-1"]["correct"] is False
 
 
-def test_generate_hugo_content_has_drift():
+def test_generate_hugo_content_has_drift_in_frontmatter():
     content = generate_hugo_content(
         run_id="2026-04-10T14-00-00",
         scorecard=SAMPLE_SCORECARD,
         drift=SAMPLE_DRIFT,
     )
-    assert "REGRESSION" in content
-    assert "model-b" in content
+    parts = content.split("---\n", 2)
+    frontmatter = yaml.safe_load(parts[1])
+    assert len(frontmatter["drift"]) == 1
+    assert frontmatter["drift"][0]["type"] == "REGRESSION"
+    assert frontmatter["drift"][0]["model"] == "model-b"
 
 
 def test_write_hugo_page_creates_file(tmp_path):

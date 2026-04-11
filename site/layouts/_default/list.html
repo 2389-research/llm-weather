@@ -6,7 +6,7 @@
 
 {{ with $latest }}
 <h1>Current Forecast</h1>
-<p style="color: var(--text-muted); font-size: 0.84rem; margin-bottom: 0.75rem;">
+<p style="color: var(--text-tertiary); font-size: 0.84rem; margin-bottom: 0.5rem;">
   Latest run: <a href="{{ .RelPermalink }}">{{ .Title }}</a>
 </p>
 
@@ -16,9 +16,7 @@
   <ul>
   {{ range . }}
     <li>
-      <span class="drift-tag {{ if eq .type "REGRESSION" }}regression{{ else if eq .type "IMPROVEMENT" }}improvement{{ else if eq .type "SCORE_DROP" }}score-drop{{ else }}score-rise{{ end }}">
-        {{ .type }}
-      </span>
+      <span class="drift-tag {{ if eq .type "REGRESSION" }}regression{{ else if eq .type "IMPROVEMENT" }}improvement{{ else if eq .type "SCORE_DROP" }}score-drop{{ else }}score-rise{{ end }}">{{ .type }}</span>
       <strong>{{ .model }}</strong> on {{ .prompt }}
     </li>
   {{ end }}
@@ -26,9 +24,10 @@
 </div>
 {{ end }}
 
-<div class="table-wrap">
-{{ .Content }}
-</div>
+{{ with .Params.scorecard }}
+<h2>Scorecard</h2>
+{{ partial "scorecard-table.html" . }}
+{{ end }}
 
 {{ end }}
 

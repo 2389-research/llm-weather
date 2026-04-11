@@ -1,0 +1,43 @@
+{{/* Collect all prompt IDs from the first model */}}
+{{ $promptIDs := slice }}
+{{ range $model, $prompts := . }}
+  {{ range $pid, $_ := $prompts }}
+    {{ if not (in $promptIDs $pid) }}
+      {{ $promptIDs = $promptIDs | append $pid }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      {{ range $promptIDs }}
+      <th>{{ . }}</th>
+      {{ end }}
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $model, $prompts := . }}
+    <tr>
+      <td>{{ $model }}</td>
+      {{ range $pid := $promptIDs }}
+        {{ $entry := index $prompts $pid }}
+        {{ if $entry }}
+          {{ if eq $entry.correct true }}
+            <td class="mark-correct">✓ ({{ $entry.score }})</td>
+          {{ else if eq $entry.correct false }}
+            <td class="mark-incorrect">✗ ({{ $entry.score }})</td>
+          {{ else }}
+            <td class="mark-na">—</td>
+          {{ end }}
+        {{ else }}
+          <td class="mark-na">—</td>
+        {{ end }}
+      {{ end }}
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
+</div>

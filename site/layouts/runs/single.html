@@ -7,9 +7,7 @@
   <ul>
   {{ range . }}
     <li>
-      <span class="drift-tag {{ if eq .type "REGRESSION" }}regression{{ else if eq .type "IMPROVEMENT" }}improvement{{ else if eq .type "SCORE_DROP" }}score-drop{{ else }}score-rise{{ end }}">
-        {{ .type }}
-      </span>
+      <span class="drift-tag {{ if eq .type "REGRESSION" }}regression{{ else if eq .type "IMPROVEMENT" }}improvement{{ else if eq .type "SCORE_DROP" }}score-drop{{ else }}score-rise{{ end }}">{{ .type }}</span>
       <strong>{{ .model }}</strong> on {{ .prompt }}
     </li>
   {{ end }}
@@ -17,7 +15,8 @@
 </div>
 {{ end }}
 
-<div class="table-wrap">
-{{ .Content }}
-</div>
+{{ with .Params.scorecard }}
+<h2>Scorecard</h2>
+{{ partial "scorecard-table.html" . }}
+{{ end }}
 {{ end }}
