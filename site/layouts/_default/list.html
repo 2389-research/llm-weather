@@ -6,8 +6,7 @@
 {{ $latest := index (sort $runs "Date" "desc") 0 }}
 
 {{ with $latest }}
-<h2>Current Forecast</h2>
-<p>Latest run: <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+<h2>Latest Run: <a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
 
 {{ .Content }}
 {{ end }}
@@ -17,7 +16,7 @@
 {{ range sort $runs "Date" "desc" }}
   <li>
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    — Top model: {{ .Params.top_model }}
+    {{ with .Params.drift }}— {{ len . }} drift alert{{ if gt (len .) 1 }}s{{ end }}{{ end }}
   </li>
 {{ end }}
 </ul>

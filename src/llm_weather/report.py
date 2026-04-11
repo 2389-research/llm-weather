@@ -1,75 +1,117 @@
-# ABOUTME: Generates summary.md (leaderboard + drift) and detail.md (per-prompt breakdowns).
-# ABOUTME: Compares against previous runs to detect ranking changes.
+# ABOUTME: Generates scorecard and drift reports from individual correctness evaluations.
+# ABOUTME: Compares against previous runs to detect correctness flips and score changes.
 
-from collections import Counter
 from pathlib import Path
 
 
-def build_leaderboard(judgments: dict) -> list[dict]:
-    wins = Counter()
-    for prompt_data in judgments["prompts"].values():
-        if prompt_data.get("skipped"):
-            continue
-        winner = prompt_data.get("majority_winner_model")
-        if winner:
-            wins[winner] += 1
-
-    total = sum(
-        1 for p in judgments["prompts"].values() if not p.get("skipped")
-    )
-    leaderboard = []
-    for rank, (model, win_count) in enumerate(wins.most_common(), 1):
-        leaderboard.append(
-            {"rank": rank, "model": model, "wins": win_count, "total": total}
-        )
-    return leaderboard
+def build_scorecard(judgments: dict) -> dict[str, dict]:
+    scorecard = {}
+    for prompt_id, prompt_data in judgments["prompts"].items():
+        for model, eval_data in prompt_data.get("evaluations", {}).items():
+            if model not in scorecard:
+                scorecard[model] = {}
+            scorecard[model][prompt_id] = {
+                "correct": eval_data["majority_correct"],
+                "score": eval_data["avg_score"],
+            }
+    return scorecard
 
 
 def detect_drift(
-    current_leaderboard: list[dict], previous_leaderboard: list[dict] | None
+    current: dict[str, dict], previous: dict[str, dict] | None
 ) -> list[dict]:
-    if not previous_leaderboard:
+    if not previous:
         return []
 
-    prev_ranks = {entry["model"]: entry["rank"] for entry in previous_leaderboard}
     drift = []
-    for entry in current_leaderboard:
-        model = entry["model"]
-        if model in prev_ranks:
-            change = prev_ranks[model] - entry["rank"]
-            if change != 0:
-                drift.append(
-                    {
+    for model, prompts in current.items():
+        if model not in previous:
+            continue
+        for prompt_id, entry in prompts.items():
+            if prompt_id not in previous[model]:
+                continue
+            prev = previous[model][prompt_id]
+            # Correctness flip
+            if entry["correct"] != prev["correct"]:
+                if prev["correct"] and not entry["correct"]:
+                    drift.append({
+                        "type": "REGRESSION",
                         "model": model,
-                        "direction": "↑" if change > 0 else "↓",
-                        "change": abs(change),
-                        "was": prev_ranks[model],
-                        "now": entry["rank"],
-                    }
-                )
+                        "prompt": prompt_id,
+                        "was": prev["correct"],
+                        "now": entry["correct"],
+                    })
+                else:
+                    drift.append({
+                        "type": "IMPROVEMENT",
+                        "model": model,
+                        "prompt": prompt_id,
+                        "was": prev["correct"],
+                        "now": entry["correct"],
+                    })
+            # Score change >= 1.0 (only if correctness didn't flip)
+            elif entry["score"] is not None and prev["score"] is not None:
+                score_delta = entry["score"] - prev["score"]
+                if score_delta <= -1.0:
+                    drift.append({
+                        "type": "SCORE_DROP",
+                        "model": model,
+                        "prompt": prompt_id,
+                        "was": prev["score"],
+                        "now": entry["score"],
+                    })
+                elif score_delta >= 1.0:
+                    drift.append({
+                        "type": "SCORE_RISE",
+                        "model": model,
+                        "prompt": prompt_id,
+                        "was": prev["score"],
+                        "now": entry["score"],
+                    })
     return drift
 
 
 def generate_summary(
-    leaderboard: list[dict], drift: list[dict], run_id: str
+    scorecard: dict[str, dict], drift: list[dict], run_id: str
 ) -> str:
-    lines = [f"# LLM Weather Report — {run_id}", "", "## Leaderboard", ""]
-    lines.append("| Rank | Model | Wins |")
-    lines.append("|------|-------|------|")
-    for entry in leaderboard:
-        lines.append(
-            f"| {entry['rank']} | {entry['model']} | {entry['wins']}/{entry['total']} |"
-        )
+    lines = [f"# LLM Weather Report — {run_id}", ""]
 
     if drift:
-        lines.append("")
-        lines.append("## Drift")
+        lines.append("## Drift Alerts")
         lines.append("")
         for d in drift:
-            lines.append(
-                f"- {d['model']}: {d['direction']} moved {d['change']} "
-                f"(was #{d['was']}, now #{d['now']})"
-            )
+            if d["type"] in ("REGRESSION", "IMPROVEMENT"):
+                was = "correct" if d["was"] else "incorrect"
+                now = "correct" if d["now"] else "incorrect"
+                lines.append(f"- {d['model']} | {d['prompt']} | {d['type']}: {was} → {now}")
+            else:
+                lines.append(f"- {d['model']} | {d['prompt']} | {d['type']}: {d['was']} → {d['now']}")
+        lines.append("")
+
+    # Collect all prompt IDs in order
+    prompt_ids = []
+    for prompts in scorecard.values():
+        for pid in prompts:
+            if pid not in prompt_ids:
+                prompt_ids.append(pid)
+
+    lines.append("## Scorecard")
+    lines.append("")
+    header = "| Model | " + " | ".join(prompt_ids) + " |"
+    separator = "|-------|" + "|".join("------" for _ in prompt_ids) + "|"
+    lines.append(header)
+    lines.append(separator)
+
+    for model in sorted(scorecard):
+        cells = []
+        for pid in prompt_ids:
+            entry = scorecard[model].get(pid)
+            if entry and entry["correct"] is not None:
+                mark = "✓" if entry["correct"] else "✗"
+                cells.append(f"{mark} ({entry['score']})")
+            else:
+                cells.append("—")
+        lines.append(f"| {model} | " + " | ".join(cells) + " |")
 
     lines.append("")
     return "\n".join(lines)
@@ -82,35 +124,35 @@ def generate_detail(judgments: dict, responses: dict) -> str:
     ]
 
     for prompt_id, j_data in judgments["prompts"].items():
-        if j_data.get("skipped"):
-            lines.append(f"## {prompt_id}")
-            lines.append(f"Skipped: {j_data['reason']}")
-            lines.append("")
-            continue
-
         r_data = responses["prompts"][prompt_id]
         lines.append(f"## {prompt_id}")
         lines.append("")
         lines.append(f"**Prompt:** {r_data['prompt']}")
         lines.append("")
-        lines.append(
-            f"**Winner:** {j_data['majority_winner_model']} "
-            f"(label {j_data['majority_winner']})"
-        )
-        lines.append("")
 
-        lines.append("### Judge Verdicts")
-        lines.append("")
-        for judge_model, verdict in j_data["judges"].items():
-            if "error" in verdict:
-                lines.append(f"- **{judge_model}:** Error — {verdict['error']}")
+        for model, eval_data in j_data.get("evaluations", {}).items():
+            correct = eval_data.get("majority_correct")
+            score = eval_data.get("avg_score")
+            if correct is not None:
+                mark = "✓" if correct else "✗"
+                lines.append(f"### {model}: {mark} (score: {score})")
             else:
-                lines.append(
-                    f"- **{judge_model}:** Winner={verdict['winner']} — "
-                    f"{verdict['reasoning']}"
-                )
-        lines.append("")
+                lines.append(f"### {model}: — (no valid judgments)")
+            lines.append("")
 
+            # Judge verdicts
+            for judge_model, verdict in eval_data.get("judges", {}).items():
+                if "error" in verdict:
+                    lines.append(f"- **{judge_model}:** Error — {verdict['error']}")
+                else:
+                    mark = "✓" if verdict["correct"] else "✗"
+                    lines.append(
+                        f"- **{judge_model}:** {mark} score={verdict['score']} — "
+                        f"{verdict['reasoning']}"
+                    )
+            lines.append("")
+
+        # Show raw responses
         lines.append("### Responses")
         lines.append("")
         for model, resp in r_data["responses"].items():
@@ -128,11 +170,11 @@ def generate_detail(judgments: dict, responses: dict) -> str:
 def write_reports(
     judgments: dict,
     responses: dict,
-    leaderboard: list[dict],
+    scorecard: dict[str, dict],
     drift: list[dict],
     run_dir: Path,
 ) -> None:
-    summary = generate_summary(leaderboard, drift, judgments["run_id"])
+    summary = generate_summary(scorecard, drift, judgments["run_id"])
     detail = generate_detail(judgments, responses)
     (run_dir / "summary.md").write_text(summary)
     (run_dir / "detail.md").write_text(detail)
