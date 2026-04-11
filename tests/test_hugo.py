@@ -73,6 +73,36 @@ def test_generate_hugo_content_has_drift_in_frontmatter():
     assert frontmatter["drift"][0]["model"] == "model-b"
 
 
+def test_generate_hugo_content_has_status_in_frontmatter():
+    content = generate_hugo_content(
+        run_id="2026-04-10T14-00-00",
+        scorecard=SAMPLE_SCORECARD,
+        drift=SAMPLE_DRIFT,
+        status={"model-a": "stable", "model-b": "down"},
+    )
+    parts = content.split("---\n", 2)
+    frontmatter = yaml.safe_load(parts[1])
+    assert frontmatter["status"]["model-a"] == "stable"
+    assert frontmatter["status"]["model-b"] == "down"
+
+
+def test_generate_hugo_content_has_previous_in_frontmatter():
+    previous = {
+        "model-a": {"logic-1": {"correct": True, "score": 4.0}},
+        "model-b": {"logic-1": {"correct": True, "score": 4.0}},
+    }
+    content = generate_hugo_content(
+        run_id="2026-04-10T14-00-00",
+        scorecard=SAMPLE_SCORECARD,
+        drift=SAMPLE_DRIFT,
+        previous=previous,
+    )
+    parts = content.split("---\n", 2)
+    frontmatter = yaml.safe_load(parts[1])
+    assert frontmatter["previous"]["model-b"]["logic-1"]["correct"] is True
+    assert frontmatter["previous"]["model-b"]["logic-1"]["score"] == 4.0
+
+
 def test_write_hugo_page_creates_file(tmp_path):
     content = generate_hugo_content(
         run_id="2026-04-10T14-00-00",

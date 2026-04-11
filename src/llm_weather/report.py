@@ -71,6 +71,19 @@ def detect_drift(
     return drift
 
 
+def model_status(scorecard: dict[str, dict], drift: list[dict]) -> dict[str, str]:
+    status = {model: "stable" for model in scorecard}
+    for d in drift:
+        model = d["model"]
+        if model not in status:
+            continue
+        if d["type"] in ("REGRESSION", "SCORE_DROP"):
+            status[model] = "down"
+        elif d["type"] in ("IMPROVEMENT", "SCORE_RISE") and status[model] != "down":
+            status[model] = "up"
+    return status
+
+
 def generate_headline(scorecard: dict[str, dict], drift: list[dict]) -> str:
     models = list(scorecard.keys())
     prompt_ids = []

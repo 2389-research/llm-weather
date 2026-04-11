@@ -1,6 +1,10 @@
-{{/* Collect all prompt IDs from the first model */}}
+{{/* Expects a dict with .scorecard and .previous */}}
+{{ $scorecard := .scorecard }}
+{{ $previous := .previous }}
+
+{{/* Collect all prompt IDs */}}
 {{ $promptIDs := slice }}
-{{ range $model, $prompts := . }}
+{{ range $model, $prompts := $scorecard }}
   {{ range $pid, $_ := $prompts }}
     {{ if not (in $promptIDs $pid) }}
       {{ $promptIDs = $promptIDs | append $pid }}
@@ -19,16 +23,24 @@
     </tr>
   </thead>
   <tbody>
-    {{ range $model, $prompts := . }}
+    {{ range $model, $prompts := $scorecard }}
     <tr>
       <td>{{ $model }}</td>
       {{ range $pid := $promptIDs }}
         {{ $entry := index $prompts $pid }}
+        {{ $prev := false }}
+        {{ with $previous }}
+          {{ with index . $model }}
+            {{ with index . $pid }}
+              {{ $prev = . }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
         {{ if $entry }}
           {{ if eq $entry.correct true }}
-            <td class="mark-correct">✓ ({{ $entry.score }})</td>
+            <td class="mark-correct">✓ ({{ $entry.score }}){{ with $prev }}{{ if ne .score $entry.score }} <span class="prev-score">was {{ .score }}</span>{{ end }}{{ end }}</td>
           {{ else if eq $entry.correct false }}
-            <td class="mark-incorrect">✗ ({{ $entry.score }})</td>
+            <td class="mark-incorrect">✗ ({{ $entry.score }}){{ with $prev }}{{ if ne .correct $entry.correct }} <span class="prev-score">was ✓</span>{{ else if ne .score $entry.score }} <span class="prev-score">was {{ .score }}</span>{{ end }}{{ end }}</td>
           {{ else }}
             <td class="mark-na">—</td>
           {{ end }}

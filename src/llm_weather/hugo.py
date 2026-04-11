@@ -11,13 +11,17 @@ def generate_hugo_content(
     scorecard: dict[str, dict],
     drift: list[dict],
     headline: str = "",
+    status: dict[str, str] | None = None,
+    previous: dict[str, dict] | None = None,
 ) -> str:
     frontmatter = {
         "title": run_id,
         "date": run_id.split("T")[0] + "T" + run_id.split("T")[1].replace("-", ":"),
         "headline": headline,
+        "status": status or {},
         "scorecard": scorecard,
         "drift": drift,
+        "previous": previous or {},
     }
 
     lines = ["---"]

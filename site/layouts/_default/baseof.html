@@ -227,6 +227,53 @@
     .mark-incorrect { color: var(--red); font-weight: 600; text-align: center; }
     .mark-na { color: var(--text-tertiary); text-align: center; }
 
+    .prev-score {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      font-style: italic;
+    }
+
+    /* ---- MODEL STATUS ---- */
+    .model-status ul { list-style: none; }
+
+    .model-status li {
+      padding: 0.35rem 0;
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 0.84rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .model-status li + li {
+      border-top: 1px solid var(--border);
+      padding-top: 0.4rem;
+    }
+
+    .status-indicator {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.4rem;
+      height: 1.4rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: 2px;
+    }
+
+    .status-indicator.up { color: var(--green); }
+    .status-indicator.down { color: var(--red); }
+    .status-indicator.stable { color: var(--text-tertiary); }
+
+    .status-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+    }
+
     /* ---- DETAIL ---- */
     blockquote {
       background: var(--surface-alt);

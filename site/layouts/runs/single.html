@@ -20,6 +20,21 @@
 
 {{ with .Params.scorecard }}
 <h2>Scorecard</h2>
-{{ partial "scorecard-table.html" . }}
+{{ partial "scorecard-table.html" (dict "scorecard" . "previous" ($.Params.previous | default dict)) }}
+{{ end }}
+
+{{ with .Params.status }}
+<h2>Model Status</h2>
+<div class="model-status">
+  <ul>
+  {{ range $model, $state := . }}
+    <li>
+      <span class="status-indicator {{ $state }}">{{ if eq $state "up" }}↑{{ else if eq $state "down" }}↓{{ else }}→{{ end }}</span>
+      <strong>{{ $model }}</strong>
+      <span class="status-label">{{ $state }}</span>
+    </li>
+  {{ end }}
+  </ul>
+</div>
 {{ end }}
 {{ end }}

@@ -25,3 +25,10 @@
 {{ range $model, $prompts := .Params.scorecard -}}
 | {{ $model }} | {{ range $pid := $promptIDs }}{{ $entry := index $prompts $pid }}{{ if $entry }}{{ if eq $entry.correct true }}✓ ({{ $entry.score }}){{ else if eq $entry.correct false }}✗ ({{ $entry.score }}){{ else }}—{{ end }}{{ else }}—{{ end }} | {{ end }}
 {{ end }}
+
+{{ with .Params.status -}}
+## Model Status
+{{ range $model, $state := . -}}
+- {{ if eq $state "up" }}↑{{ else if eq $state "down" }}↓{{ else }}→{{ end }} **{{ $model }}**: {{ $state }}
+{{ end }}
+{{ end -}}

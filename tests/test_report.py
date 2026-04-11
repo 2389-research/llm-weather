@@ -7,6 +7,7 @@ from llm_weather.report import (
     generate_headline,
     generate_summary,
     generate_detail,
+    model_status,
 )
 
 
@@ -155,6 +156,45 @@ def test_detect_drift_no_change():
     }
     drift = detect_drift(current, previous)
     assert drift == []
+
+
+def test_model_status_all_stable_no_previous():
+    scorecard = build_scorecard(SAMPLE_JUDGMENTS)
+    status = model_status(scorecard, [])
+    assert status["model-a"] == "stable"
+    assert status["model-b"] == "stable"
+
+
+def test_model_status_regression_is_down():
+    scorecard = build_scorecard(SAMPLE_JUDGMENTS)
+    drift = [{"type": "REGRESSION", "model": "model-b", "prompt": "logic-1", "was": True, "now": False}]
+    status = model_status(scorecard, drift)
+    assert status["model-b"] == "down"
+    assert status["model-a"] == "stable"
+
+
+def test_model_status_improvement_is_up():
+    scorecard = build_scorecard(SAMPLE_JUDGMENTS)
+    drift = [{"type": "IMPROVEMENT", "model": "model-b", "prompt": "math-1", "was": False, "now": True}]
+    status = model_status(scorecard, drift)
+    assert status["model-b"] == "up"
+
+
+def test_model_status_score_drop_is_down():
+    scorecard = build_scorecard(SAMPLE_JUDGMENTS)
+    drift = [{"type": "SCORE_DROP", "model": "model-a", "prompt": "logic-1", "was": 5.0, "now": 3.0}]
+    status = model_status(scorecard, drift)
+    assert status["model-a"] == "down"
+
+
+def test_model_status_regression_overrides_improvement():
+    scorecard = build_scorecard(SAMPLE_JUDGMENTS)
+    drift = [
+        {"type": "IMPROVEMENT", "model": "model-b", "prompt": "math-1", "was": False, "now": True},
+        {"type": "REGRESSION", "model": "model-b", "prompt": "logic-1", "was": True, "now": False},
+    ]
+    status = model_status(scorecard, drift)
+    assert status["model-b"] == "down"
 
 
 def test_generate_headline_all_correct_no_drift():
