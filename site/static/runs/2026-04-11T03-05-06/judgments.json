@@ -1,0 +1,1069 @@
+{
+  "run_id": "2026-04-11T03-05-06",
+  "prompts": {
+    "logic-1": {
+      "prompt": "If all bloops are razzies and all razzies are lazzies, are all bloops lazzies?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct and clearly applies transitive subset reasoning: if all bloops are razzies and all razzies are lazzies, then all bloops must be lazzies."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly applies transitive logic to conclude all bloops are lazzies, with a clear subset explanation, though it could mention this is a classic syllogism for added depth."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it correctly identifies the transitive relationship and explains it perfectly using the formal concept of subsets."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "openai/gpt-5.4-mini": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is logically correct because it properly applies transitive set inclusion: if bloops are contained in razzies and razzies are contained in lazzies, then bloops are contained in lazzies."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic and subset reasoning to conclude that all bloops are lazzies, with a clear and accurate explanation."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it correctly abstracts the problem into a relationship between sets, providing a clear and rigorous justification for the conclusion."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-opus-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive categorical reasoning: if all bloops are razzies and all razzies are lazzies, then all bloops are necessarily lazzies."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive syllogistic reasoning, clearly explains each step, and arrives at the right conclusion that all bloops are lazzies."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is correct and clearly explains the transitive logic, but a perfect score would be reserved for a response that also includes a visual aid like a Venn diagram."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is logically correct and clearly applies transitive reasoning: if all bloops are razzies and all razzies are lazzies, then all bloops are lazzies."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic (A\u2192B, B\u2192C, therefore A\u2192C) with clear step-by-step reasoning leading to the accurate conclusion that all bloops are lazzies."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the premises, states the valid conclusion, and accurately explains the underlying logical principle of transitivity."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct and clearly applies transitive set inclusion: if all bloops are razzies and all razzies are lazzies, then all bloops must be lazzies."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive reasoning, clearly explains the logical steps, and even references the formal set theory principle (A \u2286 B and B \u2286 C implies A \u2286 C) to support the conclusion."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is flawless, as it correctly answers the question and perfectly explains the logic by identifying the transitive property."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is logically correct and clearly applies transitive reasoning: if all bloops are razzies and all razzies are lazzies, then all bloops are lazzies."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic (if A\u2286B and B\u2286C, then A\u2286C), clearly explains each premise, and arrives at the correct conclusion with well-structured step-by-step reasoning."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly answers the question and provides a clear, step-by-step explanation that perfectly demonstrates the transitive logic required."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct and clearly applies transitive categorical reasoning: if all bloops are included in razzies and all razzies in lazzies, then all bloops are necessarily lazzies."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic (if A\u2192B and B\u2192C, then A\u2192C) with a clear, step-by-step explanation that accurately derives the conclusion."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is excellent because it correctly answers the question and provides a simple, clear, step-by-step explanation of the transitive logic involved."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        }
+      }
+    },
+    "math-1": {
+      "prompt": "A bat and a ball cost $1.10 together. The bat costs $1 more than the ball. How much does the ball cost?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The setup and algebra are correct, leading to the right conclusion that the ball costs $0.05."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up and solves the algebraic equation, arriving at the correct answer of 5 cents with clear, logical step-by-step reasoning."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly translates the word problem into an algebraic equation and solves it with clear, step-by-step logic."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "openai/gpt-5.4-mini": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly defines the ball's cost as x, sets up the equation x + (x + 1.00) = 1.10, solves it accurately to get x = 0.05, and reaches the correct conclusion."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up and solves the algebraic equations, arriving at the correct answer of $0.05 for the ball, with clear and logical step-by-step reasoning."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly translates the word problem into an algebraic equation and shows clear, logical steps to arrive at the correct answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-opus-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is fully correct, sets up the equation properly, solves it accurately, and verifies the result clearly."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up and solves the algebraic equation, arrives at the right answer of $0.05, verifies both conditions, and even addresses the common intuitive mistake of answering $0.10."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it correctly translates the problem into an algebraic equation, solves it clearly, verifies the answer against both conditions, and explains the common cognitive trap."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "It correctly defines variables, sets up and solves the equations logically, verifies the result, and addresses the common wrong intuition."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up and solves the system of equations, arrives at the right answer of $0.05, verifies the solution, and helpfully addresses the common intuitive mistake of answering $0.10."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides a flawless step-by-step algebraic solution, verifies the result, and insightfully addresses the common cognitive trap, making it exceptionally clear and helpful."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly defines a variable, sets up the equations accurately, solves them properly, and verifies the result, showing clear and complete reasoning."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up algebraic equations, solves them accurately to get $0.05, and verifies the answer, avoiding the common cognitive trap of answering $0.10."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response perfectly translates the problem into algebra and solves it with clear, logical, and verifiable steps."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct and uses clear, valid algebra with a proper check, so the reasoning quality is excellent."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly solves the problem using clear algebraic reasoning, arrives at the right answer of $0.05, and verifies the solution by checking both conditions of the problem."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly answers the question by providing a flawless, step-by-step algebraic solution and verifying the result."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up the equations, solves them step by step without error, and verifies the result with a valid check."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up two equations, solves them through substitution with clear step-by-step algebra, arrives at the correct answer of $0.05, and verifies the solution by checking both original conditions."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response perfectly translates the word problem into algebraic equations and solves them with clear, logical steps, including a final check to verify the correct answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        }
+      }
+    },
+    "spatial-1": {
+      "prompt": "I'm facing north. I turn right. I turn right again. I turn left. What direction am I facing?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn from north to east to south to east, with clear and fully correct reasoning."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, arriving at the correct final direction of east with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly follows each directional turn step-by-step, showing the logic from the start to the final correct answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "openai/gpt-5.4-mini": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn from north to east to south to east, yielding the correct final direction with clear step-by-step reasoning."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response perfectly breaks down the problem into a clear, sequential, and easy-to-follow process, logically arriving at the correct answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-opus-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The step-by-step directional changes are all correct, leading from North to East to South to East."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces each turn step-by-step, arriving at the correct final answer of East."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the starting direction and accurately follows each subsequent turn to arrive at the correct final direction."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The step-by-step reasoning is accurate: north to east after one right turn, south after the second right turn, and east after the final left turn."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response methodically breaks down the problem into a sequence of clear, logical, and accurate steps, leading to the correct conclusion."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn from north to east to south to east, so both the conclusion and the reasoning are accurate and clear."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, arriving at the right answer of east with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response methodically tracks the change in direction with each turn, presenting a flawless, clear, and accurate step-by-step logical flow."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks the turns from north to east to south to east with clear and fully accurate step-by-step reasoning."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, accurately applying right and left rotations to arrive at the correct final direction of East."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it breaks the problem down into a clear, sequential, and accurate step-by-step process that is easy to follow."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct and the step-by-step directional reasoning is clear, complete, and error-free."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, arriving at the correct final answer of East, with clear and accurate reasoning at every stage."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it breaks the problem down into clear, sequential steps, correctly identifying the direction after each turn."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        }
+      }
+    },
+    "causality-1": {
+      "prompt": "A man pushes his car to a hotel and loses his fortune. What happened?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Monopoly riddle and clearly explains how pushing the car token to a hotel leads to losing money, matching the intended wordplay."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly scenario but slightly misinterprets the mechanic - in the classic riddle, the man pushes his car token to a hotel owned by another player and must pay rent, losing his fortune, which the answer captures in essence but overcomplicates slightly."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the lateral thinking solution and concisely explains how all elements of the riddle map perfectly to the game's mechanics."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "openai/gpt-5.4-mini": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic Monopoly riddle and clearly explains how pushing the car token to a hotel leads to losing money by paying rent."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Monopoly scenario and clearly explains both the 'car' as the token and the 'hotel' as a property with rent, demonstrating solid lateral thinking."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic lateral thinking solution and perfectly explains how each element of the riddle maps to the rules and pieces of the board game."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-opus-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "It correctly identifies the Monopoly riddle and clearly maps each clue\u2014car, hotel, and losing his fortune\u2014to the game scenario."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly answer and explains all the key elements (car token, hotel property, rent payment leading to bankruptcy) clearly, though the step-by-step framing is slightly over-elaborate for such a straightforward riddle."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the non-literal context of the riddle and provides a perfect, step-by-step explanation that logically connects each phrase to the rules of Monopoly."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "It identifies the intended Monopoly riddle solution and clearly explains how pushing the car token to a hotel causes him to lose all his money."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic Monopoly lateral thinking puzzle and provides a clear, accurate explanation of all key elements: the car token, the hotel owned by another player, and losing his fortune by paying rent."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic puzzle and provides a clear, logical explanation that deconstructs the riddle's misleading language."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "It gives the standard correct riddle answer and clearly explains how pushing a car token to a hotel in Monopoly causes someone to lose their fortune."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies this as the classic Monopoly riddle and explains the key elements (car token, hotel, losing fortune) accurately, though the explanation is slightly verbose for what is a simple riddle answer."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the puzzle as a riddle and provides a clear, well-structured explanation that connects every element of the question to the game of Monopoly."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "gemini/gemini-2.5-pro": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "It correctly identifies the Monopoly riddle and clearly explains how each clue maps to the game pieces and losing money by landing on a hotel property."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly answer and breaks down the metaphorical elements clearly, though the step-by-step format is slightly over-structured for such a simple riddle."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the answer and provides a perfectly clear, step-by-step breakdown of the wordplay used in the riddle."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "gemini/gemini-2.5-flash": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "It correctly identifies the classic Monopoly riddle and clearly explains how the car, hotel, and lost fortune all refer to in-game pieces and money."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies this classic lateral thinking puzzle - the car is a Monopoly game piece, the hotel is a property improvement, and losing his fortune refers to going bankrupt in the game, with a clear and well-explained answer."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the non-literal context and perfectly explains how each element of the riddle maps to the mechanics of the game Monopoly."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        }
+      }
+    },
+    "code-1": {
+      "prompt": "What does this function return for input 5? def f(n): return n if n <= 1 else f(n-1) + f(n-2)",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct and clearly identifies the recursive function as Fibonacci, then verifies f(5) step by step from the base cases."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as computing Fibonacci numbers, accurately traces through all values from f(0) to f(5), and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the function as computing the Fibonacci sequence and shows the step-by-step values, though it could have been slightly more explicit by showing the addition for each step."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "openai/gpt-5.4-mini": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct and clearly identifies the recurrence as Fibonacci with the proper base cases, then computes f(5)=5 accurately."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as computing Fibonacci numbers, accurately traces the recursion with the correct base cases, and arrives at the right answer of 5."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning correctly identifies the function as the Fibonacci sequence, states the base cases, and shows the correct intermediate calculations to arrive at the right answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "anthropic/claude-opus-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "It correctly identifies the function as Fibonacci, traces the recursive calls accurately, and arrives at the correct result f(5) = 5."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Fibonacci pattern, traces all recursive calls accurately, and clearly shows the bottom-up resolution to the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as the Fibonacci sequence and provides a perfectly clear, step-by-step trace of the recursive calls and the subsequent calculations, leading to the correct answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, traces the recursive calls accurately, and computes f(5) = 5 without errors."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, traces through all recursive calls systematically, and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as a Fibonacci sequence and provides a clear, step-by-step trace of the recursive calls and return values to arrive at the correct answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, traces the recursive calls accurately, and arrives at the correct result of 5."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, traces through all recursive calls systematically, applies base cases properly, and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning correctly identifies the function's logic and base cases and arrives at the correct answer, but its trace simplifies the true execution path by not showing the redundant calculations."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "gemini/gemini-2.5-pro": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci-style recursion, traces the needed base cases and recursive expansions, and arrives at the correct result f(5) = 5."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the recursive Fibonacci function, traces through all recursive calls systematically, resolves base cases accurately, and arrives at the correct answer of 5 with clear step-by-step reasoning."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function's logic, traces the recursive calls down to the base cases, and then accurately computes the result by working back up the call stack."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci-style recursion, traces the base cases and recursive expansions accurately, and concludes with the correct result f(5)=5."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces the recursive execution, identifies the base cases, substitutes values bottom-up, arrives at the correct answer of 5, and correctly identifies the function as computing the Fibonacci sequence."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent, providing a perfectly clear, step-by-step trace of the logic, and it correctly identifies the underlying mathematical sequence."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        }
+      }
+    },
+    "ambiguity-1": {
+      "prompt": "The trophy doesn't fit in the suitcase because it's too big. What is too big?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct because in this sentence 'too big' clearly refers to the trophy, and the explanation accurately identifies the item that fails to fit as the oversized object."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big and provides clear, logical reasoning based on the context of fitting into a suitcase, though the explanation is straightforward rather than deeply analytical."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is strong because it correctly applies the physical constraint of containment to resolve the sentence's ambiguity."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.33
+        },
+        "openai/gpt-5.4-mini": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly resolves the pronoun 'it' to 'the trophy,' which is the object that would be too big to fit in the suitcase."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big, which is the logical referent of 'it' since the trophy not fitting in the suitcase implies the trophy is the oversized object."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly uses real-world knowledge to resolve the ambiguous pronoun 'it', understanding that an object is too big for a container, not the other way around."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "anthropic/claude-opus-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "It correctly resolves the pronoun by comparing both possible referents and uses sound commonsense reasoning to conclude that the trophy is too big."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the trophy as too big, and provides clear logical reasoning by eliminating the suitcase as the referent and explaining why the trophy being too big is the only interpretation that makes contextual sense."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response demonstrates excellent reasoning by systematically testing both possible interpretations and using a flawless process of elimination based on real-world logic."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly resolves the pronoun by identifying that the trophy is the item too big to fit in the suitcase."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as the referent of 'it' through logical reasoning, since the trophy not fitting implies it is the oversized object, though the explanation is brief and could elaborate more on the pronoun resolution process."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly resolves the pronoun ambiguity by identifying the logical antecedent ('the trophy') that makes the sentence coherent."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.67
+        },
+        "anthropic/claude-haiku-4-5": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies that 'it's' refers to the trophy, and the explanation matches the causal meaning of the sentence."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big and provides a reasonable explanation, though the claim that 'trophy' is 'the subject of the sentence' is slightly imprecise since 'trophy' is actually the subject of a subordinate clause, but the core reasoning about pronoun reference is sound."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the pronoun's antecedent and provides a logical explanation, with only a minor imprecision in its grammatical terminology."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.33
+        },
+        "gemini/gemini-2.5-pro": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct and clearly explains the pronoun resolution by using the sentence\u2019s causal logic to show that 'it' refers to the trophy, not the suitcase."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the trophy as too big, provides clear logical reasoning about why the pronoun 'it' refers to the trophy rather than the suitcase, and even addresses the counterargument by noting that a big suitcase would actually help the trophy fit."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it clearly breaks down the logic, applies a real-world constraint, and explicitly refutes the only alternative interpretation."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly resolves the pronoun 'it's' to the trophy, which is the object too big to fit in the suitcase."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as the referent of 'it's too big,' which is the logical interpretation since the trophy not fitting in the suitcase implies the trophy exceeds the suitcase's capacity."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly resolves the pronoun ambiguity in the sentence, but it does not explain the simple logical deduction that leads to the conclusion."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.33
+        }
+      }
+    },
+    "common-sense-1": {
+      "prompt": "How many times can you subtract 5 from 25?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct because this is a wordplay riddle: you can subtract 5 from 25 only once, after which you are subtracting from 20, and the explanation clearly captures that logic."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trick in the question and explains the logic clearly, though this is a well-known riddle and the explanation is straightforward rather than demonstrating deep reasoning."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is logical and correctly identifies the question's trick, focusing on the literal interpretation that the number changes after the first subtraction."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.33
+        },
+        "openai/gpt-5.4-mini": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly recognizes the riddle-like wording that you can subtract 5 from 25 only once because after the first subtraction the number is no longer 25."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trick in the question and provides a clear explanation, though it's a well-known riddle where the answer is technically valid from a literal interpretation standpoint."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is very good because it correctly interprets the question as a literal word puzzle, where the number 25 is changed after the first subtraction."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.33
+        },
+        "anthropic/claude-opus-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct and clearly explains the trick that only the first subtraction is from 25, making the reasoning concise and sound."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trick interpretation and explains the logic well, though it could also acknowledge the alternative straightforward answer (5 times) that many would consider equally valid."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the question as a word puzzle and provides a clear, logical explanation based on a literal interpretation of the prompt."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.33
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": false,
+              "score": 2,
+              "reasoning": "The response gives the arithmetic count of repeated subtraction, but for this classic wording the correct answer is once because after the first subtraction you are no longer subtracting from 25."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly calculates that 5 can be subtracted from 25 exactly 5 times with clear step-by-step work, and appropriately acknowledges the classic trick interpretation of the question (where the answer is 'only once, because after that you're subtracting from 20'), though it could have explored that angle more fully."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is very good because it clearly demonstrates the correct mathematical process while also acknowledging the ambiguity of the question's phrasing."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 3.33
+        },
+        "anthropic/claude-haiku-4-5": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": false,
+              "score": 2,
+              "reasoning": "This is a classic trick question: you can subtract 5 from 25 only once, after which you are subtracting 5 from 20, so the response misses the intended reasoning despite correct arithmetic."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies that 5 can be subtracted from 25 exactly 5 times, shows clear step-by-step work, and helpfully notes the division equivalence, though it misses the classic trick answer that you can only subtract 5 from 25 once (after that you're subtracting from 20, 15, etc.)."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response provides excellent step-by-step logic and correctly connects the process to division, but it doesn't address the question's potential ambiguity."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 3.33
+        },
+        "gemini/gemini-2.5-pro": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the intended riddle answer as once while also clearly acknowledging the alternative arithmetic interpretation, showing strong and complete reasoning."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies both the riddle interpretation (only once, since after the first subtraction you no longer have 25) and the mathematical interpretation (5 times until reaching zero), providing clear explanations and step-by-step work for both answers."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is excellent because it correctly identifies the question's ambiguity, providing and clearly explaining both the literal 'riddle' interpretation and the conventional mathematical interpretation."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "judges": {
+            "openai/gpt-5.4": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the trick in the question and clearly explains that only the first subtraction is from 25, making the reasoning fully accurate."
+            },
+            "anthropic/claude-sonnet-4-6": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trick nature of the question and explains that you can only subtract 5 from 25 once because subsequent subtractions are from different numbers, though the explanation is slightly verbose for such a simple trick question."
+            },
+            "gemini/gemini-2.5-pro": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is sound and clearly explains the logic behind the riddle's answer, focusing on the literal interpretation of the question."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.33
+        }
+      }
+    }
+  }
+}

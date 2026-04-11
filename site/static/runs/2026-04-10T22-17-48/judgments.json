@@ -1,0 +1,250 @@
+{
+  "run_id": "2026-04-10T22-17-48",
+  "prompts": {
+    "logic-1": {
+      "shuffle_mapping": {
+        "A": "openai/gpt-4.1",
+        "B": "openai/o4-mini",
+        "C": "anthropic/claude-haiku-4-5",
+        "D": "anthropic/claude-sonnet-4-6"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "C",
+          "ranking": [
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "reasoning": "Response C most clearly and completely explains the reasoning, explicitly connects the logic to set notation and transitivity, while being concise and precise."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "C",
+          "ranking": [
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "reasoning": "Response C is the winner because it combines conciseness with completeness, providing the logical chain clearly, naming the principle (transitivity), and adding formal set notation (A \u2286 B and B \u2286 C \u2192 A \u2286 C) that elevates the explanation without unnecessary verbosity."
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        }
+      },
+      "majority_winner": "C",
+      "majority_winner_model": "anthropic/claude-haiku-4-5"
+    },
+    "math-1": {
+      "shuffle_mapping": {
+        "A": "anthropic/claude-haiku-4-5",
+        "B": "openai/o4-mini",
+        "C": "openai/gpt-4.1",
+        "D": "anthropic/claude-sonnet-4-6"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "D",
+          "ranking": [
+            "D",
+            "A",
+            "C",
+            "B"
+          ],
+          "reasoning": "Response D not only clearly sets up the variables and equations, but also provides a helpful note about the common misconception, adding value by addressing common reasoning errors, while the others are correct but less explanatory."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "D",
+          "ranking": [
+            "D",
+            "A",
+            "C",
+            "B"
+          ],
+          "reasoning": "Response D earns the top spot by not only solving the problem correctly with clear algebraic steps and verification, but also explicitly addressing the common cognitive trap of answering $0.10, which adds meaningful educational value beyond what the other responses provide."
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        }
+      },
+      "majority_winner": "D",
+      "majority_winner_model": "anthropic/claude-sonnet-4-6"
+    },
+    "spatial-1": {
+      "shuffle_mapping": {
+        "A": "anthropic/claude-haiku-4-5",
+        "B": "openai/o4-mini",
+        "C": "anthropic/claude-sonnet-4-6",
+        "D": "openai/gpt-4.1"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "D",
+          "ranking": [
+            "D",
+            "A",
+            "B",
+            "C"
+          ],
+          "reasoning": "Response D offers the most explicit reasoning, clearly stating both the previous and resulting directions at each step, making the logic easy to follow and verify."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "D",
+          "ranking": [
+            "D",
+            "A",
+            "C",
+            "B"
+          ],
+          "reasoning": "Response D is the clearest and most readable, with explicit labels for each step, bold directional answers, and a clearly marked final answer section, making it easiest to follow despite all four responses arriving at the correct answer."
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        }
+      },
+      "majority_winner": "D",
+      "majority_winner_model": "openai/gpt-4.1"
+    },
+    "causality-1": {
+      "shuffle_mapping": {
+        "A": "anthropic/claude-sonnet-4-6",
+        "B": "openai/o4-mini",
+        "C": "openai/gpt-4.1",
+        "D": "anthropic/claude-haiku-4-5"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "C",
+          "ranking": [
+            "C",
+            "B",
+            "D",
+            "A"
+          ],
+          "reasoning": "Response C provides the most thorough step-by-step reasoning, examining both the literal and lateral/puzzle interpretations before arriving at and explaining the Monopoly answer."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "B",
+          "ranking": [
+            "B",
+            "C",
+            "D",
+            "A"
+          ],
+          "reasoning": "Response B provides the clearest, most concise step-by-step reasoning that logically walks through each element of the puzzle without unnecessary padding, making it the most effective demonstration of reasoning quality."
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        }
+      },
+      "majority_winner": "C",
+      "majority_winner_model": "openai/gpt-4.1"
+    },
+    "code-1": {
+      "shuffle_mapping": {
+        "A": "openai/gpt-4.1",
+        "B": "anthropic/claude-sonnet-4-6",
+        "C": "anthropic/claude-haiku-4-5",
+        "D": "openai/o4-mini"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "A",
+          "ranking": [
+            "A",
+            "B",
+            "D",
+            "C"
+          ],
+          "reasoning": "Response A provides the clearest explanation by describing the function, explaining the base cases, identifying it as Fibonacci, and walking through each step methodically, while the others are less thorough or structured."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "C",
+          "ranking": [
+            "C",
+            "B",
+            "D",
+            "A"
+          ],
+          "reasoning": "Response C presents the clearest hierarchical trace with proper indentation showing the recursive call tree, explicitly notes memoized results being reused, and uses clean formatting that best illustrates how the recursion unwinds."
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        }
+      },
+      "majority_winner": "A",
+      "majority_winner_model": "openai/gpt-4.1"
+    },
+    "ambiguity-1": {
+      "shuffle_mapping": {
+        "A": "openai/gpt-4.1",
+        "B": "openai/o4-mini",
+        "C": "anthropic/claude-sonnet-4-6",
+        "D": "anthropic/claude-haiku-4-5"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "A",
+          "ranking": [
+            "A",
+            "B",
+            "D",
+            "C"
+          ],
+          "reasoning": "Response A provides the clearest and most thorough step-by-step reasoning process, explicitly evaluating both possible referents and justifying why 'trophy' is correct, while B is concise but slightly less complete, and C and D are correct but offer minimal explanation."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "B",
+          "ranking": [
+            "B",
+            "A",
+            "D",
+            "C"
+          ],
+          "reasoning": "Response B provides the most concise yet complete logical reasoning by explicitly testing both candidate referents and explaining why one interpretation fails, arriving at the correct answer without unnecessary verbosity."
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        }
+      },
+      "majority_winner": "A",
+      "majority_winner_model": "openai/gpt-4.1"
+    },
+    "common-sense-1": {
+      "shuffle_mapping": {
+        "A": "anthropic/claude-haiku-4-5",
+        "B": "anthropic/claude-sonnet-4-6",
+        "C": "openai/gpt-4.1",
+        "D": "openai/o4-mini"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "C",
+          "ranking": [
+            "C",
+            "D",
+            "B",
+            "A"
+          ],
+          "reasoning": "Response C most clearly explains the trick in the question\u2019s wording and explicitly distinguishes between subtracting from 25 itself (once) versus continuous subtraction from each new result, while others either focus on the arithmetic or don\u2019t fully clarify the phrasing nuance."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "B",
+          "ranking": [
+            "B",
+            "C",
+            "D",
+            "A"
+          ],
+          "reasoning": "Response B is the best because it correctly solves the mathematical answer (5 times) with clear steps, while also acknowledging the classic trick interpretation (only once), giving the reader both perspectives without being misleading like C and D, which present only the trick answer as definitive."
+        },
+        "google/gemini-2.5-pro": {
+          "error": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=google/gemini-2.5-pro\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers"
+        }
+      },
+      "majority_winner": "C",
+      "majority_winner_model": "openai/gpt-4.1"
+    }
+  }
+}
