@@ -80,7 +80,9 @@ def generate_hugo_detail(run_id: str, judgments: dict, responses: dict) -> str:
                         f"{resp['output_tokens']} tokens):"
                     )
                     lines.append("")
-                    lines.append(f"> {resp['content']}")
+                    lines.append("```")
+                    lines.append(resp["content"])
+                    lines.append("```")
                 lines.append("")
 
         # Show judge verdicts
