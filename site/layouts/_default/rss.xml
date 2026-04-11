@@ -1,0 +1,28 @@
+{{- $runsSection := .Site.GetPage "/runs" -}}
+{{- $allRuns := slice -}}
+{{- with $runsSection }}{{ $allRuns = .RegularPages }}{{ end -}}
+{{- $runs := where $allRuns "Params.layout" "ne" "detail" -}}
+{{- $sorted := sort $runs "Date" "desc" -}}
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ .Site.Title }}</title>
+    <link>{{ .Site.BaseURL }}</link>
+    <description>{{ .Site.Params.description }}</description>
+    <generator>Hugo</generator>
+    <language>{{ .Site.LanguageCode }}</language>
+    {{- with $sorted }}
+    <lastBuildDate>{{ (index . 0).Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</lastBuildDate>
+    {{- end }}
+    <atom:link href="{{ "index.xml" | absURL }}" rel="self" type="application/rss+xml" />
+    {{- range $sorted }}
+    <item>
+      <title>LLM Weather — {{ .Date.Format "Jan 2, 2006 3:04 PM CT" }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ with .Params.headline }}{{ . }}{{ else }}Run {{ .Title }}{{ end }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ .Title }} — LLM Weather Report</title>
+  <meta name="description" content="{{ with .Params.headline }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="LLM Weather Report" href="{{ .Permalink }}">{{ end }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
@@ -171,6 +173,7 @@
         <a href="/about/" class="text-text-secondary hover:text-text no-underline{{ if eq .RelPermalink "/about/" }} text-text font-bold{{ end }}">Methodology</a>
         <a href="/skill.md" class="text-text-secondary hover:text-text no-underline">Agent Skill</a>
         <span class="ml-auto flex items-center gap-3 max-sm:gap-2">
+          <a href="/index.xml" class="text-text-secondary hover:text-text no-underline" title="RSS Feed">RSS</a>
           <a href="https://github.com/2389-research/llm-weather" class="text-text-secondary hover:text-text no-underline" title="Source on GitHub">GitHub</a>
           <a href="https://2389.ai" class="text-text-tertiary hover:text-text no-underline">2389.ai</a>
         </span>

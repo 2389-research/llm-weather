@@ -29,6 +29,6 @@ buildFuture = true
 
 [outputs]
   page = ["HTML"]
-  home = ["HTML", "llmstxt"]
-  section = ["HTML"]
+  home = ["HTML", "llmstxt", "RSS"]
+  section = ["HTML", "RSS"]
 
