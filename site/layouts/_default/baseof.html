@@ -30,80 +30,22 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.55;
-      min-height: 100vh;
     }
 
-    /* ---- HEADER / BROADCAST BAR ---- */
+    /* ---- HEADER ---- */
     .broadcast-header {
       background: var(--broadcast-blue);
       color: var(--white);
-      padding: 1.25rem 2rem;
+      padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .broadcast-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 300%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 40px,
-        rgba(255,255,255,0.02) 40px,
-        rgba(255,255,255,0.02) 80px
-      );
-    }
-
-    .radar-icon {
-      width: 36px;
-      height: 36px;
-      border: 2px solid rgba(255,255,255,0.6);
-      border-radius: 50%;
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .radar-icon::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 18px;
-      height: 18px;
-      border: 1.5px solid rgba(255,255,255,0.4);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .radar-icon::after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 50%;
-      width: 2px;
-      height: 50%;
-      background: rgba(255,255,255,0.8);
-      transform-origin: bottom center;
-      animation: radar-sweep 4s linear infinite;
-    }
-
-    @keyframes radar-sweep {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      gap: 0.75rem;
     }
 
     .broadcast-title {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
     }
 
     .broadcast-title a {
@@ -112,11 +54,10 @@
     }
 
     .broadcast-subtitle {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       opacity: 0.7;
-      font-weight: 400;
-      letter-spacing: 0.04em;
       text-transform: uppercase;
+      letter-spacing: 0.04em;
       margin-left: auto;
     }
 
@@ -124,47 +65,49 @@
     .content {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 1.5rem 2rem 4rem;
+      padding: 1.25rem 1.5rem 3rem;
     }
 
-    /* ---- SECTION HEADERS ---- */
+    /* ---- HEADINGS ---- */
     h1 {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--broadcast-blue);
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
     }
 
     h2 {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 1.15rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      color: var(--text);
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      padding: 0.5rem 0.75rem;
+      padding: 0.4rem 0.6rem;
       background: var(--broadcast-blue);
       color: var(--white);
-      margin: 1.5rem 0 0.75rem;
-      border: none;
+      margin: 1.25rem 0 0.5rem;
     }
 
     h3 {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--broadcast-blue);
-      margin: 1.25rem 0 0.4rem;
+      margin: 1rem 0 0.3rem;
     }
 
-    /* ---- TABLES (SCORECARD) ---- */
+    /* ---- TABLES ---- */
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 0.5rem 0 1rem;
+    }
+
     table {
       border-collapse: collapse;
       width: 100%;
-      margin: 0.5rem 0 1rem;
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       font-variant-numeric: tabular-nums;
     }
 
@@ -173,128 +116,93 @@
       color: var(--white);
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
       font-weight: 600;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.6rem 0.75rem;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 0.6rem;
       text-align: left;
       border: 1px solid rgba(255,255,255,0.1);
       white-space: nowrap;
+      position: sticky;
+      top: 0;
     }
 
     td {
-      padding: 0.55rem 0.75rem;
+      padding: 0.45rem 0.6rem;
       border: 1px solid var(--border);
       text-align: left;
+      white-space: nowrap;
     }
 
     tbody tr:nth-child(odd) { background: var(--white); }
     tbody tr:nth-child(even) { background: var(--panel-alt); }
 
-    tbody tr:hover { background: var(--panel); }
-
     td:first-child {
       font-weight: 600;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--broadcast-blue);
-      white-space: nowrap;
+      position: sticky;
+      left: 0;
+      background: inherit;
+      z-index: 1;
     }
 
     /* ---- LINKS ---- */
-    a {
-      color: var(--broadcast-blue-light);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--broadcast-blue-light); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
 
     /* ---- DRIFT ALERTS ---- */
     .drift-alerts {
       background: var(--white);
       border-left: 4px solid var(--signal-red);
-      padding: 0.75rem 1rem;
-      margin: 0.75rem 0 1rem;
+      padding: 0.6rem 0.75rem;
+      margin: 0.5rem 0 1rem;
     }
 
-    .drift-alerts ul {
-      list-style: none;
-      padding: 0;
-    }
+    .drift-alerts ul { list-style: none; }
 
     .drift-alerts li {
-      padding: 0.35rem 0;
-      font-size: 0.88rem;
+      padding: 0.3rem 0;
+      font-size: 0.84rem;
       border-bottom: 1px solid var(--panel);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
+      flex-wrap: wrap;
     }
 
     .drift-alerts li:last-child { border-bottom: none; }
 
     .drift-tag {
       display: inline-block;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 0.15rem 0.45rem;
+      letter-spacing: 0.03em;
+      padding: 0.1rem 0.4rem;
       border-radius: 2px;
-      animation: blip-pulse 2s ease-in-out infinite;
     }
 
-    @keyframes blip-pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
-    .drift-tag.regression {
-      background: var(--signal-red);
-      color: var(--white);
-    }
-
-    .drift-tag.improvement {
-      background: var(--steady-green);
-      color: var(--white);
-    }
-
-    .drift-tag.score-drop {
-      background: var(--alert-amber);
-      color: var(--white);
-    }
-
-    .drift-tag.score-rise {
-      background: var(--steady-green);
-      color: var(--white);
-    }
-
-    /* ---- CORRECT / INCORRECT MARKS ---- */
-    .mark-correct { color: var(--steady-green); font-weight: 600; }
-    .mark-incorrect { color: var(--signal-red); font-weight: 600; }
-    .mark-na { color: var(--text-muted); }
+    .drift-tag.regression { background: var(--signal-red); color: var(--white); }
+    .drift-tag.improvement { background: var(--steady-green); color: var(--white); }
+    .drift-tag.score-drop { background: var(--alert-amber); color: var(--white); }
+    .drift-tag.score-rise { background: var(--steady-green); color: var(--white); }
 
     /* ---- RUN LIST ---- */
-    .run-list {
-      list-style: none;
-      padding: 0;
-    }
+    .run-list { list-style: none; }
 
     .run-list li {
-      padding: 0.6rem 0.75rem;
+      padding: 0.5rem 0.6rem;
       border-bottom: 1px solid var(--border);
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
     .run-list li:nth-child(odd) { background: var(--white); }
     .run-list li:nth-child(even) { background: var(--panel-alt); }
-
-    .run-list li:hover { background: var(--panel); }
 
     .run-list .run-date {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
@@ -304,108 +212,43 @@
 
     .run-list .run-meta {
       color: var(--text-muted);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       margin-left: auto;
     }
 
-    /* ---- DETAIL PAGE ---- */
-    .prompt-section {
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 1rem;
-      margin: 0.75rem 0;
-    }
-
+    /* ---- DETAIL ---- */
     .prompt-text {
       font-style: italic;
       color: var(--text-muted);
-      padding: 0.5rem 0;
+      padding: 0.4rem 0;
       border-bottom: 1px solid var(--panel);
-      margin-bottom: 0.75rem;
-    }
-
-    .judge-verdict {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      padding: 0.2rem 0;
+      margin-bottom: 0.5rem;
     }
 
     blockquote {
       background: var(--panel-alt);
       border-left: 3px solid var(--border);
-      padding: 0.75rem 1rem;
-      margin: 0.5rem 0;
-      font-size: 0.85rem;
-      color: var(--text);
-    }
-
-    /* ---- TICKER BAR ---- */
-    .ticker-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--broadcast-blue);
-      color: var(--white);
-      font-size: 0.78rem;
-      font-weight: 500;
-      overflow: hidden;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      z-index: 100;
-    }
-
-    .ticker-label {
-      background: var(--signal-red);
-      padding: 0 0.75rem;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-weight: 700;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .ticker-scroll {
-      overflow: hidden;
-      white-space: nowrap;
-      flex: 1;
-    }
-
-    .ticker-content {
-      display: inline-block;
-      padding-left: 100%;
-      animation: ticker-slide 30s linear infinite;
-    }
-
-    .ticker-content span {
-      padding: 0 2rem;
-    }
-
-    @keyframes ticker-slide {
-      from { transform: translateX(0); }
-      to { transform: translateX(-100%); }
+      padding: 0.6rem 0.75rem;
+      margin: 0.4rem 0;
+      font-size: 0.82rem;
     }
 
     /* ---- RESPONSIVE ---- */
-    @media (max-width: 768px) {
-      .broadcast-header { padding: 1rem; }
-      .content { padding: 1rem; }
+    @media (max-width: 640px) {
+      .broadcast-header { padding: 0.75rem 1rem; }
       .broadcast-subtitle { display: none; }
+      .content { padding: 1rem; }
+      h1 { font-size: 1.2rem; }
+      h2 { font-size: 0.78rem; }
       table { font-size: 0.78rem; }
-      td, th { padding: 0.4rem 0.5rem; }
-      h1 { font-size: 1.3rem; }
+      td, th { padding: 0.35rem 0.45rem; }
+      .drift-alerts { padding: 0.5rem; }
+      .run-list .run-meta { margin-left: 0; width: 100%; }
     }
   </style>
 </head>
 <body>
   <header class="broadcast-header">
-    <div class="radar-icon"></div>
     <div class="broadcast-title"><a href="/">LLM Weather Report</a></div>
     <div class="broadcast-subtitle">Capability Drift Tracking</div>
   </header>
@@ -413,7 +256,5 @@
   <main class="content">
     {{ block "main" . }}{{ end }}
   </main>
-
-  {{ block "ticker" . }}{{ end }}
 </body>
 </html>

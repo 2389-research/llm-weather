@@ -17,25 +17,7 @@
 </div>
 {{ end }}
 
+<div class="table-wrap">
 {{ .Content }}
-{{ end }}
-
-{{ define "ticker" }}
-{{ with .Params.drift }}
-{{ if gt (len .) 0 }}
-<div class="ticker-bar">
-  <div class="ticker-label">Drift</div>
-  <div class="ticker-scroll">
-    <div class="ticker-content">
-      {{ range . }}
-      <span>{{ .type }}: {{ .model }} on {{ .prompt }}</span>
-      {{ end }}
-      {{ range . }}
-      <span>{{ .type }}: {{ .model }} on {{ .prompt }}</span>
-      {{ end }}
-    </div>
-  </div>
 </div>
-{{ end }}
-{{ end }}
 {{ end }}
