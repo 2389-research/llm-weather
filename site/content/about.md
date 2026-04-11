@@ -66,6 +66,24 @@ Each model gets a per-run status:
 
 Runs execute 6 times daily via GitHub Actions. Results are committed to the repository and deployed automatically.
 
+## Limitations
+
+This system has intentional constraints worth understanding:
+
+- **Small prompt set.** Seven prompts cannot cover the full surface area of a model's reasoning capability. A model could regress on tasks we don't test and we would miss it. The prompts are chosen for stability and breadth across reasoning categories, not for difficulty or coverage.
+- **Judge model bias.** The judge panel is itself composed of LLMs. If the judge models drift simultaneously — or share systematic blind spots — the evaluations could be wrong in correlated ways. Cross-model majority voting reduces but does not eliminate this risk.
+- **Stochastic noise.** Even with multi-sample evaluation, models are non-deterministic. A single failed sample does not necessarily indicate drift — it could be sampling variance. We flag it anyway and let the pattern emerge over time.
+- **No prompt difficulty scaling.** The prompts are deliberately simple. This means we detect gross regressions (a model that used to get basic logic right now gets it wrong) but may miss subtler degradations in advanced reasoning.
+- **API-level only.** We test what the API returns. We cannot distinguish between a weight update, a system prompt change, a routing change, or an infrastructure migration. We report what changed, not why.
+
+## How This Differs From Benchmarks
+
+Projects like MMLU, HumanEval, HELM, BIG-Bench, and MT-Bench measure model capability at a point in time — how well does this model perform on a standardized test? They are designed for cross-model comparison and typically run once per model release.
+
+The LLM Weather Report measures something different: capability *stability* over time. We run the same prompts against the same model endpoints repeatedly, looking for changes. A model could score perfectly on MMLU while silently degrading on basic syllogistic reasoning between Tuesday and Thursday — and no benchmark would catch that, because benchmarks don't re-test deployed endpoints on a schedule.
+
+We are also deliberately simpler. Benchmarks like HELM evaluate thousands of prompts across dozens of categories. We evaluate seven. This is a feature, not a limitation — a small, fixed prompt set makes drift detection unambiguous. When a score changes, the signal is clear.
+
 ## Models Tracked
 
 The current contestant and judge models are configured in `models.yaml` in the project repository. Models without API keys configured are automatically skipped.
@@ -102,4 +120,4 @@ Everything is open source at [github.com/2389-research/llm-weather](https://gith
 
 ## About
 
-A [2389 Research](https://2389.ai) project.
+Built by [Harper Reed](https://harper.blog) at [2389 Research](https://2389.ai). The project is open source and all evaluation data is published freely.

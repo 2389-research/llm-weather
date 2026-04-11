@@ -5,10 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ .Title }} — LLM Weather Report</title>
   <meta name="description" content="{{ with .Params.headline }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="canonical" href="{{ .Permalink }}">
   {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="LLM Weather Report" href="{{ .Permalink }}">{{ end }}
+  {{- $desc := .Site.Params.description -}}
+  {{- with .Params.headline }}{{ $desc = . }}{{ end -}}
+  <meta property="og:title" content="{{ .Title }} — LLM Weather Report">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="LLM Weather Report">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ .Title }} — LLM Weather Report">
+  <meta name="twitter:description" content="{{ $desc }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+
+  {{/* ---- Schema.org structured data ---- */}}
+  {{/* Base WebSite + Organization present on every page. */}}
+  {{/* Page-specific types are injected via the "schema" block below. */}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://llm-weather.netlify.app/#website",
+        "url": "https://llm-weather.netlify.app/",
+        "name": "LLM Weather Report",
+        "description": "Tracking reasoning capability drift across LLM models — pure endpoint evals, 6x daily, published as open data.",
+        "publisher": {
+          "@id": "https://2389.ai/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://llm-weather.netlify.app/runs/{search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://2389.ai/#organization",
+        "name": "2389 Research",
+        "url": "https://2389.ai",
+        "sameAs": [
+          "https://github.com/2389-research"
+        ]
+      }
+    ]
+  }
+  </script>
+  {{ block "schema" . }}{{ end }}
+
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
     tailwind.config = {
@@ -162,7 +213,7 @@
     <div class="max-w-4xl mx-auto px-8 max-sm:px-4">
       <div class="pt-6 pb-3 max-sm:pt-4 max-sm:pb-2">
         <a href="/" class="text-text no-underline hover:no-underline">
-          <h1 class="font-display text-3xl font-extrabold tracking-tight mb-0 max-sm:text-2xl" style="border:none;margin-top:0;padding:0;">LLM Weather Report</h1>
+          <span class="font-display text-3xl font-extrabold tracking-tight block max-sm:text-2xl">LLM Weather Report</span>
         </a>
         <p class="font-body text-sm text-text-secondary italic mt-1 mb-0">
           Tracking raw LLM reasoning drift — pure endpoint, no agents

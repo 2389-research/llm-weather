@@ -1,8 +1,66 @@
-{{ define "main" }}
-<h1>{{ .Date.Format "January 2, 2006 — 3:04 PM CT" }}</h1>
-{{ with .Params.headline }}
-<p class="text-lg mb-3"><strong>{{ . }}</strong></p>
+{{ define "schema" }}
+{{/* Individual run page: Article (the scorecard report) + Dataset (the run's structured eval data) */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "{{ .Permalink }}#article",
+      "headline": {{ with .Params.headline }}{{ . | jsonify }}{{ else }}{{ printf "LLM Weather Report — %s" (.Date.Format "January 2, 2006 3:04 PM") | jsonify }}{{ end }},
+      "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      "dateModified": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      "url": "{{ .Permalink }}",
+      "isPartOf": {
+        "@id": "https://llm-weather.netlify.app/#website"
+      },
+      "author": {
+        "@id": "https://2389.ai/#organization"
+      },
+      "publisher": {
+        "@id": "https://2389.ai/#organization"
+      },
+      "about": {
+        "@id": "https://llm-weather.netlify.app/#dataset"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "{{ .Permalink }}#dataset",
+      "name": {{ printf "LLM Eval Run — %s" (.Date.Format "2006-01-02T15:04:05Z07:00") | jsonify }},
+      "description": {{ with .Params.headline }}{{ . | jsonify }}{{ else }}"LLM reasoning eval scorecard run"{{ end }},
+      "url": "{{ .Permalink }}",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "{{ .Permalink }}data.json",
+          "description": "Structured scorecard, drift, and status data for this run"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/markdown",
+          "contentUrl": "{{ .Permalink }}report.md",
+          "description": "Plain text report for this run"
+        }
+      ],
+      "creator": {
+        "@id": "https://2389.ai/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://llm-weather.netlify.app/#dataset"
+      },
+      "isAccessibleForFree": true,
+      "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+    }
+  ]
+}
+</script>
 {{ end }}
+
+{{ define "main" }}
+{{ with .Params.headline }}<h1>{{ . }}</h1>{{ else }}<h1>Run: {{ .Date.Format "January 2, 2006" }}</h1>{{ end }}
+<p class="text-text-tertiary text-base mb-3">{{ .Date.Format "January 2, 2006 — 3:04 PM CT" }}</p>
 
 {{ with .Params.drift }}
 <h2>Drift Alerts</h2>
@@ -47,5 +105,34 @@
   <li><a href="/runs/{{ .Title }}/judgments.json">judgments.json</a> — raw judge verdicts</li>
   {{ if fileExists (printf "static/runs/%s/run.log" .Title) }}<li><a href="/runs/{{ .Title }}/run.log">run.log</a> — debug log</li>{{ end }}
   <li><a href="/skill.md">Agent Skill</a> — how to read and interpret this data</li>
+  <li><a href="/about/">Methodology</a> — how evaluations work</li>
 </ul>
+{{- $runsSection := .Site.GetPage "/runs" -}}
+{{- $allRuns := slice -}}
+{{- with $runsSection }}{{ $allRuns = .RegularPages }}{{ end -}}
+{{- $runs := where $allRuns "Params.layout" "ne" "detail" -}}
+{{- $sorted := sort $runs "Date" "asc" -}}
+<nav class="flex items-center justify-between mt-8 pt-4 border-t border-border font-display text-sm">
+  <div>
+  {{- range $i, $r := $sorted -}}
+    {{- if eq $r.Permalink $.Permalink -}}
+      {{- if gt $i 0 -}}
+        {{- $prev := index $sorted (sub $i 1) -}}
+        <a href="{{ $prev.RelPermalink }}" class="text-text-secondary hover:text-text no-underline">← {{ $prev.Date.Format "Jan 2" }}</a>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  </div>
+  <a href="/" class="text-text-secondary hover:text-text no-underline">Dashboard</a>
+  <div>
+  {{- range $i, $r := $sorted -}}
+    {{- if eq $r.Permalink $.Permalink -}}
+      {{- if lt $i (sub (len $sorted) 1) -}}
+        {{- $next := index $sorted (add $i 1) -}}
+        <a href="{{ $next.RelPermalink }}" class="text-text-secondary hover:text-text no-underline">{{ $next.Date.Format "Jan 2" }} →</a>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  </div>
+</nav>
 {{ end }}

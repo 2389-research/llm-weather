@@ -1,3 +1,63 @@
+{{ define "schema" }}
+{{/* Homepage: WebApplication (monitoring dashboard) + Dataset (the time-series eval corpus) */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://llm-weather.netlify.app/#app",
+      "name": "LLM Weather Report",
+      "url": "https://llm-weather.netlify.app/",
+      "description": "Tracks reasoning capability drift across LLM models by running eval prompts against models 6x per day and publishing scorecards and drift alerts.",
+      "applicationCategory": "ResearchApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript",
+      "isPartOf": {
+        "@id": "https://llm-weather.netlify.app/#website"
+      },
+      "author": {
+        "@id": "https://2389.ai/#organization"
+      },
+      "license": "https://github.com/2389-research/llm-weather/blob/main/LICENSE"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://llm-weather.netlify.app/#dataset",
+      "name": "LLM Reasoning Drift Evals",
+      "description": "Time-series evaluation data tracking reasoning capability drift across LLM models. Each run scores models on logic, math, spatial reasoning, causality, code comprehension, ambiguity resolution, and common sense prompts.",
+      "url": "https://llm-weather.netlify.app/",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://llm-weather.netlify.app/index.xml",
+          "description": "RSS feed of all runs"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://llm-weather.netlify.app/llms.txt",
+          "description": "Plain text index of all runs"
+        }
+      ],
+      "creator": {
+        "@id": "https://2389.ai/#organization"
+      },
+      "license": "https://github.com/2389-research/llm-weather/blob/main/LICENSE",
+      "isAccessibleForFree": true,
+      "measurementTechnique": "Automated API calls to LLM endpoints; correctness judged by panel of 3 models via majority vote; reasoning quality scored 1–5.",
+      "variableMeasured": [
+        "Correctness (boolean)",
+        "Reasoning quality score (1–5)",
+        "Drift type (REGRESSION, IMPROVEMENT, SCORE_DROP, SCORE_RISE)"
+      ]
+    }
+  ]
+}
+</script>
+{{ end }}
+
 {{ define "main" }}
 
 {{ $runsSection := .Site.GetPage "/runs" }}
@@ -73,6 +133,13 @@
 <p class="text-text-secondary">No runs yet. The next scheduled run will appear here automatically.</p>
 {{ end }}
 
+{{ with .Content }}
+<h2>About This Project</h2>
+<div class="prose prose-lg max-w-none">
+{{ . }}
+</div>
+{{ end }}
+
 <h2>For Agents</h2>
 <ul class="data-links">
   <li><a href="/llms.txt">llms.txt</a> — plain text index of all runs</li>
@@ -81,7 +148,7 @@
 
 <h2>Stay Updated</h2>
 <div class="newsletter-signup">
-  <p class="font-body text-text-secondary mb-4">Get notified when models drift. Join the 2389 mailing list for updates on this project and what we're building.</p>
+  <p class="font-body text-text-secondary mb-4">Get notified when models drift. Join the 2389 mailing list for updates on this project and what we're building. We only use your email for project updates — no spam, unsubscribe anytime.</p>
   <form id="newsletter-form" class="flex gap-2 max-w-md max-sm:flex-col">
     <label for="newsletter-email" class="sr-only">Email address</label>
     <input type="email" name="email" id="newsletter-email" placeholder="your@email.com" required
