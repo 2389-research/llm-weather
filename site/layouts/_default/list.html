@@ -1,23 +1,76 @@
 {{ define "main" }}
-<h1>LLM Weather Report</h1>
-<p>Tracking reasoning capability drift across LLM models.</p>
 
 {{ $runs := where .Site.RegularPages "Section" "runs" }}
-{{ $latest := index (sort $runs "Date" "desc") 0 }}
+{{ $sorted := sort $runs "Date" "desc" }}
+{{ $latest := index $sorted 0 }}
 
 {{ with $latest }}
-<h2>Latest Run: <a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+<h1>Current Forecast</h1>
+<p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">
+  Latest run: <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+</p>
+
+{{ with .Params.drift }}
+<h2>Drift Alerts</h2>
+<div class="drift-alerts">
+  <ul>
+  {{ range . }}
+    <li>
+      <span class="drift-tag {{ if eq .type "REGRESSION" }}regression{{ else if eq .type "IMPROVEMENT" }}improvement{{ else if eq .type "SCORE_DROP" }}score-drop{{ else }}score-rise{{ end }}">
+        {{ .type }}
+      </span>
+      <strong>{{ .model }}</strong> on {{ .prompt }}
+    </li>
+  {{ end }}
+  </ul>
+</div>
+{{ end }}
 
 {{ .Content }}
+
 {{ end }}
 
 <h2>Past Reports</h2>
-<ul>
-{{ range sort $runs "Date" "desc" }}
+<ul class="run-list">
+{{ range $sorted }}
   <li>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    {{ with .Params.drift }}— {{ len . }} drift alert{{ if gt (len .) 1 }}s{{ end }}{{ end }}
+    <a class="run-date" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <span class="run-meta">
+      {{ with .Params.drift }}{{ len . }} alert{{ if gt (len .) 1 }}s{{ end }}{{ else }}no drift{{ end }}
+    </span>
   </li>
 {{ end }}
 </ul>
+{{ end }}
+
+{{ define "ticker" }}
+{{ $runs := where .Site.RegularPages "Section" "runs" }}
+{{ $sorted := sort $runs "Date" "desc" }}
+{{ $hasDrift := false }}
+
+{{/* Collect all drift alerts across recent runs */}}
+{{ $driftItems := slice }}
+{{ range first 5 $sorted }}
+  {{ with .Params.drift }}
+    {{ range . }}
+      {{ $driftItems = $driftItems | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $driftItems) 0 }}
+<div class="ticker-bar">
+  <div class="ticker-label">Drift</div>
+  <div class="ticker-scroll">
+    <div class="ticker-content">
+      {{ range $driftItems }}
+      <span>{{ .type }}: {{ .model }} on {{ .prompt }}</span>
+      {{ end }}
+      {{ range $driftItems }}
+      <span>{{ .type }}: {{ .model }} on {{ .prompt }}</span>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
 {{ end }}

@@ -3,14 +3,39 @@
 
 {{ with .Params.drift }}
 <h2>Drift Alerts</h2>
-<ul>
-{{ range . }}
-  <li class="{{ if eq .type "REGRESSION" }}drift-down{{ else if eq .type "IMPROVEMENT" }}drift-up{{ else if eq .type "SCORE_DROP" }}drift-down{{ else }}drift-up{{ end }}">
-    <strong>{{ .type }}</strong>: {{ .model }} on {{ .prompt }}
-  </li>
-{{ end }}
-</ul>
+<div class="drift-alerts">
+  <ul>
+  {{ range . }}
+    <li>
+      <span class="drift-tag {{ if eq .type "REGRESSION" }}regression{{ else if eq .type "IMPROVEMENT" }}improvement{{ else if eq .type "SCORE_DROP" }}score-drop{{ else }}score-rise{{ end }}">
+        {{ .type }}
+      </span>
+      <strong>{{ .model }}</strong> on {{ .prompt }}
+    </li>
+  {{ end }}
+  </ul>
+</div>
 {{ end }}
 
 {{ .Content }}
+{{ end }}
+
+{{ define "ticker" }}
+{{ with .Params.drift }}
+{{ if gt (len .) 0 }}
+<div class="ticker-bar">
+  <div class="ticker-label">Drift</div>
+  <div class="ticker-scroll">
+    <div class="ticker-content">
+      {{ range . }}
+      <span>{{ .type }}: {{ .model }} on {{ .prompt }}</span>
+      {{ end }}
+      {{ range . }}
+      <span>{{ .type }}: {{ .model }} on {{ .prompt }}</span>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
+{{ end }}
 {{ end }}
