@@ -227,14 +227,19 @@ def generate_detail(judgments: dict, responses: dict) -> str:
         # Show raw responses
         lines.append("### Responses")
         lines.append("")
-        for model, resp in r_data["responses"].items():
-            if "error" in resp:
-                lines.append(f"**{model}:** Error — {resp['error']}")
-            else:
-                lines.append(f"**{model}** ({resp['latency_ms']}ms, {resp['output_tokens']} tokens):")
+        for model, samples in r_data["responses"].items():
+            # Normalize old single-response format to list
+            if isinstance(samples, dict):
+                samples = [samples]
+            for i, resp in enumerate(samples):
+                label = f"{model}" if len(samples) == 1 else f"{model} (sample {i + 1})"
+                if "error" in resp:
+                    lines.append(f"**{label}:** Error — {resp['error']}")
+                else:
+                    lines.append(f"**{label}** ({resp['latency_ms']}ms, {resp['output_tokens']} tokens):")
+                    lines.append("")
+                    lines.append(f"> {resp['content']}")
                 lines.append("")
-                lines.append(f"> {resp['content']}")
-            lines.append("")
 
     return "\n".join(lines)
 

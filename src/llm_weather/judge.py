@@ -53,42 +53,55 @@ def evaluate_all(responses_data: dict, judges: list[str], run_dir: Path) -> dict
     results = {"run_id": run_dir.name, "prompts": {}}
 
     for prompt_id, prompt_data in responses_data["prompts"].items():
-        valid_responses = {
-            model: resp
-            for model, resp in prompt_data["responses"].items()
-            if "error" not in resp
-        }
-        if not valid_responses:
-            results["prompts"][prompt_id] = {
-                "prompt": prompt_data["prompt"],
-                "evaluations": {},
-            }
-            continue
-
         evaluations = {}
-        for model, resp in valid_responses.items():
-            judge_verdicts = {}
-            for judge_model in judges:
-                try:
-                    verdict = evaluate_single(
-                        prompt_data["prompt"], resp["content"], judge_model
-                    )
-                    judge_verdicts[judge_model] = verdict
-                except Exception as e:
-                    judge_verdicts[judge_model] = {"error": str(e)}
+
+        for model, samples in prompt_data["responses"].items():
+            # Normalize old single-response format to list
+            if isinstance(samples, dict):
+                samples = [samples]
+
+            valid_samples = [s for s in samples if "error" not in s]
+            if not valid_samples:
+                evaluations[model] = {
+                    "samples": [],
+                    "judges": {},
+                    "majority_correct": None,
+                    "avg_score": None,
+                }
+                continue
+
+            # Evaluate each sample with each judge
+            all_verdicts = {}
+            sample_details = []
+            for i, sample in enumerate(valid_samples):
+                sample_verdicts = {}
+                for judge_model in judges:
+                    key = f"{judge_model}:s{i}"
+                    try:
+                        verdict = evaluate_single(
+                            prompt_data["prompt"], sample["content"], judge_model
+                        )
+                        all_verdicts[key] = verdict
+                        sample_verdicts[judge_model] = verdict
+                    except Exception as e:
+                        all_verdicts[key] = {"error": str(e)}
+                        sample_verdicts[judge_model] = {"error": str(e)}
+                sample_details.append({"sample_index": i, "verdicts": sample_verdicts})
 
             valid_verdicts = {
-                k: v for k, v in judge_verdicts.items() if "error" not in v
+                k: v for k, v in all_verdicts.items() if "error" not in v
             }
             if valid_verdicts:
                 evaluations[model] = {
-                    "judges": judge_verdicts,
+                    "samples": sample_details,
+                    "judges": all_verdicts,
                     "majority_correct": majority_correct(valid_verdicts),
                     "avg_score": average_score(valid_verdicts),
                 }
             else:
                 evaluations[model] = {
-                    "judges": judge_verdicts,
+                    "samples": sample_details,
+                    "judges": all_verdicts,
                     "majority_correct": None,
                     "avg_score": None,
                 }

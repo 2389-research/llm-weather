@@ -71,8 +71,14 @@ def main(ctx, project_root):
     type=click.Path(exists=True),
     help="Path to models YAML file.",
 )
+@click.option(
+    "--samples",
+    default=2,
+    type=int,
+    help="Number of response samples per prompt per model (default: 2).",
+)
 @click.pass_context
-def run(ctx, prompts, models):
+def run(ctx, prompts, models, samples):
     """Execute a full run: prompt models, evaluate responses, generate reports."""
     root = ctx.obj["project_root"]
     prompts_path = Path(prompts) if prompts else root / "prompts.yaml"
@@ -102,6 +108,7 @@ def run(ctx, prompts, models):
     click.echo(f"  Prompts: {len(prompts_config)}")
     click.echo(f"  Contestants: {len(contestants)}")
     click.echo(f"  Judges: {len(judges)}")
+    click.echo(f"  Samples per prompt: {samples}")
     if skipped_contestants:
         click.echo(f"  Skipped (no API key): {', '.join(skipped_contestants)}")
     if skipped_judges:
@@ -109,7 +116,7 @@ def run(ctx, prompts, models):
 
     # Step 1: Run prompts
     click.echo("\nRunning prompts...")
-    responses = run_all(prompts_config, contestants, run_dir)
+    responses = run_all(prompts_config, contestants, run_dir, samples=samples)
 
     # Step 2: Evaluate each response individually
     click.echo("Evaluating responses...")

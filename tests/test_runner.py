@@ -48,13 +48,41 @@ def test_run_all_writes_responses_json(tmp_path):
 
 
 @needs_api_key
+def test_run_all_response_is_list_of_samples(tmp_path):
+    prompts = [Prompt(id="test-1", category="math", prompt="What is 1 + 1?")]
+    contestants = [TEST_MODEL]
+    result = run_all(prompts, contestants, tmp_path, samples=2)
+
+    samples = result["prompts"]["test-1"]["responses"][TEST_MODEL]
+    assert isinstance(samples, list)
+    assert len(samples) == 2
+    for s in samples:
+        assert "content" in s
+        assert "latency_ms" in s
+
+
+@needs_api_key
+def test_run_all_default_samples_is_two(tmp_path):
+    prompts = [Prompt(id="test-1", category="math", prompt="What is 1 + 1?")]
+    contestants = [TEST_MODEL]
+    result = run_all(prompts, contestants, tmp_path)
+
+    samples = result["prompts"]["test-1"]["responses"][TEST_MODEL]
+    assert isinstance(samples, list)
+    assert len(samples) == 2
+
+
+@needs_api_key
 def test_run_all_captures_errors_without_crashing(tmp_path):
     prompts = [Prompt(id="test-1", category="math", prompt="What is 1 + 1?")]
     contestants = [TEST_MODEL, "fake-provider/nonexistent-model"]
     result = run_all(prompts, contestants, tmp_path)
 
-    # The valid model should have a response
-    assert "content" in result["prompts"]["test-1"]["responses"][TEST_MODEL]
-    # The fake model should have an error recorded
-    fake_resp = result["prompts"]["test-1"]["responses"]["fake-provider/nonexistent-model"]
-    assert "error" in fake_resp
+    # The valid model should have sample responses
+    samples = result["prompts"]["test-1"]["responses"][TEST_MODEL]
+    assert isinstance(samples, list)
+    assert "content" in samples[0]
+    # The fake model should have error samples
+    fake_samples = result["prompts"]["test-1"]["responses"]["fake-provider/nonexistent-model"]
+    assert isinstance(fake_samples, list)
+    assert all("error" in s for s in fake_samples)

@@ -31,10 +31,13 @@ def run_prompt(model: str, prompt: str) -> dict:
     }
 
 
-def run_all(prompts: list, contestants: list[str], run_dir: Path) -> dict:
+def run_all(
+    prompts: list, contestants: list[str], run_dir: Path, samples: int = 2
+) -> dict:
     results = {
         "run_id": run_dir.name,
         "timestamp": datetime.now(timezone.utc).isoformat(),
+        "samples": samples,
         "prompts": {},
     }
 
@@ -45,14 +48,13 @@ def run_all(prompts: list, contestants: list[str], run_dir: Path) -> dict:
             "responses": {},
         }
         for model in contestants:
-            try:
-                results["prompts"][p.id]["responses"][model] = run_prompt(
-                    model, p.prompt
-                )
-            except Exception as e:
-                results["prompts"][p.id]["responses"][model] = {
-                    "error": str(e),
-                }
+            model_samples = []
+            for _ in range(samples):
+                try:
+                    model_samples.append(run_prompt(model, p.prompt))
+                except Exception as e:
+                    model_samples.append({"error": str(e)})
+            results["prompts"][p.id]["responses"][model] = model_samples
 
     with open(run_dir / "responses.json", "w") as f:
         json.dump(results, f, indent=2)

@@ -17,6 +17,7 @@ def generate_hugo_content(
     frontmatter = {
         "title": run_id,
         "date": run_id.split("T")[0] + "T" + run_id.split("T")[1].replace("-", ":"),
+        "outputs": ["HTML", "markdown", "rawjson"],
         "headline": headline,
         "status": status or {},
         "scorecard": scorecard,

@@ -26,7 +26,7 @@ title = "LLM Weather Report"
   isPlainText = true
 
 [outputs]
-  page = ["HTML", "markdown", "rawjson"]
+  page = ["HTML"]
   home = ["HTML", "llmstxt"]
   section = ["HTML"]
 

@@ -18,15 +18,17 @@ SAMPLE_JUDGMENTS = {
             "prompt": "Test logic question?",
             "evaluations": {
                 "model-a": {
+                    "samples": [{"sample_index": 0, "verdicts": {"judge-1": {"correct": True, "score": 5, "reasoning": "Perfect"}}}],
                     "judges": {
-                        "judge-1": {"correct": True, "score": 5, "reasoning": "Perfect"},
+                        "judge-1:s0": {"correct": True, "score": 5, "reasoning": "Perfect"},
                     },
                     "majority_correct": True,
                     "avg_score": 5.0,
                 },
                 "model-b": {
+                    "samples": [{"sample_index": 0, "verdicts": {"judge-1": {"correct": False, "score": 2, "reasoning": "Wrong"}}}],
                     "judges": {
-                        "judge-1": {"correct": False, "score": 2, "reasoning": "Wrong"},
+                        "judge-1:s0": {"correct": False, "score": 2, "reasoning": "Wrong"},
                     },
                     "majority_correct": False,
                     "avg_score": 2.0,
@@ -37,15 +39,17 @@ SAMPLE_JUDGMENTS = {
             "prompt": "Test math question?",
             "evaluations": {
                 "model-a": {
+                    "samples": [{"sample_index": 0, "verdicts": {"judge-1": {"correct": True, "score": 4, "reasoning": "Good"}}}],
                     "judges": {
-                        "judge-1": {"correct": True, "score": 4, "reasoning": "Good"},
+                        "judge-1:s0": {"correct": True, "score": 4, "reasoning": "Good"},
                     },
                     "majority_correct": True,
                     "avg_score": 4.0,
                 },
                 "model-b": {
+                    "samples": [{"sample_index": 0, "verdicts": {"judge-1": {"correct": True, "score": 3, "reasoning": "OK"}}}],
                     "judges": {
-                        "judge-1": {"correct": True, "score": 3, "reasoning": "OK"},
+                        "judge-1:s0": {"correct": True, "score": 3, "reasoning": "OK"},
                     },
                     "majority_correct": True,
                     "avg_score": 3.0,
@@ -58,21 +62,34 @@ SAMPLE_JUDGMENTS = {
 SAMPLE_RESPONSES = {
     "run_id": "2026-04-10T14-00-00",
     "timestamp": "2026-04-10T14:00:00Z",
+    "samples": 2,
     "prompts": {
         "logic-1": {
             "prompt": "Test logic question?",
             "category": "logic",
             "responses": {
-                "model-a": {"content": "Yes", "latency_ms": 100, "input_tokens": 10, "output_tokens": 5},
-                "model-b": {"content": "No", "latency_ms": 200, "input_tokens": 10, "output_tokens": 3},
+                "model-a": [
+                    {"content": "Yes", "latency_ms": 100, "input_tokens": 10, "output_tokens": 5},
+                    {"content": "Yes indeed", "latency_ms": 110, "input_tokens": 10, "output_tokens": 6},
+                ],
+                "model-b": [
+                    {"content": "No", "latency_ms": 200, "input_tokens": 10, "output_tokens": 3},
+                    {"content": "No way", "latency_ms": 190, "input_tokens": 10, "output_tokens": 4},
+                ],
             },
         },
         "math-1": {
             "prompt": "Test math question?",
             "category": "math",
             "responses": {
-                "model-a": {"content": "42", "latency_ms": 150, "input_tokens": 10, "output_tokens": 4},
-                "model-b": {"content": "5", "latency_ms": 120, "input_tokens": 10, "output_tokens": 3},
+                "model-a": [
+                    {"content": "42", "latency_ms": 150, "input_tokens": 10, "output_tokens": 4},
+                    {"content": "42!", "latency_ms": 140, "input_tokens": 10, "output_tokens": 4},
+                ],
+                "model-b": [
+                    {"content": "5", "latency_ms": 120, "input_tokens": 10, "output_tokens": 3},
+                    {"content": "Five", "latency_ms": 130, "input_tokens": 10, "output_tokens": 3},
+                ],
             },
         },
     },
