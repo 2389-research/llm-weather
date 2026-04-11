@@ -1,8 +1,8 @@
 # LLM Weather Report
 
-> Tracking reasoning capability drift across LLM models. A 2389 Research project.
+> Tracking raw LLM reasoning drift — pure endpoint, no agents. A 2389 Research project.
 
-This site runs a fixed set of reasoning prompts across multiple LLM models on a schedule, evaluates each response for correctness and quality, and tracks changes over time.
+Each prompt is a single API call to the model's chat completions endpoint — no tool use, no multi-turn, no agent scaffolding. Tests the model's raw reasoning capability and tracks changes over time.
 
 ## Agent Skill
 

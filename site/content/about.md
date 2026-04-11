@@ -4,9 +4,15 @@ title: About & Methodology
 
 The LLM Weather Report tracks reasoning capability drift across large language models. Instead of benchmarking models against each other, it monitors whether individual models maintain consistent performance on a fixed set of reasoning tasks over time.
 
+## What This Tests
+
+**This tests the raw LLM endpoint, not an agent.** Each prompt is a single API call to the model's chat completions endpoint — no tool use, no multi-turn conversation, no retrieval, no agent scaffolding. The only system prompt is: *"Answer the following question. Think step by step."*
+
+This is intentional. We want to measure the model itself — its weights, its reasoning capability, its consistency. If a model starts failing the bat-and-ball problem, something changed in the model (weight updates, system prompt changes, quantization), not in the tooling layer around it. Agent frameworks, RAG pipelines, and tool use add their own variance. We strip all of that away to get a clean signal on the model's raw reasoning.
+
 ## Why
 
-Model providers update their models constantly — weight updates, system prompt changes, infrastructure migrations. These changes can silently alter reasoning behavior. A model that correctly solved a logic puzzle yesterday might fail today. The LLM Weather Report catches these changes.
+Model providers update their models constantly — weight updates, system prompt changes, infrastructure migrations, quantization changes. These changes can silently alter reasoning behavior. A model that correctly solved a logic puzzle yesterday might fail today. The LLM Weather Report catches these changes.
 
 ## How It Works
 
@@ -75,6 +81,18 @@ All data is available in multiple formats:
 - **Agent skill** — `/skill.md` instructions for AI agents consuming this data
 - **Source** — full run data in the [GitHub repository](https://github.com/2389-research/llm-weather)
 
+## Source Code
+
+Everything is open source at [github.com/2389-research/llm-weather](https://github.com/2389-research/llm-weather). Key files:
+
+- **[prompts.yaml](https://github.com/2389-research/llm-weather/blob/main/prompts.yaml)** — the 7 reasoning prompts
+- **[models.yaml](https://github.com/2389-research/llm-weather/blob/main/models.yaml)** — contestant and judge model configuration
+- **[runner.py](https://github.com/2389-research/llm-weather/blob/main/src/llm_weather/runner.py)** — sends prompts to models via LiteLLM (`completion()` call, single system prompt)
+- **[judge.py](https://github.com/2389-research/llm-weather/blob/main/src/llm_weather/judge.py)** — evaluates each response for correctness and quality
+- **[report.py](https://github.com/2389-research/llm-weather/blob/main/src/llm_weather/report.py)** — builds scorecard, detects drift, generates headlines
+- **[weather.yml](https://github.com/2389-research/llm-weather/blob/main/.github/workflows/weather.yml)** — GitHub Actions workflow (cron schedule)
+- **[runs/](https://github.com/2389-research/llm-weather/tree/main/runs)** — raw JSON data for every run
+
 ## Built With
 
 - [LiteLLM](https://github.com/BerriAI/litellm) — unified API for all model providers
@@ -84,4 +102,4 @@ All data is available in multiple formats:
 
 ## About
 
-A [2389 Research](https://2389.ai) project. Source code on [GitHub](https://github.com/2389-research/llm-weather).
+A [2389 Research](https://2389.ai) project.

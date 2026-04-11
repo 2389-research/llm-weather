@@ -7,339 +7,162 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #FAFAF7;
-      --surface: #FFFFFF;
-      --surface-alt: #F3F1ED;
-      --border: #E2DFD8;
-      --accent: #2d5a4a;
-      --accent-light: #3a7561;
-      --rust: #bf4a24;
-      --amber: #B8860B;
-      --green: #2d5a4a;
-      --red: #A63D2F;
-      --text: #1a1a1a;
-      --text-secondary: #6B6560;
-      --text-tertiary: #9B958E;
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#FAFAF7',
+            surface: '#FFFFFF',
+            'surface-alt': '#F3F1ED',
+            border: '#E2DFD8',
+            accent: '#2d5a4a',
+            'accent-light': '#3a7561',
+            rust: '#bf4a24',
+            amber: '#B8860B',
+            'status-green': '#2d5a4a',
+            'status-red': '#A63D2F',
+            text: '#1a1a1a',
+            'text-secondary': '#6B6560',
+            'text-tertiary': '#9B958E',
+          },
+          fontFamily: {
+            display: ["'Bricolage Grotesque'", 'system-ui', 'sans-serif'],
+            body: ["'Source Serif 4'", 'Georgia', 'serif'],
+          },
+        },
+      },
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Source Serif 4', Georgia, serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    /* ---- HEADER ---- */
-    .site-header {
-      border-bottom: 2px solid var(--text);
-      padding: 1.25rem 2rem;
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-    }
-
-    .site-title {
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .site-title a {
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .site-tagline {
-      font-size: 0.82rem;
-      color: var(--text-tertiary);
-      margin-left: auto;
-      font-style: italic;
-    }
-
-    /* ---- MAIN ---- */
-    .content {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 2rem 4rem;
-    }
-
-    /* ---- HEADINGS ---- */
-    h1 {
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    h2 {
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-secondary);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.35rem;
-      margin: 2rem 0 0.75rem;
-    }
-
-    h3 {
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--text);
-      margin: 1.25rem 0 0.3rem;
-    }
-
-    p { margin-bottom: 0.75rem; }
-
-    /* ---- LINKS ---- */
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
+  </script>
+  <style type="text/tailwindcss">
     /* ---- TABLES ---- */
     .table-wrap {
-      overflow-x: auto;
+      @apply overflow-x-auto my-2 mb-5;
       -webkit-overflow-scrolling: touch;
-      margin: 0.5rem 0 1.25rem;
     }
 
     table {
-      border-collapse: collapse;
-      width: 100%;
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      @apply w-full border-collapse font-display text-sm tabular-nums;
       font-size: 0.8rem;
-      font-variant-numeric: tabular-nums;
     }
 
     thead th {
-      font-weight: 700;
+      @apply font-bold text-text-secondary py-2 px-2.5 text-left whitespace-nowrap uppercase tracking-wider border-b-2 border-text;
       font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-secondary);
-      padding: 0.5rem 0.65rem;
-      text-align: left;
-      border-bottom: 2px solid var(--text);
-      white-space: nowrap;
     }
 
     td {
-      padding: 0.5rem 0.65rem;
-      border-bottom: 1px solid var(--border);
-      text-align: left;
-      white-space: nowrap;
+      @apply py-2 px-2.5 text-left whitespace-nowrap border-b border-border;
     }
 
-    tbody tr:last-child td { border-bottom: 1px solid var(--text); }
+    tbody tr:last-child td { @apply border-b border-text; }
 
     td:first-child {
-      font-weight: 600;
-      font-size: 0.78rem;
-      color: var(--text);
-      position: sticky;
-      left: 0;
-      background: var(--bg);
-      z-index: 1;
-    }
-
-    /* ---- DRIFT ALERTS ---- */
-    .drift-alerts {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--rust);
-      padding: 0.75rem 1rem;
-      margin: 0.5rem 0 1.25rem;
-    }
-
-    .drift-alerts ul { list-style: none; }
-
-    .drift-alerts li {
-      padding: 0.3rem 0;
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 0.82rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .drift-alerts li + li {
-      border-top: 1px solid var(--border);
-      padding-top: 0.4rem;
-    }
-
-    .drift-tag {
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      display: inline-block;
-      font-size: 0.62rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.15rem 0.4rem;
-      border-radius: 2px;
-    }
-
-    .drift-tag.regression { background: var(--red); color: #fff; }
-    .drift-tag.improvement { background: var(--green); color: #fff; }
-    .drift-tag.score-drop { background: var(--amber); color: #fff; }
-    .drift-tag.score-rise { background: var(--green); color: #fff; }
-
-    /* ---- RUN LIST ---- */
-    .run-list { list-style: none; }
-
-    .run-list li {
-      padding: 0.55rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.88rem;
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .run-list .run-date {
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-weight: 600;
-      font-size: 0.84rem;
-    }
-
-    .run-list .run-headline {
-      color: var(--text-secondary);
-      font-size: 0.78rem;
-      flex: 1;
-    }
-
-    .run-list .run-meta {
-      color: var(--text-tertiary);
+      @apply font-semibold text-text sticky left-0 bg-bg z-10;
       font-size: 0.78rem;
     }
 
     /* ---- MARKS ---- */
-    .mark-correct { color: var(--green); font-weight: 600; text-align: center; }
-    .mark-incorrect { color: var(--red); font-weight: 600; text-align: center; }
-    .mark-na { color: var(--text-tertiary); text-align: center; }
+    .mark-correct { @apply text-status-green font-semibold text-center; }
+    .mark-incorrect { @apply text-status-red font-semibold text-center; }
+    .mark-na { @apply text-text-tertiary text-center; }
+    .prev-score { @apply block text-text-tertiary italic font-normal; font-size: 0.62rem; }
 
-    .prev-score {
-      display: block;
-      font-size: 0.62rem;
-      font-weight: 400;
-      color: var(--text-tertiary);
-      font-style: italic;
+    /* ---- DRIFT ---- */
+    .drift-alerts {
+      @apply bg-surface border border-border border-l-[3px] border-l-rust py-3 px-4 my-2 mb-5;
     }
+    .drift-alerts ul { @apply list-none p-0; }
+    .drift-alerts li {
+      @apply py-1 font-display text-sm flex items-center gap-2 flex-wrap;
+      font-size: 0.82rem;
+    }
+    .drift-alerts li + li { @apply border-t border-border pt-1.5; }
+
+    .drift-tag {
+      @apply font-display inline-block font-bold uppercase tracking-wide py-0.5 px-1.5 rounded-sm;
+      font-size: 0.62rem;
+    }
+    .drift-tag.regression { @apply bg-status-red text-white; }
+    .drift-tag.improvement { @apply bg-status-green text-white; }
+    .drift-tag.score-drop { @apply bg-amber text-white; }
+    .drift-tag.score-rise { @apply bg-status-green text-white; }
+
+    /* ---- RUN LIST ---- */
+    .run-list { @apply list-none p-0; }
+    .run-list li {
+      @apply py-2 border-b border-border text-sm flex items-baseline gap-3 flex-wrap;
+    }
+    .run-list .run-date { @apply font-display font-semibold; font-size: 0.84rem; }
+    .run-list .run-headline { @apply text-text-secondary flex-1; font-size: 0.78rem; }
+    .run-list .run-meta { @apply text-text-tertiary; font-size: 0.78rem; }
 
     /* ---- MODEL STATUS ---- */
-    .model-status ul { list-style: none; }
-
+    .model-status ul { @apply list-none p-0; }
     .model-status li {
-      padding: 0.35rem 0;
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      @apply py-1 font-display text-sm flex items-center gap-2;
       font-size: 0.84rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
-
-    .model-status li + li {
-      border-top: 1px solid var(--border);
-      padding-top: 0.4rem;
-    }
-
+    .model-status li + li { @apply border-t border-border pt-1.5; }
     .status-indicator {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.4rem;
-      height: 1.4rem;
-      font-size: 0.82rem;
-      font-weight: 700;
-      border-radius: 2px;
+      @apply inline-flex items-center justify-center w-5 h-5 text-sm font-bold rounded-sm;
     }
-
-    .status-indicator.up { color: var(--green); }
-    .status-indicator.down { color: var(--red); }
-    .status-indicator.stable { color: var(--text-tertiary); }
-
+    .status-indicator.up { @apply text-status-green; }
+    .status-indicator.down { @apply text-status-red; }
+    .status-indicator.stable { @apply text-text-tertiary; }
     .status-label {
+      @apply text-text-secondary uppercase tracking-wide;
       font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-secondary);
     }
 
     /* ---- DATA LINKS ---- */
-    .data-links {
-      list-style: none;
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 0.82rem;
-    }
+    .data-links { @apply list-none p-0 font-display text-sm; font-size: 0.82rem; }
+    .data-links li { @apply py-1 text-text-secondary; }
+    .data-links a { @apply font-semibold; }
 
-    .data-links li {
-      padding: 0.3rem 0;
-      color: var(--text-secondary);
-    }
-
-    .data-links a {
-      font-weight: 600;
-    }
-
-    /* ---- DETAIL ---- */
-    blockquote {
-      background: var(--surface-alt);
-      border-left: 2px solid var(--border);
-      padding: 0.6rem 0.75rem;
-      margin: 0.4rem 0;
-      font-size: 0.84rem;
-    }
-
-    /* ---- FOOTER ---- */
-    .site-footer {
-      border-top: 1px solid var(--border);
-      padding: 1.25rem 2rem;
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    /* ---- HEADINGS ---- */
+    h1 { @apply font-display text-2xl font-bold text-text mb-2 tracking-tight; }
+    h2 {
+      @apply font-display font-bold text-text-secondary uppercase tracking-widest border-b border-border pb-1 mt-8 mb-3;
       font-size: 0.72rem;
-      color: var(--text-tertiary);
-      text-align: center;
-      letter-spacing: 0.02em;
     }
+    h3 { @apply font-display text-sm font-semibold text-text mt-5 mb-1; }
 
-    .site-footer a { color: var(--text-secondary); }
+    /* ---- PROSE OVERRIDES ---- */
+    .prose h2 {
+      @apply font-display font-bold text-text-secondary uppercase tracking-widest border-b border-border pb-1;
+      font-size: 0.72rem;
+    }
+    .prose h3 { @apply font-display; }
+    .prose table { @apply font-display text-sm; font-size: 0.8rem; }
+    .prose a { @apply text-accent no-underline hover:underline; }
 
-    /* ---- RESPONSIVE ---- */
     @media (max-width: 640px) {
-      .site-header {
-        padding: 1rem;
-        flex-direction: column;
-        gap: 0.25rem;
-      }
-      .site-tagline { margin-left: 0; }
-      .content { padding: 1.25rem 1rem 3rem; }
-      h1 { font-size: 1.25rem; }
       table { font-size: 0.75rem; }
-      td, th { padding: 0.35rem 0.5rem; }
-      .run-list .run-meta { margin-left: 0; }
+      td, th { @apply py-1 px-2; }
     }
   </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-title"><a href="/">LLM Weather Report</a></div>
-    <div class="site-tagline">Tracking capability drift across models — <a href="/about/" style="color: var(--text-tertiary);">About</a> · <a href="/skill.md" style="color: var(--text-tertiary);">Agent Skill</a></div>
+<body class="bg-bg text-text font-body leading-relaxed">
+  <header class="border-b-2 border-text px-8 py-5 flex items-baseline gap-4 max-sm:flex-col max-sm:gap-1 max-sm:px-4">
+    <div class="font-display text-xl font-extrabold tracking-tight">
+      <a href="/" class="text-text no-underline hover:no-underline">LLM Weather Report</a>
+    </div>
+    <div class="text-sm italic text-text-tertiary ml-auto max-sm:ml-0">
+      Tracking raw LLM reasoning drift — pure endpoint, no agents —
+      <a href="/about/" class="text-text-tertiary hover:underline">About</a> ·
+      <a href="/skill.md" class="text-text-tertiary hover:underline">Agent Skill</a>
+    </div>
   </header>
 
-  <main class="content">
+  <main class="max-w-4xl mx-auto px-8 pt-8 pb-16 max-sm:px-4 max-sm:pt-5 max-sm:pb-12">
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer class="site-footer">
-    A <a href="https://2389.ai">2389 Research</a> project · <a href="https://github.com/2389-research/llm-weather">GitHub</a>
+  <footer class="border-t border-border px-8 py-5 font-display text-xs text-text-tertiary text-center tracking-wide">
+    A <a href="https://2389.ai" class="text-text-secondary hover:underline">2389 Research</a> project ·
+    <a href="https://github.com/2389-research/llm-weather" class="text-text-secondary hover:underline">GitHub</a>
   </footer>
 </body>
 </html>
