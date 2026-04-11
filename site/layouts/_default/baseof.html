@@ -6,255 +6,267 @@
   <title>{{ .Title }} — LLM Weather Report</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #F2F6FA;
-      --panel: #E1E9F0;
-      --panel-alt: #EBF0F5;
-      --broadcast-blue: #0B3D91;
-      --broadcast-blue-light: #1A5BC4;
-      --steady-green: #0D7A4A;
-      --alert-amber: #CC7A00;
-      --signal-red: #CC3333;
-      --text: #1A2233;
-      --text-muted: #5A6B80;
-      --border: #C8D5E0;
-      --white: #FFFFFF;
+      --bg: #FAFAF7;
+      --surface: #FFFFFF;
+      --surface-alt: #F3F1ED;
+      --border: #E2DFD8;
+      --accent: #2d5a4a;
+      --accent-light: #3a7561;
+      --rust: #bf4a24;
+      --amber: #B8860B;
+      --green: #2d5a4a;
+      --red: #A63D2F;
+      --text: #1a1a1a;
+      --text-secondary: #6B6560;
+      --text-tertiary: #9B958E;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Instrument Sans', system-ui, sans-serif;
+      font-family: 'Source Serif 4', Georgia, serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     /* ---- HEADER ---- */
-    .broadcast-header {
-      background: var(--broadcast-blue);
-      color: var(--white);
-      padding: 1rem 1.5rem;
+    .site-header {
+      border-bottom: 2px solid var(--text);
+      padding: 1.25rem 2rem;
       display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      align-items: baseline;
+      gap: 1rem;
     }
 
-    .broadcast-title {
+    .site-title {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
-    .broadcast-title a {
-      color: var(--white);
+    .site-title a {
+      color: var(--text);
       text-decoration: none;
     }
 
-    .broadcast-subtitle {
-      font-size: 0.78rem;
-      opacity: 0.7;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+    .site-tagline {
+      font-size: 0.82rem;
+      color: var(--text-tertiary);
       margin-left: auto;
+      font-style: italic;
     }
 
-    /* ---- MAIN CONTENT ---- */
+    /* ---- MAIN ---- */
     .content {
-      max-width: 1100px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 1.25rem 1.5rem 3rem;
+      padding: 2rem 2rem 4rem;
     }
 
     /* ---- HEADINGS ---- */
     h1 {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      color: var(--broadcast-blue);
-      margin-bottom: 0.75rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
     }
 
     h2 {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.72rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.4rem 0.6rem;
-      background: var(--broadcast-blue);
-      color: var(--white);
-      margin: 1.25rem 0 0.5rem;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+      margin: 2rem 0 0.75rem;
     }
 
     h3 {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 600;
-      color: var(--broadcast-blue);
-      margin: 1rem 0 0.3rem;
+      color: var(--text);
+      margin: 1.25rem 0 0.3rem;
     }
+
+    p { margin-bottom: 0.75rem; }
+
+    /* ---- LINKS ---- */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     /* ---- TABLES ---- */
     .table-wrap {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      margin: 0.5rem 0 1rem;
+      margin: 0.5rem 0 1.25rem;
     }
 
     table {
       border-collapse: collapse;
       width: 100%;
-      font-size: 0.84rem;
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 0.8rem;
       font-variant-numeric: tabular-nums;
     }
 
     thead th {
-      background: var(--broadcast-blue);
-      color: var(--white);
-      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-      font-weight: 600;
-      font-size: 0.75rem;
+      font-weight: 700;
+      font-size: 0.68rem;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 0.5rem 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--text-secondary);
+      padding: 0.5rem 0.65rem;
       text-align: left;
-      border: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 2px solid var(--text);
       white-space: nowrap;
-      position: sticky;
-      top: 0;
     }
 
     td {
-      padding: 0.45rem 0.6rem;
-      border: 1px solid var(--border);
+      padding: 0.5rem 0.65rem;
+      border-bottom: 1px solid var(--border);
       text-align: left;
       white-space: nowrap;
     }
 
-    tbody tr:nth-child(odd) { background: var(--white); }
-    tbody tr:nth-child(even) { background: var(--panel-alt); }
+    tbody tr:last-child td { border-bottom: 1px solid var(--text); }
 
     td:first-child {
       font-weight: 600;
-      font-size: 0.8rem;
-      color: var(--broadcast-blue);
+      font-size: 0.78rem;
+      color: var(--text);
       position: sticky;
       left: 0;
-      background: inherit;
+      background: var(--bg);
       z-index: 1;
     }
 
-    /* ---- LINKS ---- */
-    a { color: var(--broadcast-blue-light); text-decoration: none; font-weight: 500; }
-    a:hover { text-decoration: underline; }
-
     /* ---- DRIFT ALERTS ---- */
     .drift-alerts {
-      background: var(--white);
-      border-left: 4px solid var(--signal-red);
-      padding: 0.6rem 0.75rem;
-      margin: 0.5rem 0 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--rust);
+      padding: 0.75rem 1rem;
+      margin: 0.5rem 0 1.25rem;
     }
 
     .drift-alerts ul { list-style: none; }
 
     .drift-alerts li {
       padding: 0.3rem 0;
-      font-size: 0.84rem;
-      border-bottom: 1px solid var(--panel);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-    }
-
-    .drift-alerts li:last-child { border-bottom: none; }
-
-    .drift-tag {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      padding: 0.1rem 0.4rem;
-      border-radius: 2px;
-    }
-
-    .drift-tag.regression { background: var(--signal-red); color: var(--white); }
-    .drift-tag.improvement { background: var(--steady-green); color: var(--white); }
-    .drift-tag.score-drop { background: var(--alert-amber); color: var(--white); }
-    .drift-tag.score-rise { background: var(--steady-green); color: var(--white); }
-
-    /* ---- RUN LIST ---- */
-    .run-list { list-style: none; }
-
-    .run-list li {
-      padding: 0.5rem 0.6rem;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.84rem;
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 0.82rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
       flex-wrap: wrap;
     }
 
-    .run-list li:nth-child(odd) { background: var(--white); }
-    .run-list li:nth-child(even) { background: var(--panel-alt); }
+    .drift-alerts li + li {
+      border-top: 1px solid var(--border);
+      padding-top: 0.4rem;
+    }
+
+    .drift-tag {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.15rem 0.4rem;
+      border-radius: 2px;
+    }
+
+    .drift-tag.regression { background: var(--red); color: #fff; }
+    .drift-tag.improvement { background: var(--green); color: #fff; }
+    .drift-tag.score-drop { background: var(--amber); color: #fff; }
+    .drift-tag.score-rise { background: var(--green); color: #fff; }
+
+    /* ---- RUN LIST ---- */
+    .run-list { list-style: none; }
+
+    .run-list li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
 
     .run-list .run-date {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
       font-weight: 600;
-      color: var(--broadcast-blue);
+      font-size: 0.84rem;
     }
 
     .run-list .run-meta {
-      color: var(--text-muted);
+      color: var(--text-tertiary);
       font-size: 0.78rem;
       margin-left: auto;
     }
 
     /* ---- DETAIL ---- */
-    .prompt-text {
-      font-style: italic;
-      color: var(--text-muted);
-      padding: 0.4rem 0;
-      border-bottom: 1px solid var(--panel);
-      margin-bottom: 0.5rem;
-    }
-
     blockquote {
-      background: var(--panel-alt);
-      border-left: 3px solid var(--border);
+      background: var(--surface-alt);
+      border-left: 2px solid var(--border);
       padding: 0.6rem 0.75rem;
       margin: 0.4rem 0;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
     }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    .site-footer a { color: var(--text-secondary); }
 
     /* ---- RESPONSIVE ---- */
     @media (max-width: 640px) {
-      .broadcast-header { padding: 0.75rem 1rem; }
-      .broadcast-subtitle { display: none; }
-      .content { padding: 1rem; }
-      h1 { font-size: 1.2rem; }
-      h2 { font-size: 0.78rem; }
-      table { font-size: 0.78rem; }
-      td, th { padding: 0.35rem 0.45rem; }
-      .drift-alerts { padding: 0.5rem; }
-      .run-list .run-meta { margin-left: 0; width: 100%; }
+      .site-header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .site-tagline { margin-left: 0; }
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.25rem; }
+      table { font-size: 0.75rem; }
+      td, th { padding: 0.35rem 0.5rem; }
+      .run-list .run-meta { margin-left: 0; }
     }
   </style>
 </head>
 <body>
-  <header class="broadcast-header">
-    <div class="broadcast-title"><a href="/">LLM Weather Report</a></div>
-    <div class="broadcast-subtitle">Capability Drift Tracking</div>
+  <header class="site-header">
+    <div class="site-title"><a href="/">LLM Weather Report</a></div>
+    <div class="site-tagline">Tracking capability drift across models</div>
   </header>
 
   <main class="content">
     {{ block "main" . }}{{ end }}
   </main>
+
+  <footer class="site-footer">
+    A <a href="https://2389.ai">2389 Research</a> project
+  </footer>
 </body>
 </html>
