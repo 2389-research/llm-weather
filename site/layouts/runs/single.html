@@ -1,19 +1,16 @@
 {{ define "main" }}
 <h1>Run: {{ .Title }}</h1>
 
-{{ .Content }}
-
 {{ with .Params.drift }}
-<h2>Drift</h2>
+<h2>Drift Alerts</h2>
 <ul>
 {{ range . }}
-  <li>
-    <span class="{{ if eq .direction "↑" }}drift-up{{ else }}drift-down{{ end }}">
-      {{ .direction }}
-    </span>
-    {{ .model }}: moved {{ .change }} (was #{{ .was }}, now #{{ .now }})
+  <li class="{{ if eq .type "REGRESSION" }}drift-down{{ else if eq .type "IMPROVEMENT" }}drift-up{{ else if eq .type "SCORE_DROP" }}drift-down{{ else }}drift-up{{ end }}">
+    <strong>{{ .type }}</strong>: {{ .model }} on {{ .prompt }}
   </li>
 {{ end }}
 </ul>
 {{ end }}
+
+{{ .Content }}
 {{ end }}

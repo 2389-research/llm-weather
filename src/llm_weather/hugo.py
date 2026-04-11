@@ -1,5 +1,5 @@
 # ABOUTME: Generates Hugo-compatible markdown content pages from run data.
-# ABOUTME: Creates pages with YAML frontmatter for the Hugo static site.
+# ABOUTME: Creates pages with YAML frontmatter showing scorecard and drift alerts.
 
 from pathlib import Path
 
@@ -8,14 +8,13 @@ import yaml
 
 def generate_hugo_content(
     run_id: str,
-    leaderboard: list[dict],
+    scorecard: dict[str, dict],
     drift: list[dict],
 ) -> str:
     frontmatter = {
         "title": run_id,
         "date": run_id.split("T")[0] + "T" + run_id.split("T")[1].replace("-", ":"),
-        "top_model": leaderboard[0]["model"] if leaderboard else "none",
-        "leaderboard": leaderboard,
+        "scorecard": scorecard,
         "drift": drift,
     }
 
@@ -23,24 +22,43 @@ def generate_hugo_content(
     lines.append(yaml.dump(frontmatter, default_flow_style=False).strip())
     lines.append("---")
     lines.append("")
-    lines.append("## Leaderboard")
-    lines.append("")
-    lines.append("| Rank | Model | Wins |")
-    lines.append("|------|-------|------|")
-    for entry in leaderboard:
-        lines.append(
-            f"| {entry['rank']} | {entry['model']} | {entry['wins']}/{entry['total']} |"
-        )
 
     if drift:
-        lines.append("")
-        lines.append("## Drift")
+        lines.append("## Drift Alerts")
         lines.append("")
         for d in drift:
-            lines.append(
-                f"- {d['model']}: {d['direction']} moved {d['change']} "
-                f"(was #{d['was']}, now #{d['now']})"
-            )
+            if d["type"] in ("REGRESSION", "IMPROVEMENT"):
+                was = "correct" if d["was"] else "incorrect"
+                now = "correct" if d["now"] else "incorrect"
+                lines.append(f"- {d['model']} | {d['prompt']} | {d['type']}: {was} → {now}")
+            else:
+                lines.append(f"- {d['model']} | {d['prompt']} | {d['type']}: {d['was']} → {d['now']}")
+        lines.append("")
+
+    # Collect all prompt IDs
+    prompt_ids = []
+    for prompts in scorecard.values():
+        for pid in prompts:
+            if pid not in prompt_ids:
+                prompt_ids.append(pid)
+
+    lines.append("## Scorecard")
+    lines.append("")
+    header = "| Model | " + " | ".join(prompt_ids) + " |"
+    separator = "|-------|" + "|".join("------" for _ in prompt_ids) + "|"
+    lines.append(header)
+    lines.append(separator)
+
+    for model in sorted(scorecard):
+        cells = []
+        for pid in prompt_ids:
+            entry = scorecard[model].get(pid)
+            if entry and entry["correct"] is not None:
+                mark = "✓" if entry["correct"] else "✗"
+                cells.append(f"{mark} ({entry['score']})")
+            else:
+                cells.append("—")
+        lines.append(f"| {model} | " + " | ".join(cells) + " |")
 
     lines.append("")
     return "\n".join(lines)

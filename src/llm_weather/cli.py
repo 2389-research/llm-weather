@@ -9,9 +9,9 @@ import click
 
 from llm_weather.config import filter_available_models, load_models, load_prompts
 from llm_weather.hugo import generate_hugo_content, write_hugo_page
-from llm_weather.judge import judge_all
+from llm_weather.judge import evaluate_all
 from llm_weather.report import (
-    build_leaderboard,
+    build_scorecard,
     detect_drift,
     write_reports,
 )
@@ -22,7 +22,7 @@ def get_project_root() -> Path:
     return Path(__file__).parent.parent.parent
 
 
-def find_previous_run(runs_dir: Path, current_run_id: str) -> list[dict] | None:
+def find_previous_scorecard(runs_dir: Path, current_run_id: str) -> dict | None:
     if not runs_dir.exists():
         return None
     run_dirs = sorted(
@@ -36,7 +36,10 @@ def find_previous_run(runs_dir: Path, current_run_id: str) -> list[dict] | None:
         return None
     with open(judgments_path) as f:
         prev_judgments = json.load(f)
-    return build_leaderboard(prev_judgments)
+    # Handle both old-format (leaderboard) and new-format (scorecard) judgments
+    if "evaluations" in str(prev_judgments):
+        return build_scorecard(prev_judgments)
+    return None
 
 
 @click.group()
@@ -68,7 +71,7 @@ def main(ctx, project_root):
 )
 @click.pass_context
 def run(ctx, prompts, models):
-    """Execute a full run: prompt models, judge responses, generate reports."""
+    """Execute a full run: prompt models, evaluate responses, generate reports."""
     root = ctx.obj["project_root"]
     prompts_path = Path(prompts) if prompts else root / "prompts.yaml"
     models_path = Path(models) if models else root / "models.yaml"
@@ -106,20 +109,20 @@ def run(ctx, prompts, models):
     click.echo("\nRunning prompts...")
     responses = run_all(prompts_config, contestants, run_dir)
 
-    # Step 2: Judge
-    click.echo("Judging responses...")
-    judgments = judge_all(responses, judges, run_dir)
+    # Step 2: Evaluate each response individually
+    click.echo("Evaluating responses...")
+    judgments = evaluate_all(responses, judges, run_dir)
 
     # Step 3: Reports
     click.echo("Generating reports...")
-    leaderboard = build_leaderboard(judgments)
-    previous = find_previous_run(runs_dir, run_id)
-    drift = detect_drift(leaderboard, previous)
-    write_reports(judgments, responses, leaderboard, drift, run_dir)
+    scorecard = build_scorecard(judgments)
+    previous = find_previous_scorecard(runs_dir, run_id)
+    drift = detect_drift(scorecard, previous)
+    write_reports(judgments, responses, scorecard, drift, run_dir)
 
     # Step 4: Hugo content
     click.echo("Generating Hugo content...")
-    hugo_content = generate_hugo_content(run_id, leaderboard, drift)
+    hugo_content = generate_hugo_content(run_id, scorecard, drift)
     site_dir = root / "site"
     write_hugo_page(hugo_content, run_id, site_dir)
 
@@ -136,11 +139,11 @@ def report(run_dir):
     with open(run_dir / "judgments.json") as f:
         judgments = json.load(f)
 
-    leaderboard = build_leaderboard(judgments)
+    scorecard = build_scorecard(judgments)
     runs_dir = run_dir.parent
-    previous = find_previous_run(runs_dir, run_dir.name)
-    drift = detect_drift(leaderboard, previous)
-    write_reports(judgments, responses, leaderboard, drift, run_dir)
+    previous = find_previous_scorecard(runs_dir, run_dir.name)
+    drift = detect_drift(scorecard, previous)
+    write_reports(judgments, responses, scorecard, drift, run_dir)
     click.echo(f"Reports regenerated in {run_dir}")
 
 
@@ -165,10 +168,10 @@ def publish(ctx):
         with open(judgments_path) as f:
             judgments = json.load(f)
 
-        leaderboard = build_leaderboard(judgments)
-        previous = find_previous_run(runs_dir, run_dir.name)
-        drift = detect_drift(leaderboard, previous)
-        hugo_content = generate_hugo_content(run_dir.name, leaderboard, drift)
+        scorecard = build_scorecard(judgments)
+        previous = find_previous_scorecard(runs_dir, run_dir.name)
+        drift = detect_drift(scorecard, previous)
+        hugo_content = generate_hugo_content(run_dir.name, scorecard, drift)
         write_hugo_page(hugo_content, run_dir.name, site_dir)
 
     click.echo(f"Hugo content generated for {len(run_dirs)} runs in {site_dir}")

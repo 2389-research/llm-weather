@@ -1,86 +1,80 @@
-# ABOUTME: Tests for the blind judging module.
-# ABOUTME: Tests shuffle logic, response formatting, and majority vote counting.
+# ABOUTME: Tests for the individual correctness evaluation module.
+# ABOUTME: Tests parse logic, majority correctness, score averaging, and evaluation structure.
 
 import os
 
 import pytest
 
 from llm_weather.judge import (
-    shuffle_responses,
-    format_responses,
-    majority_winner,
-    judge_prompt,
+    parse_evaluation_response,
+    majority_correct,
+    average_score,
+    evaluate_single,
 )
 
 
-def test_shuffle_responses_assigns_labels():
-    responses = {
-        "openai/gpt-4.1": {"content": "Answer A"},
-        "anthropic/claude-sonnet-4-6": {"content": "Answer B"},
-        "google/gemini-2.5-pro": {"content": "Answer C"},
+def test_parse_evaluation_response_valid_json():
+    text = '{"correct": true, "score": 4, "reasoning": "Good logic"}'
+    result = parse_evaluation_response(text)
+    assert result["correct"] is True
+    assert result["score"] == 4
+    assert result["reasoning"] == "Good logic"
+
+
+def test_parse_evaluation_response_embedded_json():
+    text = 'Here is my evaluation:\n{"correct": false, "score": 2, "reasoning": "Wrong answer"}\nThat is all.'
+    result = parse_evaluation_response(text)
+    assert result["correct"] is False
+    assert result["score"] == 2
+
+
+def test_parse_evaluation_response_invalid_raises():
+    with pytest.raises(ValueError):
+        parse_evaluation_response("no json here")
+
+
+def test_majority_correct_all_agree_true():
+    verdicts = {
+        "judge-1": {"correct": True, "score": 5, "reasoning": "..."},
+        "judge-2": {"correct": True, "score": 4, "reasoning": "..."},
+        "judge-3": {"correct": True, "score": 5, "reasoning": "..."},
     }
-    label_to_model, label_to_content = shuffle_responses(responses)
-
-    assert set(label_to_model.keys()) == {"A", "B", "C"}
-    assert set(label_to_model.values()) == set(responses.keys())
-    assert len(label_to_content) == 3
-    assert all(isinstance(v, str) for v in label_to_content.values())
+    assert majority_correct(verdicts) is True
 
 
-def test_shuffle_responses_content_matches():
-    responses = {
-        "model-a": {"content": "Alpha response"},
-        "model-b": {"content": "Beta response"},
+def test_majority_correct_all_agree_false():
+    verdicts = {
+        "judge-1": {"correct": False, "score": 1, "reasoning": "..."},
+        "judge-2": {"correct": False, "score": 2, "reasoning": "..."},
     }
-    label_to_model, label_to_content = shuffle_responses(responses)
-
-    for label, model in label_to_model.items():
-        assert label_to_content[label] == responses[model]["content"]
+    assert majority_correct(verdicts) is False
 
 
-def test_format_responses_includes_all_labels():
-    label_to_content = {
-        "A": "First answer",
-        "B": "Second answer",
+def test_majority_correct_split_vote():
+    verdicts = {
+        "judge-1": {"correct": True, "score": 4, "reasoning": "..."},
+        "judge-2": {"correct": False, "score": 2, "reasoning": "..."},
+        "judge-3": {"correct": True, "score": 3, "reasoning": "..."},
     }
-    formatted = format_responses(label_to_content)
-
-    assert "Response A:" in formatted
-    assert "First answer" in formatted
-    assert "Response B:" in formatted
-    assert "Second answer" in formatted
+    assert majority_correct(verdicts) is True
 
 
-def test_format_responses_sorted_by_label():
-    label_to_content = {
-        "C": "Third",
-        "A": "First",
-        "B": "Second",
+def test_average_score():
+    verdicts = {
+        "judge-1": {"correct": True, "score": 5, "reasoning": "..."},
+        "judge-2": {"correct": True, "score": 4, "reasoning": "..."},
+        "judge-3": {"correct": True, "score": 3, "reasoning": "..."},
     }
-    formatted = format_responses(label_to_content)
-
-    pos_a = formatted.index("Response A:")
-    pos_b = formatted.index("Response B:")
-    pos_c = formatted.index("Response C:")
-    assert pos_a < pos_b < pos_c
+    assert average_score(verdicts) == 4.0
 
 
-def test_majority_winner_clear_majority():
-    judge_results = {
-        "judge-1": {"winner": "A", "ranking": ["A", "B", "C"], "reasoning": "..."},
-        "judge-2": {"winner": "A", "ranking": ["A", "C", "B"], "reasoning": "..."},
-        "judge-3": {"winner": "B", "ranking": ["B", "A", "C"], "reasoning": "..."},
+def test_average_score_rounds_to_two_decimals():
+    verdicts = {
+        "judge-1": {"correct": True, "score": 5, "reasoning": "..."},
+        "judge-2": {"correct": True, "score": 4, "reasoning": "..."},
+        "judge-3": {"correct": True, "score": 5, "reasoning": "..."},
     }
-    assert majority_winner(judge_results) == "A"
-
-
-def test_majority_winner_tie_returns_most_common():
-    judge_results = {
-        "judge-1": {"winner": "A", "ranking": ["A", "B"], "reasoning": "..."},
-        "judge-2": {"winner": "B", "ranking": ["B", "A"], "reasoning": "..."},
-        "judge-3": {"winner": "B", "ranking": ["B", "A"], "reasoning": "..."},
-    }
-    assert majority_winner(judge_results) == "B"
+    assert average_score(verdicts) == pytest.approx(4.67, abs=0.01)
 
 
 # Integration tests — require API keys
@@ -93,17 +87,14 @@ TEST_JUDGE_MODEL = os.environ.get("LLM_WEATHER_TEST_MODEL", "openai/gpt-4.1-mini
 
 
 @needs_api_key
-def test_judge_prompt_returns_verdict():
-    label_to_content = {
-        "A": "Yes, all bloops are lazzies. Since all bloops are razzies, and all razzies are lazzies, by transitivity all bloops are lazzies.",
-        "B": "No, bloops are not lazzies because they are bloops.",
-    }
-    verdict = judge_prompt(
-        "If all bloops are razzies and all razzies are lazzies, are all bloops lazzies?",
-        label_to_content,
-        TEST_JUDGE_MODEL,
+def test_evaluate_single_returns_evaluation():
+    result = evaluate_single(
+        question="If all bloops are razzies and all razzies are lazzies, are all bloops lazzies?",
+        response="Yes, all bloops are lazzies by transitivity.",
+        judge_model=TEST_JUDGE_MODEL,
     )
-    assert "winner" in verdict
-    assert verdict["winner"] in ("A", "B")
-    assert "ranking" in verdict
-    assert "reasoning" in verdict
+    assert "correct" in result
+    assert "score" in result
+    assert isinstance(result["correct"], bool)
+    assert 1 <= result["score"] <= 5
+    assert "reasoning" in result
