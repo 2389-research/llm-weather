@@ -129,14 +129,25 @@
     }
     h3 { @apply font-display text-sm font-semibold text-text mt-5 mb-1; }
 
-    /* ---- PROSE OVERRIDES ---- */
+    /* ---- PROSE OVERRIDES (Tailwind Typography) ---- */
+    .prose { @apply text-text; --tw-prose-body: #1a1a1a; --tw-prose-headings: #1a1a1a; --tw-prose-links: #2d5a4a; --tw-prose-bold: #1a1a1a; --tw-prose-counters: #6B6560; --tw-prose-bullets: #9B958E; --tw-prose-hr: #E2DFD8; --tw-prose-quotes: #6B6560; --tw-prose-quote-borders: #bf4a24; --tw-prose-code: #1a1a1a; --tw-prose-pre-bg: #F3F1ED; --tw-prose-pre-code: #1a1a1a; --tw-prose-th-borders: #1a1a1a; --tw-prose-td-borders: #E2DFD8; }
+    .prose h1 { @apply font-display text-2xl font-bold tracking-tight; border: none; margin-top: 0; }
     .prose h2 {
       @apply font-display font-bold text-text-secondary uppercase tracking-widest border-b border-border pb-1;
       font-size: 0.72rem;
     }
-    .prose h3 { @apply font-display; }
+    .prose h3 { @apply font-display text-base font-semibold; }
     .prose table { @apply font-display text-sm; font-size: 0.8rem; }
     .prose a { @apply text-accent no-underline hover:underline; }
+    .prose blockquote { @apply border-l-[3px] border-l-rust italic text-text-secondary; }
+    .prose code { @apply bg-surface-alt px-1 py-0.5 rounded-sm text-sm; font-family: ui-monospace, monospace; }
+    .prose pre { @apply bg-surface-alt border border-border rounded-sm; }
+    .prose pre code { @apply bg-transparent p-0; }
+    .prose strong { @apply font-semibold text-text; }
+    .prose ul { @apply list-disc; }
+    .prose ol { @apply list-decimal; }
+    .prose li { @apply my-0.5; }
+    .prose p { @apply leading-relaxed; }
 
     @media (max-width: 640px) {
       table { font-size: 0.75rem; }
@@ -145,14 +156,25 @@
   </style>
 </head>
 <body class="bg-bg text-text font-body leading-relaxed">
-  <header class="border-b-2 border-text px-8 py-5 flex items-baseline gap-4 max-sm:flex-col max-sm:gap-1 max-sm:px-4">
-    <div class="font-display text-xl font-extrabold tracking-tight">
-      <a href="/" class="text-text no-underline hover:no-underline">LLM Weather Report</a>
-    </div>
-    <div class="text-sm italic text-text-tertiary ml-auto max-sm:ml-0">
-      Tracking raw LLM reasoning drift — pure endpoint, no agents —
-      <a href="/about/" class="text-text-tertiary hover:underline">About</a> ·
-      <a href="/skill.md" class="text-text-tertiary hover:underline">Agent Skill</a>
+  <header class="border-b-2 border-text">
+    <div class="max-w-4xl mx-auto px-8 max-sm:px-4">
+      <div class="pt-6 pb-3 max-sm:pt-4 max-sm:pb-2">
+        <a href="/" class="text-text no-underline hover:no-underline">
+          <h1 class="font-display text-3xl font-extrabold tracking-tight mb-0 max-sm:text-2xl" style="border:none;margin-top:0;padding:0;">LLM Weather Report</h1>
+        </a>
+        <p class="font-body text-sm text-text-secondary italic mt-1 mb-0">
+          Tracking raw LLM reasoning drift — pure endpoint, no agents
+        </p>
+      </div>
+      <nav class="flex items-center gap-5 pb-3 font-display text-xs uppercase tracking-widest text-text-secondary max-sm:gap-3 max-sm:text-[0.6rem]">
+        <a href="/" class="text-text-secondary hover:text-text no-underline{{ if .IsHome }} text-text font-bold{{ end }}">Dashboard</a>
+        <a href="/about/" class="text-text-secondary hover:text-text no-underline{{ if eq .RelPermalink "/about/" }} text-text font-bold{{ end }}">Methodology</a>
+        <a href="/skill.md" class="text-text-secondary hover:text-text no-underline">Agent Skill</a>
+        <span class="ml-auto flex items-center gap-3 max-sm:gap-2">
+          <a href="https://github.com/2389-research/llm-weather" class="text-text-secondary hover:text-text no-underline" title="Source on GitHub">GitHub</a>
+          <a href="https://2389.ai" class="text-text-tertiary hover:text-text no-underline">2389.ai</a>
+        </span>
+      </nav>
     </div>
   </header>
 
@@ -160,9 +182,12 @@
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer class="border-t border-border px-8 py-5 font-display text-xs text-text-tertiary text-center tracking-wide">
-    A <a href="https://2389.ai" class="text-text-secondary hover:underline">2389 Research</a> project ·
-    <a href="https://github.com/2389-research/llm-weather" class="text-text-secondary hover:underline">GitHub</a>
+  <footer class="border-t border-border">
+    <div class="max-w-4xl mx-auto px-8 py-5 max-sm:px-4 font-display text-xs text-text-tertiary text-center tracking-wide">
+      A <a href="https://2389.ai" class="text-text-secondary hover:underline">2389 Research</a> project ·
+      <a href="https://github.com/2389-research/llm-weather" class="text-text-secondary hover:underline">Source</a> ·
+      <a href="/skill.md" class="text-text-secondary hover:underline">Agent API</a>
+    </div>
   </footer>
 </body>
 </html>
