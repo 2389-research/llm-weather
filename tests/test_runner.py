@@ -10,7 +10,7 @@ from llm_weather.runner import run_prompt, run_all
 from llm_weather.config import Prompt
 
 # Use cheapest available model for tests
-TEST_MODEL = os.environ.get("LLM_WEATHER_TEST_MODEL", "openai/gpt-4.1-mini")
+TEST_MODEL = os.environ.get("LLM_WEATHER_TEST_MODEL", "openai/gpt-5.4-mini")
 
 needs_api_key = pytest.mark.skipif(
     not any(os.environ.get(k) for k in ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"]),

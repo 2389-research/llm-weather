@@ -14,7 +14,7 @@ needs_api_key = pytest.mark.skipif(
     reason="No API key available",
 )
 
-TEST_MODEL = os.environ.get("LLM_WEATHER_TEST_MODEL", "openai/gpt-4.1-mini")
+TEST_MODEL = os.environ.get("LLM_WEATHER_TEST_MODEL", "openai/gpt-5.4-mini")
 
 
 @needs_api_key

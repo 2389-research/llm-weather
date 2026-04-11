@@ -32,12 +32,12 @@ def test_load_models_returns_config():
 
 def test_load_models_contestants():
     config = load_models(FIXTURES / "models.yaml")
-    assert config.contestants == ["openai/gpt-4.1", "anthropic/claude-sonnet-4-6"]
+    assert config.contestants == ["openai/gpt-5.4", "anthropic/claude-sonnet-4-6"]
 
 
 def test_load_models_judges():
     config = load_models(FIXTURES / "models.yaml")
-    assert config.judges == ["openai/gpt-4.1"]
+    assert config.judges == ["openai/gpt-5.4"]
 
 
 def test_has_api_key_ollama_always_true():
@@ -51,8 +51,8 @@ def test_has_api_key_unknown_provider_no_key():
 def test_filter_available_models_splits_correctly(monkeypatch):
     monkeypatch.setenv("OPENAI_API_KEY", "test-key")
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
-    models = ["openai/gpt-4.1", "anthropic/claude-sonnet-4-6", "ollama/llama3"]
+    models = ["openai/gpt-5.4", "anthropic/claude-sonnet-4-6", "ollama/llama3"]
     available, skipped = filter_available_models(models)
-    assert "openai/gpt-4.1" in available
+    assert "openai/gpt-5.4" in available
     assert "ollama/llama3" in available
     assert "anthropic/claude-sonnet-4-6" in skipped
