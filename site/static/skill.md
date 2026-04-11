@@ -25,12 +25,21 @@ Drift alerts flag changes between consecutive runs:
 - **SCORE_DROP** — model still correct but quality score dropped by ≥1.0 point.
 - **SCORE_RISE** — model still correct and quality score rose by ≥1.0 point.
 
+## How To Read Model Status
+
+Each model is assigned a status based on drift:
+
+- **stable** (→) — no drift detected since last run
+- **up** (↑) — model improved (correctness or score rise)
+- **down** (↓) — model regressed (correctness loss or score drop). Down overrides up.
+
 ## How To Access Data
 
 - **Latest report (HTML):** `/` — the home page shows the most recent scorecard
 - **Individual run (HTML):** `/runs/<run-id>/` — full scorecard for a specific run
 - **Individual run (Markdown):** `/runs/<run-id>/report.md` — machine-readable markdown
-- **All runs index:** `/llms.txt` — plain text index of all runs with headlines
+- **Individual run (JSON):** `/runs/<run-id>/data.json` — raw structured data with scorecard, drift, status, and previous run comparison
+- **All runs index:** `/llms.txt` — plain text index of all runs with headlines and links to markdown/JSON
 - **Raw data:** Available in the git repo under `runs/<run-id>/responses.json` and `runs/<run-id>/judgments.json`
 
 ## Models Tracked
@@ -46,6 +55,9 @@ The current contestant models are listed in the scorecard. Models without API ke
 
 ## For Programmatic Access
 
-Fetch `/llms.txt` for a structured index of all runs. Each run links to its markdown version at `/runs/<run-id>/report.md` which can be parsed directly.
+Fetch `/llms.txt` for a structured index of all runs. Each run links to its markdown and JSON versions.
 
-The markdown reports use a consistent table format that can be parsed with standard markdown table parsers.
+- **Markdown:** `/runs/<run-id>/report.md` — human-readable, parseable table format
+- **JSON:** `/runs/<run-id>/data.json` — structured data with fields: `run_id`, `date`, `headline`, `status`, `scorecard`, `drift`, `previous`
+
+The JSON endpoint is the recommended way to consume data programmatically. The `previous` field contains the prior run's scorecard for comparison.

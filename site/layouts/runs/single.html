@@ -1,5 +1,5 @@
 {{ define "main" }}
-<h1>Run: {{ .Title }}</h1>
+<h1>{{ .Date.Format "January 2, 2006 — 3:04 PM UTC" }}</h1>
 {{ with .Params.headline }}
 <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>{{ . }}</strong></p>
 {{ end }}
@@ -37,4 +37,11 @@
   </ul>
 </div>
 {{ end }}
+
+<h2>Raw Data</h2>
+<ul class="data-links">
+  <li><a href="{{ .RelPermalink }}data.json">JSON</a> — structured data for programmatic access</li>
+  <li><a href="{{ .RelPermalink }}report.md">Markdown</a> — plain text report</li>
+  <li><a href="/skill.md">Agent Skill</a> — how to read and interpret this data</li>
+</ul>
 {{ end }}

@@ -5,9 +5,9 @@
 {{ $latest := index $sorted 0 }}
 
 {{ with $latest }}
-<h1>Current Forecast</h1>
+<h1>Latest Report</h1>
 <p style="color: var(--text-tertiary); font-size: 0.84rem; margin-bottom: 0.25rem;">
-  Latest run: <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  <a href="{{ .RelPermalink }}">{{ .Date.Format "January 2, 2006 — 3:04 PM UTC" }}</a>
 </p>
 {{ with .Params.headline }}
 <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>{{ . }}</strong></p>
@@ -27,12 +27,7 @@
 </div>
 {{ end }}
 
-{{ with .Params.scorecard }}
-<h2>Scorecard</h2>
-{{ partial "scorecard-table.html" (dict "scorecard" . "previous" ($.Params.previous | default dict)) }}
-{{ end }}
-
-{{ with $.Params.status }}
+{{ with .Params.status }}
 <h2>Model Status</h2>
 <div class="model-status">
   <ul>
@@ -47,18 +42,29 @@
 </div>
 {{ end }}
 
+{{ with .Params.scorecard }}
+<h2>Scorecard</h2>
+{{ partial "scorecard-table.html" (dict "scorecard" . "previous" ($latest.Params.previous | default dict)) }}
+{{ end }}
+
 {{ end }}
 
 <h2>Past Reports</h2>
 <ul class="run-list">
 {{ range $sorted }}
   <li>
-    <a class="run-date" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <a class="run-date" href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006 3:04 PM" }}</a>
     {{ with .Params.headline }}<span class="run-headline">{{ . }}</span>{{ end }}
     <span class="run-meta">
       {{ with .Params.drift }}{{ len . }} alert{{ if gt (len .) 1 }}s{{ end }}{{ else }}no drift{{ end }}
     </span>
   </li>
 {{ end }}
+</ul>
+
+<h2>For Agents</h2>
+<ul class="data-links">
+  <li><a href="/llms.txt">llms.txt</a> — plain text index of all runs</li>
+  <li><a href="/skill.md">Agent Skill</a> — how to read and interpret this data</li>
 </ul>
 {{ end }}

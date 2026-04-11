@@ -17,4 +17,5 @@ Each run tests models on 7 reasoning prompts (logic, math, spatial, causality, c
 {{ range sort $runs "Date" "desc" -}}
 - [{{ .Title }}]({{ .Permalink }}): {{ with .Params.headline }}{{ . }}{{ end }}
   - Markdown: {{ .Permalink }}report.md
+  - JSON: {{ .Permalink }}data.json
 {{ end }}

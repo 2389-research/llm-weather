@@ -1,0 +1,2 @@
+{{ $data := dict "run_id" .Title "date" (.Date.Format "2006-01-02T15:04:05Z") "headline" .Params.headline "status" (.Params.status | default dict) "scorecard" (.Params.scorecard | default dict) "drift" (.Params.drift | default slice) "previous" (.Params.previous | default dict) }}
+{{ $data | jsonify (dict "indent" "  ") }}

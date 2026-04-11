@@ -198,24 +198,58 @@ def test_model_status_regression_overrides_improvement():
 
 
 def test_generate_headline_all_correct_no_drift():
-    scorecard = build_scorecard(SAMPLE_JUDGMENTS)
+    scorecard = {
+        "model-a": {"logic-1": {"correct": True, "score": 5.0}},
+        "model-b": {"logic-1": {"correct": True, "score": 4.0}},
+    }
     headline = generate_headline(scorecard, [])
-    assert "2 models" in headline
-    assert "2 prompts" in headline
+    # Should say everything is stable
+    assert "stable" in headline.lower()
+    # Should NOT mention any model by name when nothing is wrong
+    assert "model-a" not in headline
+    assert "model-b" not in headline
 
 
-def test_generate_headline_with_incorrect():
+def test_generate_headline_with_failures_no_drift():
     scorecard = build_scorecard(SAMPLE_JUDGMENTS)
     headline = generate_headline(scorecard, [])
-    # model-b got logic-1 wrong
+    # model-b got logic-1 wrong — headline should call it out
     assert "model-b" in headline
+    assert "logic-1" in headline
 
 
-def test_generate_headline_with_drift():
+def test_generate_headline_with_regression():
     scorecard = build_scorecard(SAMPLE_JUDGMENTS)
     drift = [{"type": "REGRESSION", "model": "model-b", "prompt": "logic-1", "was": True, "now": False}]
     headline = generate_headline(scorecard, drift)
-    assert "1 regression" in headline.lower() or "REGRESSION" in headline
+    # Should name the model that regressed
+    assert "model-b" in headline
+    # Should indicate something broke
+    assert "broke" in headline.lower() or "regressed" in headline.lower() or "lost" in headline.lower()
+
+
+def test_generate_headline_with_improvements_only():
+    scorecard = {
+        "model-a": {"logic-1": {"correct": True, "score": 5.0}},
+        "model-b": {"logic-1": {"correct": True, "score": 4.0}},
+    }
+    drift = [{"type": "IMPROVEMENT", "model": "model-b", "prompt": "logic-1", "was": False, "now": True}]
+    headline = generate_headline(scorecard, drift)
+    # Should name the model that improved
+    assert "model-b" in headline
+
+
+def test_generate_headline_regression_leads_over_improvement():
+    scorecard = build_scorecard(SAMPLE_JUDGMENTS)
+    drift = [
+        {"type": "IMPROVEMENT", "model": "model-a", "prompt": "math-1", "was": False, "now": True},
+        {"type": "REGRESSION", "model": "model-b", "prompt": "logic-1", "was": True, "now": False},
+    ]
+    headline = generate_headline(scorecard, drift)
+    # Regression is the lead story
+    reg_pos = headline.find("model-b")
+    imp_pos = headline.find("model-a")
+    assert reg_pos < imp_pos or imp_pos == -1
 
 
 def test_generate_summary_contains_scorecard():

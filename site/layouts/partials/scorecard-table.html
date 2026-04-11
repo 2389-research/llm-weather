@@ -38,9 +38,9 @@
         {{ end }}
         {{ if $entry }}
           {{ if eq $entry.correct true }}
-            <td class="mark-correct">✓ ({{ $entry.score }}){{ with $prev }}{{ if ne .score $entry.score }} <span class="prev-score">was {{ .score }}</span>{{ end }}{{ end }}</td>
+            <td class="mark-correct">✓ ({{ $entry.score }}){{ with $prev }}{{ if ne .correct true }}<span class="prev-score">was ✗ ({{ .score }})</span>{{ else }}{{ $delta := sub $entry.score .score }}{{ if or (ge $delta 1.0) (le $delta -1.0) }}<span class="prev-score">was {{ .score }}</span>{{ end }}{{ end }}{{ end }}</td>
           {{ else if eq $entry.correct false }}
-            <td class="mark-incorrect">✗ ({{ $entry.score }}){{ with $prev }}{{ if ne .correct $entry.correct }} <span class="prev-score">was ✓</span>{{ else if ne .score $entry.score }} <span class="prev-score">was {{ .score }}</span>{{ end }}{{ end }}</td>
+            <td class="mark-incorrect">✗ ({{ $entry.score }}){{ with $prev }}{{ if ne .correct false }}<span class="prev-score">was ✓ ({{ .score }})</span>{{ else }}{{ $delta := sub $entry.score .score }}{{ if or (ge $delta 1.0) (le $delta -1.0) }}<span class="prev-score">was {{ .score }}</span>{{ end }}{{ end }}{{ end }}</td>
           {{ else }}
             <td class="mark-na">—</td>
           {{ end }}

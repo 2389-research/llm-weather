@@ -84,46 +84,61 @@ def model_status(scorecard: dict[str, dict], drift: list[dict]) -> dict[str, str
     return status
 
 
-def generate_headline(scorecard: dict[str, dict], drift: list[dict]) -> str:
-    models = list(scorecard.keys())
-    prompt_ids = []
-    for prompts in scorecard.values():
-        for pid in prompts:
-            if pid not in prompt_ids:
-                prompt_ids.append(pid)
+def _short_model(model: str) -> str:
+    return model.split("/")[-1] if "/" in model else model
 
-    # Count failures
+
+def generate_headline(scorecard: dict[str, dict], drift: list[dict]) -> str:
+    regressions = [d for d in drift if d["type"] == "REGRESSION"]
+    score_drops = [d for d in drift if d["type"] == "SCORE_DROP"]
+    improvements = [d for d in drift if d["type"] == "IMPROVEMENT"]
+    score_rises = [d for d in drift if d["type"] == "SCORE_RISE"]
+
+    # Failures not caused by drift (persistent incorrect answers)
     failures = []
+    regression_keys = {(d["model"], d["prompt"]) for d in regressions}
     for model, prompts in scorecard.items():
         for pid, entry in prompts.items():
-            if entry["correct"] is False:
-                short_model = model.split("/")[-1] if "/" in model else model
-                failures.append(f"{short_model} on {pid}")
+            if entry["correct"] is False and (model, pid) not in regression_keys:
+                failures.append((model, pid))
 
-    parts = [f"{len(models)} models, {len(prompt_ids)} prompts."]
+    parts = []
 
-    if not failures:
-        parts.append("All correct.")
-    else:
-        parts.append(f"{len(failures)} incorrect: {', '.join(failures)}.")
-
-    # Drift summary
-    regressions = [d for d in drift if d["type"] == "REGRESSION"]
-    improvements = [d for d in drift if d["type"] == "IMPROVEMENT"]
-    score_changes = [d for d in drift if d["type"] in ("SCORE_DROP", "SCORE_RISE")]
-
-    drift_parts = []
+    # Lead with regressions — the most actionable signal
     if regressions:
-        drift_parts.append(f"{len(regressions)} regression{'s' if len(regressions) > 1 else ''}")
-    if improvements:
-        drift_parts.append(f"{len(improvements)} improvement{'s' if len(improvements) > 1 else ''}")
-    if score_changes:
-        drift_parts.append(f"{len(score_changes)} score change{'s' if len(score_changes) > 1 else ''}")
+        models_broke = []
+        for d in regressions:
+            models_broke.append(f"{_short_model(d['model'])} lost {d['prompt']}")
+        parts.append("; ".join(models_broke) + ".")
 
-    if drift_parts:
-        parts.append(", ".join(drift_parts) + ".")
-    elif not failures:
-        parts.append("No drift.")
+    # Score drops next
+    if score_drops:
+        models_dropped = []
+        for d in score_drops:
+            models_dropped.append(f"{_short_model(d['model'])} dropped on {d['prompt']}")
+        parts.append("; ".join(models_dropped) + ".")
+
+    # Persistent failures (not new regressions)
+    if failures:
+        failure_strs = [f"{_short_model(m)} failing {p}" for m, p in failures]
+        parts.append("; ".join(failure_strs) + ".")
+
+    # Improvements are good news, secondary
+    if improvements:
+        models_improved = []
+        for d in improvements:
+            models_improved.append(_short_model(d["model"]))
+        parts.append(", ".join(models_improved) + " recovering.")
+
+    if score_rises:
+        models_rose = []
+        for d in score_rises:
+            models_rose.append(_short_model(d["model"]))
+        parts.append(", ".join(models_rose) + " scores rising.")
+
+    # If nothing notable, say so
+    if not parts:
+        parts.append("All models stable.")
 
     return " ".join(parts)
 

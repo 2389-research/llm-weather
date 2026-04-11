@@ -20,10 +20,13 @@ title = "LLM Weather Report"
   isPlainText = true
   notAlternative = true
 
+[outputFormats.rawjson]
+  mediaType = "application/json"
+  baseName = "data"
+  isPlainText = true
+
 [outputs]
-  page = ["HTML", "markdown"]
+  page = ["HTML", "markdown", "rawjson"]
   home = ["HTML", "llmstxt"]
   section = ["HTML"]
-
-# Skill page markdown template (reuses the same layout)
 
