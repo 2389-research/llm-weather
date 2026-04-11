@@ -4,6 +4,7 @@
 from llm_weather.report import (
     build_scorecard,
     detect_drift,
+    generate_headline,
     generate_summary,
     generate_detail,
 )
@@ -154,6 +155,27 @@ def test_detect_drift_no_change():
     }
     drift = detect_drift(current, previous)
     assert drift == []
+
+
+def test_generate_headline_all_correct_no_drift():
+    scorecard = build_scorecard(SAMPLE_JUDGMENTS)
+    headline = generate_headline(scorecard, [])
+    assert "2 models" in headline
+    assert "2 prompts" in headline
+
+
+def test_generate_headline_with_incorrect():
+    scorecard = build_scorecard(SAMPLE_JUDGMENTS)
+    headline = generate_headline(scorecard, [])
+    # model-b got logic-1 wrong
+    assert "model-b" in headline
+
+
+def test_generate_headline_with_drift():
+    scorecard = build_scorecard(SAMPLE_JUDGMENTS)
+    drift = [{"type": "REGRESSION", "model": "model-b", "prompt": "logic-1", "was": True, "now": False}]
+    headline = generate_headline(scorecard, drift)
+    assert "1 regression" in headline.lower() or "REGRESSION" in headline
 
 
 def test_generate_summary_contains_scorecard():

@@ -71,6 +71,50 @@ def detect_drift(
     return drift
 
 
+def generate_headline(scorecard: dict[str, dict], drift: list[dict]) -> str:
+    models = list(scorecard.keys())
+    prompt_ids = []
+    for prompts in scorecard.values():
+        for pid in prompts:
+            if pid not in prompt_ids:
+                prompt_ids.append(pid)
+
+    # Count failures
+    failures = []
+    for model, prompts in scorecard.items():
+        for pid, entry in prompts.items():
+            if entry["correct"] is False:
+                short_model = model.split("/")[-1] if "/" in model else model
+                failures.append(f"{short_model} on {pid}")
+
+    parts = [f"{len(models)} models, {len(prompt_ids)} prompts."]
+
+    if not failures:
+        parts.append("All correct.")
+    else:
+        parts.append(f"{len(failures)} incorrect: {', '.join(failures)}.")
+
+    # Drift summary
+    regressions = [d for d in drift if d["type"] == "REGRESSION"]
+    improvements = [d for d in drift if d["type"] == "IMPROVEMENT"]
+    score_changes = [d for d in drift if d["type"] in ("SCORE_DROP", "SCORE_RISE")]
+
+    drift_parts = []
+    if regressions:
+        drift_parts.append(f"{len(regressions)} regression{'s' if len(regressions) > 1 else ''}")
+    if improvements:
+        drift_parts.append(f"{len(improvements)} improvement{'s' if len(improvements) > 1 else ''}")
+    if score_changes:
+        drift_parts.append(f"{len(score_changes)} score change{'s' if len(score_changes) > 1 else ''}")
+
+    if drift_parts:
+        parts.append(", ".join(drift_parts) + ".")
+    elif not failures:
+        parts.append("No drift.")
+
+    return " ".join(parts)
+
+
 def generate_summary(
     scorecard: dict[str, dict], drift: list[dict], run_id: str
 ) -> str:

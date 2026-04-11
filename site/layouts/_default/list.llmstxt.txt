@@ -1,0 +1,21 @@
+# LLM Weather Report
+
+> Tracking reasoning capability drift across LLM models. A 2389 Research project.
+
+This site runs a fixed set of reasoning prompts across multiple LLM models on a schedule, evaluates each response for correctness and quality, and tracks changes over time.
+
+## Agent Skill
+
+For detailed instructions on how to read and interpret LLM Weather data, fetch the agent skill page:
+- HTML: /skill/
+- Markdown: /skill/report.md
+
+## Runs
+
+Each run tests models on 7 reasoning prompts (logic, math, spatial, causality, code, ambiguity, common sense) and evaluates responses individually for correctness (boolean) and reasoning quality (1-5 score).
+
+{{ $runs := where .Site.RegularPages "Section" "runs" -}}
+{{ range sort $runs "Date" "desc" -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ with .Params.headline }}{{ . }}{{ end }}
+  - Markdown: {{ .Permalink }}report.md
+{{ end }}

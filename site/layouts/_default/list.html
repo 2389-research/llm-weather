@@ -6,9 +6,12 @@
 
 {{ with $latest }}
 <h1>Current Forecast</h1>
-<p style="color: var(--text-tertiary); font-size: 0.84rem; margin-bottom: 0.5rem;">
+<p style="color: var(--text-tertiary); font-size: 0.84rem; margin-bottom: 0.25rem;">
   Latest run: <a href="{{ .RelPermalink }}">{{ .Title }}</a>
 </p>
+{{ with .Params.headline }}
+<p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>{{ . }}</strong></p>
+{{ end }}
 
 {{ with .Params.drift }}
 <h2>Drift Alerts</h2>
@@ -36,6 +39,7 @@
 {{ range $sorted }}
   <li>
     <a class="run-date" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ with .Params.headline }}<span class="run-headline">{{ . }}</span>{{ end }}
     <span class="run-meta">
       {{ with .Params.drift }}{{ len . }} alert{{ if gt (len .) 1 }}s{{ end }}{{ else }}no drift{{ end }}
     </span>

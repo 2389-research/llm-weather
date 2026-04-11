@@ -13,6 +13,7 @@ from llm_weather.judge import evaluate_all
 from llm_weather.report import (
     build_scorecard,
     detect_drift,
+    generate_headline,
     write_reports,
 )
 from llm_weather.runner import run_all
@@ -122,7 +123,8 @@ def run(ctx, prompts, models):
 
     # Step 4: Hugo content
     click.echo("Generating Hugo content...")
-    hugo_content = generate_hugo_content(run_id, scorecard, drift)
+    headline = generate_headline(scorecard, drift)
+    hugo_content = generate_hugo_content(run_id, scorecard, drift, headline)
     site_dir = root / "site"
     write_hugo_page(hugo_content, run_id, site_dir)
 
@@ -171,7 +173,8 @@ def publish(ctx):
         scorecard = build_scorecard(judgments)
         previous = find_previous_scorecard(runs_dir, run_dir.name)
         drift = detect_drift(scorecard, previous)
-        hugo_content = generate_hugo_content(run_dir.name, scorecard, drift)
+        headline = generate_headline(scorecard, drift)
+        hugo_content = generate_hugo_content(run_dir.name, scorecard, drift, headline)
         write_hugo_page(hugo_content, run_dir.name, site_dir)
 
     click.echo(f"Hugo content generated for {len(run_dirs)} runs in {site_dir}")

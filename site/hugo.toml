@@ -4,3 +4,26 @@ title = "LLM Weather Report"
 
 [params]
   description = "Tracking reasoning capability drift across LLM models"
+
+# Custom output formats
+[mediaTypes."text/markdown"]
+  suffixes = ["md"]
+
+[outputFormats.markdown]
+  mediaType = "text/markdown"
+  baseName = "report"
+  isPlainText = true
+
+[outputFormats.llmstxt]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  page = ["HTML", "markdown"]
+  home = ["HTML", "llmstxt"]
+  section = ["HTML"]
+
+# Skill page markdown template (reuses the same layout)
+

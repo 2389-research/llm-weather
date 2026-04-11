@@ -10,10 +10,12 @@ def generate_hugo_content(
     run_id: str,
     scorecard: dict[str, dict],
     drift: list[dict],
+    headline: str = "",
 ) -> str:
     frontmatter = {
         "title": run_id,
         "date": run_id.split("T")[0] + "T" + run_id.split("T")[1].replace("-", ":"),
+        "headline": headline,
         "scorecard": scorecard,
         "drift": drift,
     }
