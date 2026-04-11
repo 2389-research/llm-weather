@@ -43,7 +43,8 @@ def test_generate_hugo_content_date_is_valid_iso():
     )
     parts = content.split("---\n", 2)
     raw = parts[1]
-    assert "2026-04-10T19:11:30" in raw
+    # Date is converted from UTC to Central time (UTC-5 or UTC-6)
+    assert "2026-04-10T14:11:30-05:00" in raw
 
 
 def test_generate_hugo_content_has_scorecard_in_frontmatter():

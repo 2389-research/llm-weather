@@ -1,9 +1,12 @@
 {{ define "main" }}
 
-{{ $runs := where .Site.RegularPages "Section" "runs" }}
+{{ $runsSection := .Site.GetPage "/runs" }}
+{{ $allRuns := slice }}
+{{ with $runsSection }}{{ $allRuns = .RegularPages }}{{ end }}
+{{ $runs := where $allRuns "Params.layout" "ne" "detail" }}
 {{ $sorted := sort $runs "Date" "desc" }}
 
-{{ if $sorted }}
+{{ if gt (len $sorted) 0 }}
 {{ $latest := index $sorted 0 }}
 
 {{ with $latest }}
@@ -52,7 +55,7 @@
 {{ end }}
 {{ end }}
 
-{{ if $sorted }}
+{{ if gt (len $sorted) 0 }}
 <h2>Past Reports</h2>
 <ul class="run-list">
 {{ range $sorted }}

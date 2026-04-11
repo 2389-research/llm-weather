@@ -1,9 +1,20 @@
 # ABOUTME: Generates Hugo-compatible markdown content pages from run data.
 # ABOUTME: Creates pages with YAML frontmatter showing scorecard and drift alerts.
 
+from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import yaml
+
+
+def _run_id_to_central(run_id: str) -> str:
+    """Convert a UTC run_id timestamp to Central time ISO string."""
+    date_part, time_part = run_id.split("T")
+    utc_str = f"{date_part}T{time_part.replace('-', ':')}"
+    utc_dt = datetime.fromisoformat(utc_str).replace(tzinfo=timezone.utc)
+    central = utc_dt.astimezone(ZoneInfo("America/Chicago"))
+    return central.isoformat()
 
 
 def generate_hugo_content(
@@ -16,7 +27,7 @@ def generate_hugo_content(
 ) -> str:
     frontmatter = {
         "title": run_id,
-        "date": run_id.split("T")[0] + "T" + run_id.split("T")[1].replace("-", ":"),
+        "date": _run_id_to_central(run_id),
         "outputs": ["HTML", "markdown", "rawjson"],
         "headline": headline,
         "status": status or {},
@@ -34,7 +45,7 @@ def generate_hugo_content(
 
 def generate_hugo_detail(run_id: str, judgments: dict, responses: dict) -> str:
     """Generate a Hugo detail page with full eval logs per prompt × model."""
-    date_str = run_id.split("T")[0] + "T" + run_id.split("T")[1].replace("-", ":")
+    date_str = _run_id_to_central(run_id)
     frontmatter = {
         "title": f"{run_id} — Detail",
         "date": date_str,
