@@ -45,7 +45,7 @@
   <li><a href="{{ .RelPermalink }}report.md">Markdown</a> — plain text report</li>
   <li><a href="/runs/{{ .Title }}/responses.json">responses.json</a> — raw model outputs</li>
   <li><a href="/runs/{{ .Title }}/judgments.json">judgments.json</a> — raw judge verdicts</li>
-  <li><a href="/runs/{{ .Title }}/run.log">run.log</a> — debug log</li>
+  {{ if fileExists (printf "static/runs/%s/run.log" .Title) }}<li><a href="/runs/{{ .Title }}/run.log">run.log</a> — debug log</li>{{ end }}
   <li><a href="/skill.md">Agent Skill</a> — how to read and interpret this data</li>
 </ul>
 {{ end }}
