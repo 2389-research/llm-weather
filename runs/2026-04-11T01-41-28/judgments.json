@@ -1,0 +1,355 @@
+{
+  "run_id": "2026-04-11T01-41-28",
+  "prompts": {
+    "logic-1": {
+      "shuffle_mapping": {
+        "A": "gemini/gemini-2.5-flash",
+        "B": "anthropic/claude-sonnet-4-6",
+        "C": "anthropic/claude-haiku-4-5",
+        "D": "gemini/gemini-2.5-pro",
+        "E": "openai/gpt-4.1",
+        "F": "openai/o4-mini"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "F",
+          "ranking": [
+            "F",
+            "E",
+            "C",
+            "B",
+            "D",
+            "A"
+          ],
+          "reasoning": "Response F provides the clearest and most precise logical reasoning by explicitly discussing the subset relationship, making the transitive logic transparent and rigorous."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "D",
+          "ranking": [
+            "D",
+            "C",
+            "F",
+            "B",
+            "E",
+            "A"
+          ],
+          "reasoning": "Response D stands out by combining clear step-by-step logical structure with an intuitive visual analogy (nested boxes) that makes the transitive relationship immediately understandable, while still being concise and accurate."
+        },
+        "gemini/gemini-2.5-pro": {
+          "winner": "D",
+          "ranking": [
+            "D",
+            "E",
+            "F",
+            "C",
+            "B",
+            "A"
+          ],
+          "reasoning": "The winner provides the most effective explanation by using a simple and powerful analogy of nested boxes, which makes the abstract logical relationship concrete and exceptionally easy to understand."
+        }
+      },
+      "majority_winner": "D",
+      "majority_winner_model": "gemini/gemini-2.5-pro"
+    },
+    "math-1": {
+      "shuffle_mapping": {
+        "A": "anthropic/claude-sonnet-4-6",
+        "B": "openai/o4-mini",
+        "C": "gemini/gemini-2.5-pro",
+        "D": "anthropic/claude-haiku-4-5",
+        "E": "gemini/gemini-2.5-flash",
+        "F": "openai/gpt-4.1"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "C",
+          "ranking": [
+            "C",
+            "E",
+            "D",
+            "A",
+            "F",
+            "B"
+          ],
+          "reasoning": "Response C is the most thorough, with clear steps, logical explanation, and verification, making it the most complete and reader-friendly reasoning among all responses."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "C",
+          "ranking": [
+            "C",
+            "D",
+            "A",
+            "E",
+            "F",
+            "B"
+          ],
+          "reasoning": "Response C earns the top spot by combining clear step-by-step algebra, a verification check, and a note addressing the common intuitive mistake, making it the most complete and pedagogically useful answer."
+        },
+        "gemini/gemini-2.5-pro": {
+          "winner": "C",
+          "ranking": [
+            "C",
+            "D",
+            "A",
+            "E",
+            "F",
+            "B"
+          ],
+          "reasoning": "The winner provides the most comprehensive and pedagogical explanation by stating the answer upfront, breaking down the logic with an explicit verification step, and addressing the common intuitive mistake."
+        }
+      },
+      "majority_winner": "C",
+      "majority_winner_model": "gemini/gemini-2.5-pro"
+    },
+    "spatial-1": {
+      "shuffle_mapping": {
+        "A": "gemini/gemini-2.5-pro",
+        "B": "gemini/gemini-2.5-flash",
+        "C": "openai/gpt-4.1",
+        "D": "anthropic/claude-sonnet-4-6",
+        "E": "openai/o4-mini",
+        "F": "anthropic/claude-haiku-4-5"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "C",
+          "ranking": [
+            "C",
+            "B",
+            "A",
+            "F",
+            "D",
+            "E"
+          ],
+          "reasoning": "Response C provides the clearest and most detailed step-by-step breakdown with explicit direction changes, ensuring a rigorous reasoning process, while others are briefer or less explicit."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "D",
+          "ranking": [
+            "D",
+            "F",
+            "E",
+            "B",
+            "A",
+            "C"
+          ],
+          "reasoning": "All responses arrive at the correct answer (East) with identical logic, but D presents the clearest and most concise step-by-step breakdown without unnecessary verbosity or over-formatting, making it the most readable."
+        },
+        "gemini/gemini-2.5-pro": {
+          "winner": "C",
+          "ranking": [
+            "C",
+            "B",
+            "A",
+            "F",
+            "E",
+            "D"
+          ],
+          "reasoning": "Response C provides the most thorough and well-structured breakdown, using indentation and descriptive phrases to explicitly explain the logic of each sequential turn."
+        }
+      },
+      "majority_winner": "C",
+      "majority_winner_model": "openai/gpt-4.1"
+    },
+    "causality-1": {
+      "shuffle_mapping": {
+        "A": "anthropic/claude-haiku-4-5",
+        "B": "openai/gpt-4.1",
+        "C": "gemini/gemini-2.5-flash",
+        "D": "gemini/gemini-2.5-pro",
+        "E": "openai/o4-mini",
+        "F": "anthropic/claude-sonnet-4-6"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "B",
+          "ranking": [
+            "B",
+            "A",
+            "D",
+            "E",
+            "F",
+            "C"
+          ],
+          "reasoning": "Response B gives a clear step-by-step logical breakdown that guides the reader through the riddle, explains the reasoning, and connects each clue explicitly, making it the most thorough and accessible answer."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "E",
+          "ranking": [
+            "E",
+            "D",
+            "A",
+            "F",
+            "B",
+            "C"
+          ],
+          "reasoning": "Response E presents the clearest, most concise step-by-step reasoning that walks through each clue logically without unnecessary padding, making it the most elegant demonstration of the reasoning process while arriving at the correct Monopoly answer."
+        },
+        "gemini/gemini-2.5-pro": {
+          "winner": "B",
+          "ranking": [
+            "B",
+            "A",
+            "D",
+            "E",
+            "F",
+            "C"
+          ],
+          "reasoning": "Response B provides the most comprehensive reasoning by first breaking down why the literal interpretation of the riddle doesn't work, which logically leads to the correct, non-literal solution."
+        }
+      },
+      "majority_winner": "B",
+      "majority_winner_model": "openai/gpt-4.1"
+    },
+    "code-1": {
+      "shuffle_mapping": {
+        "A": "openai/o4-mini",
+        "B": "anthropic/claude-haiku-4-5",
+        "C": "openai/gpt-4.1",
+        "D": "anthropic/claude-sonnet-4-6",
+        "E": "gemini/gemini-2.5-pro",
+        "F": "gemini/gemini-2.5-flash"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "E",
+          "ranking": [
+            "E",
+            "F",
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "reasoning": "Response E combines step-by-step reasoning through the recursion with clear indentation, explicit tracing of the base cases, and a coherent walk-through of substituting values, making it the most thorough and understandable explanation."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "F",
+          "ranking": [
+            "F",
+            "E",
+            "C",
+            "D",
+            "A",
+            "B"
+          ],
+          "reasoning": "Response F is the most thorough and clearly structured, explicitly showing each recursive call with the substitution arithmetic, identifying the Fibonacci pattern, and presenting both the expansion and substitution phases in a clean, readable format."
+        },
+        "gemini/gemini-2.5-pro": {
+          "winner": "F",
+          "ranking": [
+            "F",
+            "E",
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "reasoning": "Response F is the winner because it provides the most comprehensive and pedagogically sound explanation, breaking down each recursive call with its specific logic before clearly showing how the results are substituted back up the chain."
+        }
+      },
+      "majority_winner": "F",
+      "majority_winner_model": "gemini/gemini-2.5-flash"
+    },
+    "ambiguity-1": {
+      "shuffle_mapping": {
+        "A": "gemini/gemini-2.5-pro",
+        "B": "openai/o4-mini",
+        "C": "anthropic/claude-sonnet-4-6",
+        "D": "gemini/gemini-2.5-flash",
+        "E": "anthropic/claude-haiku-4-5",
+        "F": "openai/gpt-4.1"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "B",
+          "ranking": [
+            "B",
+            "A",
+            "F",
+            "E",
+            "C",
+            "D"
+          ],
+          "reasoning": "Response B provides clear step-by-step reasoning that explicitly rules out the alternative interpretation, demonstrating the strongest logical clarity among all responses."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "A",
+          "ranking": [
+            "A",
+            "B",
+            "F",
+            "E",
+            "C",
+            "D"
+          ],
+          "reasoning": "Response A provides the clearest step-by-step reasoning including the key logical elimination (if the suitcase were too big, the trophy would fit), making the answer both correct and well-justified."
+        },
+        "gemini/gemini-2.5-pro": {
+          "winner": "F",
+          "ranking": [
+            "F",
+            "A",
+            "B",
+            "E",
+            "C",
+            "D"
+          ],
+          "reasoning": "Response F provides the most comprehensive and explicit step-by-step logical breakdown, articulating the general principle that resolves the pronoun's ambiguity, making it the most well-reasoned response."
+        }
+      },
+      "majority_winner": "B",
+      "majority_winner_model": "openai/o4-mini"
+    },
+    "common-sense-1": {
+      "shuffle_mapping": {
+        "A": "anthropic/claude-sonnet-4-6",
+        "B": "anthropic/claude-haiku-4-5",
+        "C": "gemini/gemini-2.5-flash",
+        "D": "openai/o4-mini",
+        "E": "gemini/gemini-2.5-pro",
+        "F": "openai/gpt-4.1"
+      },
+      "judges": {
+        "openai/gpt-4.1": {
+          "winner": "F",
+          "ranking": [
+            "F",
+            "A",
+            "B",
+            "E",
+            "D",
+            "C"
+          ],
+          "reasoning": "Response F clearly explains both the mathematical and riddle interpretations, providing thorough reasoning, while the others each focus on only one perspective or provide less clarity and detail."
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "winner": "A",
+          "ranking": [
+            "A",
+            "F",
+            "B",
+            "D",
+            "E",
+            "C"
+          ],
+          "reasoning": "Response A wins because it gives the mathematically correct answer of 5 times as the primary answer while also acknowledging the riddle interpretation as a secondary note, striking the best balance of correctness and awareness\u2014whereas C, D, and E commit fully to the riddle trick answer as if it were definitively correct, and F and B are solid but F is overly verbose and B ignores the riddle angle entirely."
+        },
+        "gemini/gemini-2.5-pro": {
+          "winner": "F",
+          "ranking": [
+            "F",
+            "A",
+            "B",
+            "D",
+            "E",
+            "C"
+          ],
+          "reasoning": "Response F is the winner because it is the only one that comprehensively addresses both the mathematical and the classic riddle interpretations of the question, providing clear and separate explanations for each."
+        }
+      },
+      "majority_winner": "F",
+      "majority_winner_model": "openai/gpt-4.1"
+    }
+  }
+}
