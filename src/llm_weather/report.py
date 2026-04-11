@@ -72,7 +72,11 @@ def detect_drift(
 
 
 def model_status(scorecard: dict[str, dict], drift: list[dict]) -> dict[str, str]:
-    status = {model: "stable" for model in scorecard}
+    # Exclude models with no valid evaluations (all None scores)
+    status = {}
+    for model, prompts in scorecard.items():
+        if any(entry.get("score") is not None for entry in prompts.values()):
+            status[model] = "stable"
     for d in drift:
         model = d["model"]
         if model not in status:
