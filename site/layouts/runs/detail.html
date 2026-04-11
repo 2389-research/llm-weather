@@ -1,0 +1,10 @@
+{{ define "main" }}
+<p class="text-sm text-text-tertiary mb-1">
+  <a href="/runs/{{ .Params.parent_run }}/">← Back to run</a>
+</p>
+<h1>{{ .Date.Format "January 2, 2006 — 3:04 PM UTC" }} — Detail</h1>
+
+<div class="prose prose-stone max-w-none">
+{{ .Content }}
+</div>
+{{ end }}

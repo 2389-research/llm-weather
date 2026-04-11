@@ -2,10 +2,13 @@
 # ABOUTME: Uses multiple judge models with majority vote on correctness, averaged scores.
 
 import json
+import logging
 import re
 from pathlib import Path
 
 from litellm import completion
+
+logger = logging.getLogger("llm_weather.judge")
 
 EVAL_PROMPT = """Evaluate this response to a reasoning question.
 
@@ -30,13 +33,21 @@ def parse_evaluation_response(text: str) -> dict:
 
 
 def evaluate_single(question: str, response: str, judge_model: str) -> dict:
+    logger.info("Judging with %s", judge_model)
+    logger.debug("Question: %s", question[:100])
+    logger.debug("Response being judged: %s", response[:200])
     prompt = EVAL_PROMPT.format(question=question, response=response)
     result = completion(
         model=judge_model,
         messages=[{"role": "user", "content": prompt}],
     )
     content = result.choices[0].message.content
-    return parse_evaluation_response(content)
+    parsed = parse_evaluation_response(content)
+    logger.info(
+        "Verdict from %s: correct=%s score=%s reason=%s",
+        judge_model, parsed["correct"], parsed["score"], parsed["reasoning"][:100],
+    )
+    return parsed
 
 
 def majority_correct(verdicts: dict[str, dict]) -> bool:
@@ -92,11 +103,17 @@ def evaluate_all(responses_data: dict, judges: list[str], run_dir: Path) -> dict
                 k: v for k, v in all_verdicts.items() if "error" not in v
             }
             if valid_verdicts:
+                mc = majority_correct(valid_verdicts)
+                avg = average_score(valid_verdicts)
+                logger.info(
+                    "=== %s | %s: correct=%s avg_score=%s (%d verdicts) ===",
+                    prompt_id, model, mc, avg, len(valid_verdicts),
+                )
                 evaluations[model] = {
                     "samples": sample_details,
                     "judges": all_verdicts,
-                    "majority_correct": majority_correct(valid_verdicts),
-                    "avg_score": average_score(valid_verdicts),
+                    "majority_correct": mc,
+                    "avg_score": avg,
                 }
             else:
                 evaluations[model] = {

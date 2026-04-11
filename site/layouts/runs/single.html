@@ -40,8 +40,12 @@
 
 <h2>Raw Data</h2>
 <ul class="data-links">
+  <li><a href="/runs/{{ .Title }}-detail/">Detail log</a> — full responses and judge verdicts per prompt</li>
   <li><a href="{{ .RelPermalink }}data.json">JSON</a> — structured data for programmatic access</li>
   <li><a href="{{ .RelPermalink }}report.md">Markdown</a> — plain text report</li>
+  <li><a href="/runs/{{ .Title }}/responses.json">responses.json</a> — raw model outputs</li>
+  <li><a href="/runs/{{ .Title }}/judgments.json">judgments.json</a> — raw judge verdicts</li>
+  <li><a href="/runs/{{ .Title }}/run.log">run.log</a> — debug log</li>
   <li><a href="/skill.md">Agent Skill</a> — how to read and interpret this data</li>
 </ul>
 {{ end }}

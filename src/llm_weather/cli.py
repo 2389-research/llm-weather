@@ -2,13 +2,15 @@
 # ABOUTME: Provides run, report, and publish commands.
 
 import json
+import logging
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
 import click
 
 from llm_weather.config import filter_available_models, load_models, load_prompts
-from llm_weather.hugo import generate_hugo_content, write_hugo_page
+from llm_weather.hugo import generate_hugo_content, generate_hugo_detail, write_hugo_page
 from llm_weather.judge import evaluate_all
 from llm_weather.report import (
     build_scorecard,
@@ -42,6 +44,16 @@ def find_previous_scorecard(runs_dir: Path, current_run_id: str) -> dict | None:
     if "evaluations" in str(prev_judgments):
         return build_scorecard(prev_judgments)
     return None
+
+
+def _copy_run_data(run_dir: Path, site_dir: Path, run_id: str) -> None:
+    """Copy raw JSON and log files to Hugo static directory for serving."""
+    static_run_dir = site_dir / "static" / "runs" / run_id
+    static_run_dir.mkdir(parents=True, exist_ok=True)
+    for filename in ["responses.json", "judgments.json", "run.log"]:
+        src = run_dir / filename
+        if src.exists():
+            shutil.copy2(src, static_run_dir / filename)
 
 
 @click.group()
@@ -104,6 +116,22 @@ def run(ctx, prompts, models, samples):
     run_dir = runs_dir / run_id
     run_dir.mkdir(parents=True)
 
+    # Set up debug logging to file
+    log_path = run_dir / "run.log"
+    file_handler = logging.FileHandler(log_path)
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(
+        logging.Formatter("%(asctime)s %(name)s %(levelname)s %(message)s")
+    )
+    root_logger = logging.getLogger("llm_weather")
+    root_logger.setLevel(logging.DEBUG)
+    root_logger.addHandler(file_handler)
+    # Also log to stderr at INFO level
+    stream_handler = logging.StreamHandler()
+    stream_handler.setLevel(logging.INFO)
+    stream_handler.setFormatter(logging.Formatter("%(name)s %(message)s"))
+    root_logger.addHandler(stream_handler)
+
     click.echo(f"Starting run {run_id}")
     click.echo(f"  Prompts: {len(prompts_config)}")
     click.echo(f"  Contestants: {len(contestants)}")
@@ -138,6 +166,12 @@ def run(ctx, prompts, models, samples):
     )
     site_dir = root / "site"
     write_hugo_page(hugo_content, run_id, site_dir)
+
+    # Step 5: Copy raw data and generate detail page
+    _copy_run_data(run_dir, site_dir, run_id)
+    detail_content = generate_hugo_detail(run_id, judgments, responses)
+    detail_path = site_dir / "content" / "runs" / f"{run_id}-detail.md"
+    detail_path.write_text(detail_content)
 
     click.echo(f"\nDone! Results in {run_dir}")
 
@@ -181,6 +215,12 @@ def publish(ctx):
         with open(judgments_path) as f:
             judgments = json.load(f)
 
+        responses_path = run_dir / "responses.json"
+        responses = {}
+        if responses_path.exists():
+            with open(responses_path) as f:
+                responses = json.load(f)
+
         scorecard = build_scorecard(judgments)
         previous = find_previous_scorecard(runs_dir, run_dir.name)
         drift = detect_drift(scorecard, previous)
@@ -190,5 +230,12 @@ def publish(ctx):
             run_dir.name, scorecard, drift, headline, status, previous,
         )
         write_hugo_page(hugo_content, run_dir.name, site_dir)
+
+        # Copy raw data and generate detail page
+        _copy_run_data(run_dir, site_dir, run_dir.name)
+        if responses:
+            detail_content = generate_hugo_detail(run_dir.name, judgments, responses)
+            detail_path = site_dir / "content" / "runs" / f"{run_dir.name}-detail.md"
+            detail_path.write_text(detail_content)
 
     click.echo(f"Hugo content generated for {len(run_dirs)} runs in {site_dir}")
