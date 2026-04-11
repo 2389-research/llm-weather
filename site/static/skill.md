@@ -1,8 +1,3 @@
----
-title: "Agent Skill: Reading LLM Weather Reports"
-layout: skill
----
-
 # LLM Weather Report — Agent Skill
 
 You are reading results from the LLM Weather Report, a tool that tracks reasoning capability drift across LLM models over time.

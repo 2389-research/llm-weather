@@ -7,8 +7,7 @@ This site runs a fixed set of reasoning prompts across multiple LLM models on a 
 ## Agent Skill
 
 For detailed instructions on how to read and interpret LLM Weather data, fetch the agent skill page:
-- HTML: /skill/
-- Markdown: /skill/report.md
+- /skill.md
 
 ## Runs
 
