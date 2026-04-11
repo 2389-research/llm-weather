@@ -2,15 +2,17 @@
 
 {{ $runs := where .Site.RegularPages "Section" "runs" }}
 {{ $sorted := sort $runs "Date" "desc" }}
+
+{{ if $sorted }}
 {{ $latest := index $sorted 0 }}
 
 {{ with $latest }}
 <h1>Latest Report</h1>
-<p style="color: var(--text-tertiary); font-size: 0.84rem; margin-bottom: 0.25rem;">
-  <a href="{{ .RelPermalink }}">{{ .Date.Format "January 2, 2006 — 3:04 PM UTC" }}</a>
+<p class="text-text-tertiary text-base mb-1">
+  <a href="{{ .RelPermalink }}">{{ .Date.Format "January 2, 2006 — 3:04 PM CT" }}</a>
 </p>
 {{ with .Params.headline }}
-<p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>{{ . }}</strong></p>
+<p class="text-lg mb-3"><strong>{{ . }}</strong></p>
 {{ end }}
 
 {{ with .Params.drift }}
@@ -48,7 +50,9 @@
 {{ end }}
 
 {{ end }}
+{{ end }}
 
+{{ if $sorted }}
 <h2>Past Reports</h2>
 <ul class="run-list">
 {{ range $sorted }}
@@ -61,6 +65,10 @@
   </li>
 {{ end }}
 </ul>
+{{ else }}
+<h1>LLM Weather Report</h1>
+<p class="text-text-secondary">No runs yet. The next scheduled run will appear here automatically.</p>
+{{ end }}
 
 <h2>For Agents</h2>
 <ul class="data-links">

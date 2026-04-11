@@ -1,7 +1,7 @@
 {{ define "main" }}
-<h1>{{ .Date.Format "January 2, 2006 — 3:04 PM UTC" }}</h1>
+<h1>{{ .Date.Format "January 2, 2006 — 3:04 PM CT" }}</h1>
 {{ with .Params.headline }}
-<p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>{{ . }}</strong></p>
+<p class="text-lg mb-3"><strong>{{ . }}</strong></p>
 {{ end }}
 
 {{ with .Params.drift }}

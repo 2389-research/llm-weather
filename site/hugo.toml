@@ -1,6 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "LLM Weather Report"
+timeZone = "America/Chicago"
 
 [params]
   description = "Tracking reasoning capability drift across LLM models"
