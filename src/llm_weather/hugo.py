@@ -67,7 +67,9 @@ def generate_hugo_detail(run_id: str, judgments: dict, responses: dict) -> str:
 
         # Show responses
         resp_data = r_data.get("responses", {})
-        for model, samples in resp_data.items():
+        model_list = list(resp_data.keys())
+        for mi, model in enumerate(model_list):
+            samples = resp_data[model]
             if isinstance(samples, dict):
                 samples = [samples]
             for i, resp in enumerate(samples):
@@ -83,6 +85,9 @@ def generate_hugo_detail(run_id: str, judgments: dict, responses: dict) -> str:
                     lines.append("```")
                     lines.append(resp["content"])
                     lines.append("```")
+                lines.append("")
+            if mi < len(model_list) - 1:
+                lines.append("---")
                 lines.append("")
 
         # Show judge verdicts
