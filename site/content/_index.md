@@ -2,12 +2,12 @@
 title: "LLM Weather Report"
 ---
 
-Model providers ship updates constantly — weight adjustments, system prompt changes, quantization tweaks, infrastructure migrations. Most of these changes are silent. No changelog, no announcement. But they can alter how a model reasons.
+Model providers push updates all the time. Weight tweaks, system prompt changes, quantization experiments, infrastructure swaps. Almost none of it gets announced. You just wake up one morning and GPT handles a logic puzzle differently than it did last week.
 
-The LLM Weather Report catches these changes. Six times a day, we send the same fixed set of reasoning prompts to major LLM endpoints and score the responses. When a model that correctly solved a logic puzzle yesterday starts failing today, we flag it. When reasoning quality degrades even though the answer is still technically correct, we flag that too.
+We got tired of not knowing when this happened. So we built something simple: six times a day, we send the same seven reasoning prompts to a handful of major models and score what comes back. Same prompts, same grading, every four hours. When something changes, we publish it here.
 
-This is not a benchmark or a leaderboard. We are not comparing models against each other. We are tracking whether each model stays consistent with itself over time — a weather report for reasoning capability, not a horse race.
+This isn't a leaderboard. We don't care which model is "best." We care whether each model is the same as it was yesterday. Think of it as a weather report: not a competition, just a reading of current conditions.
 
-Every evaluation hits the raw API endpoint directly. No agents, no tool use, no retrieval, no multi-turn conversation. Just a single system prompt ("Answer the following question. Think step by step.") and one user message. This isolates the model's own reasoning from any scaffolding built around it.
+We also test the raw endpoint, not an agent stack. One system prompt, one user message, one API call. No tools, no retrieval, no chain-of-thought scaffolding. If a model starts failing a basic syllogism, that's the model, not some middleware bug.
 
-All data is open. Every run publishes its full scorecard, raw model responses, judge verdicts, and drift alerts in HTML, JSON, Markdown, and plain text. The source code, prompts, and evaluation methodology are public on GitHub. If you want to verify a result or run your own analysis, everything you need is here.
+Everything is open. Raw responses, judge verdicts, scorecard data, source code. If you want to check our work or run your own analysis, it's all on [GitHub](https://github.com/2389-research/llm-weather).
