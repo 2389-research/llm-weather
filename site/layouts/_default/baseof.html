@@ -220,13 +220,13 @@
         </p>
       </div>
       <nav class="flex items-center gap-5 pb-3 font-display text-xs uppercase tracking-widest text-text-secondary max-sm:gap-3 max-sm:text-[0.6rem]">
-        <a href="/" class="text-text-secondary hover:text-text no-underline{{ if .IsHome }} text-text font-bold{{ end }}">Dashboard</a>
-        <a href="/about/" class="text-text-secondary hover:text-text no-underline{{ if eq .RelPermalink "/about/" }} text-text font-bold{{ end }}">Methodology</a>
-        <a href="/skill.md" class="text-text-secondary hover:text-text no-underline">Agent Skill</a>
+        <a href="/" class="text-text-secondary hover:text-text no-underline{{ if .IsHome }} text-text font-bold{{ end }}" data-tinylytics-event="nav.dashboard">Dashboard</a>
+        <a href="/about/" class="text-text-secondary hover:text-text no-underline{{ if eq .RelPermalink "/about/" }} text-text font-bold{{ end }}" data-tinylytics-event="nav.methodology">Methodology</a>
+        <a href="/skill.md" class="text-text-secondary hover:text-text no-underline" data-tinylytics-event="nav.skill">Agent Skill</a>
         <span class="ml-auto flex items-center gap-3 max-sm:gap-2">
-          <a href="/index.xml" class="text-text-secondary hover:text-text no-underline" title="RSS Feed">RSS</a>
-          <a href="https://github.com/2389-research/llm-weather" class="text-text-secondary hover:text-text no-underline" title="Source on GitHub">GitHub</a>
-          <a href="https://2389.ai" class="text-text-tertiary hover:text-text no-underline">2389.ai</a>
+          <a href="/index.xml" class="text-text-secondary hover:text-text no-underline" title="RSS Feed" data-tinylytics-event="nav.rss">RSS</a>
+          <a href="https://github.com/2389-research/llm-weather" class="text-text-secondary hover:text-text no-underline" title="Source on GitHub" data-tinylytics-event="outbound.github">GitHub</a>
+          <a href="https://2389.ai" class="text-text-tertiary hover:text-text no-underline" data-tinylytics-event="outbound.2389">2389.ai</a>
         </span>
       </nav>
     </div>
@@ -243,6 +243,6 @@
       <a href="/skill.md" class="text-text-secondary hover:underline">Agent API</a>
     </div>
   </footer>
-  <script src="https://tinylytics.app/embed/ZT6hKsPDxyH7qrXVrBqm.js" defer></script>
+  <script src="https://tinylytics.app/embed/ZT6hKsPDxyH7qrXVrBqm.js?events" defer></script>
 </body>
 </html>
