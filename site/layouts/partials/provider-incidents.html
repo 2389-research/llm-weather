@@ -1,0 +1,13 @@
+{{/* Display provider status incidents. Pass the incidents list as context. */}}
+{{ with . }}
+<div class="drift-alerts" style="border-left-color: #B8860B;">
+  <ul>
+  {{ range . }}
+    <li>
+      <span class="drift-tag score-drop">{{ .provider }}</span>
+      {{ if .link }}<a href="{{ .link }}" class="text-text hover:underline font-semibold" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}<strong>{{ .title }}</strong>{{ end }}
+    </li>
+  {{ end }}
+  </ul>
+</div>
+{{ end }}

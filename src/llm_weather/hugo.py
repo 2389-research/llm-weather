@@ -24,6 +24,7 @@ def generate_hugo_content(
     headline: str = "",
     status: dict[str, str] | None = None,
     previous: dict[str, dict] | None = None,
+    provider_incidents: list[dict] | None = None,
 ) -> str:
     frontmatter = {
         "title": run_id,
@@ -35,6 +36,8 @@ def generate_hugo_content(
         "drift": drift,
         "previous": previous or {},
     }
+    if provider_incidents:
+        frontmatter["provider_incidents"] = provider_incidents
 
     lines = ["---"]
     lines.append(yaml.dump(frontmatter, default_flow_style=False).strip())

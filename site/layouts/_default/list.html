@@ -107,6 +107,11 @@
 </div>
 {{ end }}
 
+{{ with .Params.provider_incidents }}
+<h2>Provider Status</h2>
+{{ partial "provider-incidents.html" . }}
+{{ end }}
+
 {{ with .Params.scorecard }}
 <h2>Scorecard</h2>
 {{ partial "scorecard-table.html" (dict "scorecard" . "previous" ($latest.Params.previous | default dict)) }}

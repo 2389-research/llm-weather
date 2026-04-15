@@ -20,6 +20,7 @@ from llm_weather.report import (
     write_reports,
 )
 from llm_weather.runner import run_all
+from llm_weather.status import fetch_provider_status, status_for_frontmatter
 
 
 def get_project_root() -> Path:
@@ -157,17 +158,27 @@ def run(ctx, prompts, models, samples):
     drift = detect_drift(scorecard, previous)
     write_reports(judgments, responses, scorecard, drift, run_dir)
 
-    # Step 4: Hugo content
+    # Step 4: Fetch provider status
+    click.echo("Checking provider status feeds...")
+    provider_status = fetch_provider_status()
+    provider_incidents = status_for_frontmatter(provider_status)
+    if provider_incidents:
+        click.echo(f"  {len(provider_incidents)} recent incident(s) found")
+    else:
+        click.echo("  No recent incidents")
+
+    # Step 5: Hugo content
     click.echo("Generating Hugo content...")
     headline = generate_headline(scorecard, drift)
     status = model_status(scorecard, drift)
     hugo_content = generate_hugo_content(
         run_id, scorecard, drift, headline, status, previous,
+        provider_incidents=provider_incidents,
     )
     site_dir = root / "site"
     write_hugo_page(hugo_content, run_id, site_dir)
 
-    # Step 5: Copy raw data and generate detail page
+    # Step 6: Copy raw data and generate detail page
     _copy_run_data(run_dir, site_dir, run_id)
     detail_content = generate_hugo_detail(run_id, judgments, responses)
     detail_path = site_dir / "content" / "runs" / f"{run_id}-detail.md"
