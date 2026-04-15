@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ .Title }} — LLM Weather Report</title>
+  <title>{{ .Title }} — LLM Weather - 2389 Research, Inc</title>
   <meta name="description" content="{{ with .Params.headline }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <link rel="canonical" href="{{ .Permalink }}">
   {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="LLM Weather Report" href="{{ .Permalink }}">{{ end }}
   {{- $desc := .Site.Params.description -}}
   {{- with .Params.headline }}{{ $desc = . }}{{ end -}}
-  <meta property="og:title" content="{{ .Title }} — LLM Weather Report">
+  <meta property="og:title" content="{{ .Title }} — LLM Weather - 2389 Research, Inc">
   <meta property="og:description" content="{{ $desc }}">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:site_name" content="LLM Weather Report">
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ .Title }} — LLM Weather Report">
+  <meta name="twitter:title" content="{{ .Title }} — LLM Weather - 2389 Research, Inc">
   <meta name="twitter:description" content="{{ $desc }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
