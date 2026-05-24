@@ -1,0 +1,2616 @@
+{
+  "run_id": "2026-05-24T01-46-33",
+  "prompts": {
+    "logic-1": {
+      "prompt": "If all bloops are razzies and all razzies are lazzies, are all bloops lazzies?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies the transitive property of syllogistic logic, clearly chains the two premises together, and arrives at the correct conclusion that all bloops are lazzies."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly answers the question with a clear, step-by-step logical breakdown and accurately identifies the underlying principle of transitivity."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive reasoning/syllogism logic, clearly explains each step, uses set notation to formalize the argument, and arrives at the correct conclusion."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is exceptionally clear, not only walking through the logical steps correctly but also identifying the formal name and structure of the argument."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies the transitive property of syllogistic logic, clearly chains the two premises together, and arrives at the correct conclusion that all bloops are lazzies."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly answers the question with a clear, step-by-step logical breakdown and accurately identifies the underlying principle of transitivity."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive reasoning/syllogism logic, clearly explains each step, uses set notation to formalize the argument, and arrives at the correct conclusion."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is exceptionally clear, not only walking through the logical steps correctly but also identifying the formal name and structure of the argument."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive reasoning/syllogism, clearly lays out both premises, draws the valid conclusion, and accurately identifies the logical principle at work."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it correctly deconstructs the premises, states the valid conclusion, and accurately identifies the formal logical principle (syllogism) that justifies the answer."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the transitive relationship between the three categories, clearly states the premises, applies syllogistic logic accurately, and arrives at the correct conclusion that all bloops are lazzies."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response is flawless; it correctly answers the question, breaks down the premises, and accurately identifies the logical structure as a syllogism."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive reasoning/syllogism, clearly lays out both premises, draws the valid conclusion, and accurately identifies the logical principle at work."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it correctly deconstructs the premises, states the valid conclusion, and accurately identifies the formal logical principle (syllogism) that justifies the answer."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the transitive relationship between the three categories, clearly states the premises, applies syllogistic logic accurately, and arrives at the correct conclusion that all bloops are lazzies."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is flawless; it correctly answers the question, breaks down the premises, and accurately identifies the logical structure as a syllogism."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive reasoning, clearly states the logical steps, and even provides a formal set theory notation to support the conclusion."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response is excellent because it correctly answers the question, clearly lays out the premises and conclusion, and accurately identifies the logical principle of transitivity."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive logic, clearly walks through each premise, reaches the right conclusion, and even provides a formal set theory notation to support the reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent; it is logically flawless, clearly structured, and correctly identifies the principle of transitivity."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive reasoning, clearly states the logical steps, and even provides a formal set theory notation to support the conclusion."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is excellent because it correctly answers the question, clearly lays out the premises and conclusion, and accurately identifies the logical principle of transitivity."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic, clearly walks through each premise, reaches the right conclusion, and even provides a formal set theory notation to support the reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent; it is logically flawless, clearly structured, and correctly identifies the principle of transitivity."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the transitive relationship between the three categories, provides clear step-by-step logical reasoning, and reinforces the conclusion with a helpful real-world analogy."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it correctly deduces the conclusion through a clear step-by-step process and reinforces the logic with a simple, effective analogy."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive logic, provides a clear step-by-step breakdown, and reinforces the abstract reasoning with a concrete real-world analogy that maps perfectly to the original premises."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly answers the question, provides a clear step-by-step logical deduction, and solidifies the concept with a perfect real-world analogy."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the transitive relationship between the three categories, provides clear step-by-step logical reasoning, and reinforces the conclusion with a helpful real-world analogy."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it correctly deduces the conclusion through a clear step-by-step process and reinforces the logic with a simple, effective analogy."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic, provides a clear step-by-step breakdown, and reinforces the abstract reasoning with a concrete real-world analogy that maps perfectly to the original premises."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly answers the question, provides a clear step-by-step logical deduction, and solidifies the concept with a perfect real-world analogy."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive logic, arrives at the right conclusion, and clearly explains the reasoning using set containment with a well-structured visual breakdown."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it correctly identifies the logical principle of transitivity and explains it perfectly using the clear analogy of set inclusion."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive logic to conclude all bloops are lazzies, with a clear step-by-step explanation of the syllogism."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the conclusion and provides a flawless, step-by-step breakdown of the deductive reasoning involved."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic, arrives at the right conclusion, and clearly explains the reasoning using set containment with a well-structured visual breakdown."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it correctly identifies the logical principle of transitivity and explains it perfectly using the clear analogy of set inclusion."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic to conclude all bloops are lazzies, with a clear step-by-step explanation of the syllogism."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the conclusion and provides a flawless, step-by-step breakdown of the deductive reasoning involved."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "math-1": {
+      "prompt": "A bat and a ball cost $1.10 together. The bat costs $1 more than the ball. How much does the ball cost?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up and solves the algebraic equation, arrives at the right answer of $0.05, verifies both conditions, and even addresses the common intuitive mistake of answering $0.10."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response provides a flawless, step-by-step algebraic solution, verifies the answer against both conditions, and explains the common cognitive trap, making it exceptionally clear and thorough."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up and solves the algebraic equation, arrives at the right answer of $0.05, verifies the solution, and even addresses the common intuitive mistake of answering $0.10."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response provides a flawless step-by-step algebraic solution, verifies the answer against both conditions, and demonstrates deeper understanding by addressing the common cognitive error."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up and solves the algebraic equation, arrives at the right answer of $0.05, verifies both conditions, and even addresses the common intuitive mistake of answering $0.10."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides a flawless, step-by-step algebraic solution, verifies the answer against both conditions, and explains the common cognitive trap, making it exceptionally clear and thorough."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up and solves the algebraic equation, arrives at the right answer of $0.05, verifies the solution, and even addresses the common intuitive mistake of answering $0.10."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides a flawless step-by-step algebraic solution, verifies the answer against both conditions, and demonstrates deeper understanding by addressing the common cognitive error."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up a system of equations, solves them accurately to get $0.05, verifies the answer, and even addresses the common intuitive mistake of answering $0.10."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response is excellent because it provides a flawless step-by-step algebraic solution, verifies the final answer, and proactively addresses the common misconception associated with this problem."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly solves the problem using algebraic substitution, arrives at the right answer of $0.05, verifies the solution, and even addresses the common intuitive mistake of answering $0.10."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response provides a flawless algebraic breakdown, verifies the answer, and explains the common intuitive error, making the reasoning exceptionally clear and thorough."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up a system of equations, solves them accurately to get $0.05, verifies the answer, and even addresses the common intuitive mistake of answering $0.10."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is excellent because it provides a flawless step-by-step algebraic solution, verifies the final answer, and proactively addresses the common misconception associated with this problem."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly solves the problem using algebraic substitution, arrives at the right answer of $0.05, verifies the solution, and even addresses the common intuitive mistake of answering $0.10."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides a flawless algebraic breakdown, verifies the answer, and explains the common intuitive error, making the reasoning exceptionally clear and thorough."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up two equations, solves them systematically by substitution, arrives at the correct answer of $0.05, and verifies the solution by checking both conditions."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly translates the word problem into a system of equations, solves them logically and clearly, and verifies the final answer."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up algebraic equations, solves systematically for b = $0.05, and verifies the answer satisfies both constraints (total $1.10 and bat costing exactly $1 more than the ball)."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the variables, sets up the proper algebraic equation, solves it step-by-step, and verifies the final answer."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up two equations, solves them systematically by substitution, arrives at the correct answer of $0.05, and verifies the solution by checking both conditions."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly translates the word problem into a system of equations, solves them logically and clearly, and verifies the final answer."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up algebraic equations, solves systematically for b = $0.05, and verifies the answer satisfies both constraints (total $1.10 and bat costing exactly $1 more than the ball)."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the variables, sets up the proper algebraic equation, solves it step-by-step, and verifies the final answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the answer as $0.05, provides clear verification that the values satisfy both constraints, and proactively addresses the common misconception of $0.10 with a logical explanation of why it fails."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response provides the correct answer and a clear explanation, including addressing the common incorrect guess, but it verifies the answer rather than showing the algebraic derivation."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response is fully correct, clearly identifies and explains the common intuitive mistake, provides a logical step-by-step algebraic solution, and verifies the answer with a final check."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it not only provides the correct step-by-step derivation but also preemptively addresses and explains the common intuitive mistake."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the answer as $0.05, provides clear verification that the values satisfy both constraints, and proactively addresses the common misconception of $0.10 with a logical explanation of why it fails."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response provides the correct answer and a clear explanation, including addressing the common incorrect guess, but it verifies the answer rather than showing the algebraic derivation."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is fully correct, clearly identifies and explains the common intuitive mistake, provides a logical step-by-step algebraic solution, and verifies the answer with a final check."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it not only provides the correct step-by-step derivation but also preemptively addresses and explains the common intuitive mistake."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.75
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up a system of two equations, solves algebraically step-by-step, arrives at the correct answer of $0.05, and verifies the solution \u2014 demonstrating clear and thorough reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response demonstrates flawless reasoning by methodically translating the problem into algebraic equations, solving them step-by-step, and verifying the result."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up two equations, substitutes systematically, solves for the ball's cost as $0.05, and verifies the answer\u2014demonstrating clear, accurate, and well-structured reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response provides a flawless step-by-step algebraic solution, correctly defines variables, solves the equations, and verifies the result."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up a system of two equations, solves algebraically step-by-step, arrives at the correct answer of $0.05, and verifies the solution \u2014 demonstrating clear and thorough reasoning."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response demonstrates flawless reasoning by methodically translating the problem into algebraic equations, solving them step-by-step, and verifying the result."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up two equations, substitutes systematically, solves for the ball's cost as $0.05, and verifies the answer\u2014demonstrating clear, accurate, and well-structured reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides a flawless step-by-step algebraic solution, correctly defines variables, solves the equations, and verifies the result."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "spatial-1": {
+      "prompt": "I'm facing north. I turn right. I turn right again. I turn left. What direction am I facing?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks the direction through each sequential turn, providing a clear, step-by-step breakdown that is logical and easy to follow."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step-by-step, arriving at the right answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response methodically breaks down the problem into a clear, step-by-step sequence of turns, leading logically to the correct final direction."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks the direction through each sequential turn, providing a clear, step-by-step breakdown that is logical and easy to follow."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, arriving at the right answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response methodically breaks down the problem into a clear, step-by-step sequence of turns, leading logically to the correct final direction."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly solves the problem with a perfect, step-by-step breakdown of each directional turn, making the logic exceptionally clear."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly breaks down the problem into a clear, sequential, and easy-to-follow process, with each step logically leading to the next."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly solves the problem with a perfect, step-by-step breakdown of each directional turn, making the logic exceptionally clear."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly breaks down the problem into a clear, sequential, and easy-to-follow process, with each step logically leading to the next."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step-by-step, arriving at the right answer of East, with clear and accurate reasoning throughout."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response perfectly breaks down the problem into a clear, sequential, and accurate series of steps that are flawless and easy to follow."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly traces each turn step by step, arriving at the correct final direction of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is flawless, breaking the problem down into a clear, correct, and easy-to-follow sequence of steps."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, arriving at the right answer of East, with clear and accurate reasoning throughout."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response perfectly breaks down the problem into a clear, sequential, and accurate series of steps that are flawless and easy to follow."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces each turn step by step, arriving at the correct final direction of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is flawless, breaking the problem down into a clear, correct, and easy-to-follow sequence of steps."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step by step, arriving at the correct final answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly breaks the problem into a clear, sequential list of steps, with each logical step accurately reflecting the directional change."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly traces each turn step by step, arriving at the right answer of East, with clear and accurate reasoning throughout."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response breaks the problem down into a flawless, sequential, and easy-to-follow series of logical steps that lead to the correct conclusion."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step by step, arriving at the correct final answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly breaks the problem into a clear, sequential list of steps, with each logical step accurately reflecting the directional change."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces each turn step by step, arriving at the right answer of East, with clear and accurate reasoning throughout."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response breaks the problem down into a flawless, sequential, and easy-to-follow series of logical steps that lead to the correct conclusion."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East, with clear and accurate reasoning throughout."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response uses a perfect step-by-step method that clearly and accurately tracks each turn to arrive at the correct final direction."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step-by-step, arriving at the right answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response provides a perfectly clear, accurate, and logical step-by-step breakdown of the directional changes to arrive at the correct answer."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East, with clear and accurate reasoning throughout."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response uses a perfect step-by-step method that clearly and accurately tracks each turn to arrive at the correct final direction."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, arriving at the right answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides a perfectly clear, accurate, and logical step-by-step breakdown of the directional changes to arrive at the correct answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "causality-1": {
+      "prompt": "A man pushes his car to a hotel and loses his fortune. What happened?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the Monopoly solution, clearly explains all three elements of the riddle (car token, hotel property, losing fortune through rent), and demonstrates solid lateral thinking by recognizing the non-literal context."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the classic riddle's solution and provides an excellent, step-by-step explanation that logically maps each element of the question to the context of a Monopoly game."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Monopoly solution and explains all key elements (car token, hotel, losing fortune/going bankrupt), though the 'step by step' framing is slightly misleading since it jumps directly to the answer without showing genuine reasoning steps."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the non-literal context of the riddle and perfectly maps each ambiguous phrase to a specific mechanic within the game of Monopoly."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Monopoly solution, clearly explains all three elements of the riddle (car token, hotel property, losing fortune through rent), and demonstrates solid lateral thinking by recognizing the non-literal context."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic riddle's solution and provides an excellent, step-by-step explanation that logically maps each element of the question to the context of a Monopoly game."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly solution and explains all key elements (car token, hotel, losing fortune/going bankrupt), though the 'step by step' framing is slightly misleading since it jumps directly to the answer without showing genuine reasoning steps."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the non-literal context of the riddle and perfectly maps each ambiguous phrase to a specific mechanic within the game of Monopoly."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.75
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Monopoly solution and explains the mechanics clearly, though it's a straightforward recognition of a well-known puzzle rather than demonstrated reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the question as a lateral thinking puzzle and provides the classic, accurate solution with a clear and logical explanation."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Monopoly solution and explains the key elements (car token, hotel, losing fortune), though it's slightly verbose for what is a well-known lateral thinking puzzle."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it flawlessly deconstructs the puzzle, clearly explaining how each seemingly illogical phrase maps perfectly to the rules and pieces of the game Monopoly."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly solution and explains the mechanics clearly, though it's a straightforward recognition of a well-known puzzle rather than demonstrated reasoning."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the question as a lateral thinking puzzle and provides the classic, accurate solution with a clear and logical explanation."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly solution and explains the key elements (car token, hotel, losing fortune), though it's slightly verbose for what is a well-known lateral thinking puzzle."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it flawlessly deconstructs the puzzle, clearly explaining how each seemingly illogical phrase maps perfectly to the rules and pieces of the game Monopoly."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Monopoly riddle and explains the key elements (car token, hotel, paying rent/losing fortune), though it's slightly verbose for what is a well-known classic riddle."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the question as a riddle and provides a clear, complete explanation that logically connects every element of the riddle to the game of Monopoly."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Monopoly answer and provides a clear, accurate explanation of how the riddle's elements map to the game, though the explanation is somewhat verbose for a simple riddle."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the classic answer and provides an excellent, well-structured explanation of how each element of the riddle maps to the game of Monopoly."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly riddle and explains the key elements (car token, hotel, paying rent/losing fortune), though it's slightly verbose for what is a well-known classic riddle."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the question as a riddle and provides a clear, complete explanation that logically connects every element of the riddle to the game of Monopoly."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly answer and provides a clear, accurate explanation of how the riddle's elements map to the game, though the explanation is somewhat verbose for a simple riddle."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic answer and provides an excellent, well-structured explanation of how each element of the riddle maps to the game of Monopoly."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the Monopoly answer and provides clear, logical step-by-step reasoning that explains how each element of the riddle maps to the game context."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly solves the riddle with a clear, step-by-step explanation, although the formal structure is slightly excessive for such a well-known puzzle."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Monopoly riddle and provides accurate step-by-step reasoning explaining each element, though the breakdown is slightly verbose for what is a straightforward riddle solution."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly solves the riddle and presents a perfectly clear, step-by-step deconstruction of the double meanings that make the riddle work."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Monopoly answer and provides clear, logical step-by-step reasoning that explains how each element of the riddle maps to the game context."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly solves the riddle with a clear, step-by-step explanation, although the formal structure is slightly excessive for such a well-known puzzle."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly riddle and provides accurate step-by-step reasoning explaining each element, though the breakdown is slightly verbose for what is a straightforward riddle solution."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly solves the riddle and presents a perfectly clear, step-by-step deconstruction of the double meanings that make the riddle work."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": false,
+                  "score": 2,
+                  "reasoning": "This is a classic lateral thinking puzzle where the answer is that the man is playing Monopoly - he lands on a hotel and must pay rent, losing his fortune in the game, but the response instead constructs an elaborate real-world scenario involving gambling."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response provides a creative and logically coherent scenario, interpreting the riddle literally rather than solving for its intended non-literal answer."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": false,
+                  "score": 2,
+                  "reasoning": "The classic answer to this riddle is that the man is playing Monopoly - he lands on a hotel and must pay rent, losing his fortune - but the response instead fabricates a literal narrative about running out of gas and gambling, missing the intended puzzle solution entirely."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response presents a creative and logically plausible scenario, but it misses the intended, classic answer to the riddle, which is that the man was playing Monopoly."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": false,
+              "score": 2,
+              "reasoning": "This is a classic lateral thinking puzzle where the answer is that the man is playing Monopoly - he lands on a hotel and must pay rent, losing his fortune in the game, but the response instead constructs an elaborate real-world scenario involving gambling."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response provides a creative and logically coherent scenario, interpreting the riddle literally rather than solving for its intended non-literal answer."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": false,
+              "score": 2,
+              "reasoning": "The classic answer to this riddle is that the man is playing Monopoly - he lands on a hotel and must pay rent, losing his fortune - but the response instead fabricates a literal narrative about running out of gas and gambling, missing the intended puzzle solution entirely."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response presents a creative and logically plausible scenario, but it misses the intended, classic answer to the riddle, which is that the man was playing Monopoly."
+            }
+          },
+          "majority_correct": false,
+          "avg_score": 3.0
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "code-1": {
+      "prompt": "What does this function return for input 5? def f(n): return n if n <= 1 else f(n-1) + f(n-2)",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the Fibonacci function, accurately traces all recursive calls step by step, arrives at the correct answer of 5, and provides helpful context about the sequence."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning is clear and correct, but it demonstrates a bottom-up calculation rather than accurately tracing the top-down execution of the recursive calls."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces all recursive calls with proper base cases, arrives at the correct answer of 5, and provides helpful context about the sequence."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning is very clear and correct, providing a step-by-step calculation, but it explains the result using a bottom-up iterative approach rather than tracing the top-down recursive calls."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Fibonacci function, accurately traces all recursive calls step by step, arrives at the correct answer of 5, and provides helpful context about the sequence."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is clear and correct, but it demonstrates a bottom-up calculation rather than accurately tracing the top-down execution of the recursive calls."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces all recursive calls with proper base cases, arrives at the correct answer of 5, and provides helpful context about the sequence."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is very clear and correct, providing a step-by-step calculation, but it explains the result using a bottom-up iterative approach rather than tracing the top-down recursive calls."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the recursive Fibonacci function, systematically traces all base cases and recursive calls, builds back up accurately, and arrives at the correct answer of 5."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the function and traces the calls to find the right answer, but it simplifies the trace by not showing the redundant calculations inherent in this recursive implementation."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the function as a Fibonacci sequence, systematically traces the recursion from base cases upward, and arrives at the correct answer of 5."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response perfectly traces the recursive logic, breaking the problem down to its base cases and then correctly building the solution back up."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the recursive Fibonacci function, systematically traces all base cases and recursive calls, builds back up accurately, and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the function and traces the calls to find the right answer, but it simplifies the trace by not showing the redundant calculations inherent in this recursive implementation."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as a Fibonacci sequence, systematically traces the recursion from base cases upward, and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response perfectly traces the recursive logic, breaking the problem down to its base cases and then correctly building the solution back up."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.75
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the function as Fibonacci, traces through all recursive calls systematically, arrives at the correct answer of 5, and provides helpful context about the Fibonacci sequence indexing."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the function and traces the logic to the right answer, though its trace simplifies the actual recursive call stack by not showing redundant computations."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces all recursive calls with proper base cases, and arrives at the correct answer of 5."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the recursive pattern and reaches the correct conclusion, but the trace of the execution is confusingly structured and contains redundant steps."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, traces through all recursive calls systematically, arrives at the correct answer of 5, and provides helpful context about the Fibonacci sequence indexing."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the function and traces the logic to the right answer, though its trace simplifies the actual recursive call stack by not showing redundant computations."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces all recursive calls with proper base cases, and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the recursive pattern and reaches the correct conclusion, but the trace of the execution is confusingly structured and contains redundant steps."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces all recursive calls with proper base cases, and arrives at the correct answer of 5."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning correctly traces the recursive logic to find the right answer, but it simplifies the explanation by not showing the re-computation of intermediate values."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly traces the recursive execution step by step, arrives at the right answer of 5, and provides helpful context by identifying the function as a Fibonacci sequence implementation."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The step-by-step reasoning is clear and correct, but it simplifies the trace by implying results are reused (e.g., \"We already calculated this\") when the code would actually recompute them from scratch."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces all recursive calls with proper base cases, and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning correctly traces the recursive logic to find the right answer, but it simplifies the explanation by not showing the re-computation of intermediate values."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces the recursive execution step by step, arrives at the right answer of 5, and provides helpful context by identifying the function as a Fibonacci sequence implementation."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The step-by-step reasoning is clear and correct, but it simplifies the trace by implying results are reused (e.g., \"We already calculated this\") when the code would actually recompute them from scratch."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the function as Fibonacci, traces the execution accurately step by step, and arrives at the correct answer of 5."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the function's purpose and accurately traces the recursive calls and base cases to arrive at the correct answer, but the linear trace simplifies the true, branching nature of the recursion."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly traces the recursive Fibonacci function step by step, accurately computes all intermediate values, and arrives at the correct answer of 5 with clear and well-organized reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response provides an excellent and complete explanation by correctly tracing the function, calculating the result from the base cases up, and also identifying the underlying mathematical sequence."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, traces the execution accurately step by step, and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the function's purpose and accurately traces the recursive calls and base cases to arrive at the correct answer, but the linear trace simplifies the true, branching nature of the recursion."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces the recursive Fibonacci function step by step, accurately computes all intermediate values, and arrives at the correct answer of 5 with clear and well-organized reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides an excellent and complete explanation by correctly tracing the function, calculating the result from the base cases up, and also identifying the underlying mathematical sequence."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.75
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "ambiguity-1": {
+      "prompt": "The trophy doesn't fit in the suitcase because it's too big. What is too big?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the trophy as too big and provides clear logical reasoning by eliminating the alternative interpretation and explaining why the trophy being too big is the only sensible reading of the sentence."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it clearly identifies the two possible antecedents, logically evaluates the implications of each one, and correctly concludes which is the only one that makes sense in the context of the sentence."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the trophy as too big, and provides clear logical reasoning by testing both possible referents of the pronoun 'it' and eliminating the suitcase interpretation with sound logic."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the pronoun ambiguity, systematically evaluates both interpretations based on real-world logic, and clearly explains why one option is valid and the other is not."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the trophy as too big and provides clear logical reasoning by eliminating the alternative interpretation and explaining why the trophy being too big is the only sensible reading of the sentence."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it clearly identifies the two possible antecedents, logically evaluates the implications of each one, and correctly concludes which is the only one that makes sense in the context of the sentence."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the trophy as too big, and provides clear logical reasoning by testing both possible referents of the pronoun 'it' and eliminating the suitcase interpretation with sound logic."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the pronoun ambiguity, systematically evaluates both interpretations based on real-world logic, and clearly explains why one option is valid and the other is not."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the trophy as too big and provides a clear, accurate explanation of the pronoun reference in the sentence."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the antecedent of 'it' and clarifies the meaning, but it doesn't explicitly explain the physical logic that makes this the only possible answer."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trophy as too big, with clear and concise reasoning, though the explanation is minimal and somewhat redundant."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the referent of 'it' and demonstrates understanding by rephrasing the sentence, but it does not explain the grammatical or logical basis for the conclusion."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the trophy as too big and provides a clear, accurate explanation of the pronoun reference in the sentence."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the antecedent of 'it' and clarifies the meaning, but it doesn't explicitly explain the physical logic that makes this the only possible answer."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big, with clear and concise reasoning, though the explanation is minimal and somewhat redundant."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the referent of 'it' and demonstrates understanding by rephrasing the sentence, but it does not explain the grammatical or logical basis for the conclusion."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.25
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trophy as too big and provides a reasonable explanation, though the claim that 'it' refers to the grammatical subject is a simplification\u2014the correct reasoning is based on contextual logic (if the suitcase were too big, the trophy would fit easily)."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning correctly identifies the pronoun's antecedent based on grammar, though it could be improved by also explaining why the alternative interpretation is logically nonsensical."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The answer is correct and the reasoning is sound, identifying that 'it' refers to the trophy as the object that cannot fit due to being too big, though calling it 'the subject' is slightly imprecise since the trophy is grammatically the subject while the suitcase is the container it doesn't fit into."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the antecedent of the pronoun and provides sound linguistic and logical reasoning, though it could have been slightly more thorough by also explaining why the suitcase cannot be the thing that is too big."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big and provides a reasonable explanation, though the claim that 'it' refers to the grammatical subject is a simplification\u2014the correct reasoning is based on contextual logic (if the suitcase were too big, the trophy would fit easily)."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning correctly identifies the pronoun's antecedent based on grammar, though it could be improved by also explaining why the alternative interpretation is logically nonsensical."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The answer is correct and the reasoning is sound, identifying that 'it' refers to the trophy as the object that cannot fit due to being too big, though calling it 'the subject' is slightly imprecise since the trophy is grammatically the subject while the suitcase is the container it doesn't fit into."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the antecedent of the pronoun and provides sound linguistic and logical reasoning, though it could have been slightly more thorough by also explaining why the suitcase cannot be the thing that is too big."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trophy as too big, which is the proper antecedent of 'it' in the sentence, as the trophy not fitting in the suitcase logically means the trophy is too big."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly resolves the pronoun ambiguity, identifying that 'it' must refer to the trophy for the sentence to be logically coherent."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trophy as too big and provides logical step-by-step reasoning, including a helpful elimination argument about why the suitcase being too big wouldn't make sense in context, though the explanation is slightly verbose for a straightforward pronoun resolution task."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it correctly identifies the pronoun's antecedent and confirms the conclusion by using a logical counterfactual to eliminate the alternative possibility."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big, which is the proper antecedent of 'it' in the sentence, as the trophy not fitting in the suitcase logically means the trophy is too big."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly resolves the pronoun ambiguity, identifying that 'it' must refer to the trophy for the sentence to be logically coherent."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big and provides logical step-by-step reasoning, including a helpful elimination argument about why the suitcase being too big wouldn't make sense in context, though the explanation is slightly verbose for a straightforward pronoun resolution task."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it correctly identifies the pronoun's antecedent and confirms the conclusion by using a logical counterfactual to eliminate the alternative possibility."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the trophy as too big, using proper pronoun resolution logic since 'it' refers to the subject causing the size incompatibility, which is the trophy that cannot fit into the suitcase."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the antecedent of the pronoun 'it' by applying common-sense knowledge about the physical properties of objects."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the trophy as too big, using proper pronoun resolution to determine that 'it' refers to the trophy (the subject that cannot fit into the suitcase)."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly resolves the ambiguous pronoun 'it' by using contextual clues to identify the trophy as the object that is too large to fit in the suitcase."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the trophy as too big, using proper pronoun resolution logic since 'it' refers to the subject causing the size incompatibility, which is the trophy that cannot fit into the suitcase."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the antecedent of the pronoun 'it' by applying common-sense knowledge about the physical properties of objects."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the trophy as too big, using proper pronoun resolution to determine that 'it' refers to the trophy (the subject that cannot fit into the suitcase)."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly resolves the ambiguous pronoun 'it' by using contextual clues to identify the trophy as the object that is too large to fit in the suitcase."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "common-sense-1": {
+      "prompt": "How many times can you subtract 5 from 25?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies and explains the trick interpretation of the question, noting that after the first subtraction the number is no longer 25, though it could be more concise and acknowledge the alternative straightforward interpretation (5 times) before settling on the trick answer."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning is sound and clearly explains the logic behind the 'trick' answer, though it doesn't acknowledge the alternative mathematical interpretation (25 / 5 = 5)."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trick interpretation and gives the right answer of 1, while also acknowledging the more straightforward interpretation (answer: 5), demonstrating clear and complete reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the nature of the question as a riddle, provides a perfectly logical explanation for its answer, and also addresses the alternative mathematical interpretation, showing a complete understanding of the ambiguity."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies and explains the trick interpretation of the question, noting that after the first subtraction the number is no longer 25, though it could be more concise and acknowledge the alternative straightforward interpretation (5 times) before settling on the trick answer."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is sound and clearly explains the logic behind the 'trick' answer, though it doesn't acknowledge the alternative mathematical interpretation (25 / 5 = 5)."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trick interpretation and gives the right answer of 1, while also acknowledging the more straightforward interpretation (answer: 5), demonstrating clear and complete reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the nature of the question as a riddle, provides a perfectly logical explanation for its answer, and also addresses the alternative mathematical interpretation, showing a complete understanding of the ambiguity."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.25
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly provides both the mathematical answer (5 times) and acknowledges the classic trick interpretation (only once, since after the first subtraction you're no longer subtracting from 25), covering both valid interpretations, though presenting the trick answer as an afterthought rather than leading with it slightly undermines the reasoning flow."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response provides a clear, step-by-step breakdown for the mathematical answer and also correctly identifies and explains the common trick-question interpretation, making it a comprehensive and excellent answer."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies both the straightforward mathematical answer (5 times) and the classic trick answer (only once, since after the first subtraction you're no longer subtracting from 25), demonstrating thorough reasoning, though presenting both answers creates slight ambiguity about which is the 'intended' answer."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies and answers both the straightforward mathematical interpretation and the common literal/trick interpretation of the ambiguous question."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly provides both the mathematical answer (5 times) and acknowledges the classic trick interpretation (only once, since after the first subtraction you're no longer subtracting from 25), covering both valid interpretations, though presenting the trick answer as an afterthought rather than leading with it slightly undermines the reasoning flow."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides a clear, step-by-step breakdown for the mathematical answer and also correctly identifies and explains the common trick-question interpretation, making it a comprehensive and excellent answer."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies both the straightforward mathematical answer (5 times) and the classic trick answer (only once, since after the first subtraction you're no longer subtracting from 25), demonstrating thorough reasoning, though presenting both answers creates slight ambiguity about which is the 'intended' answer."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies and answers both the straightforward mathematical interpretation and the common literal/trick interpretation of the ambiguous question."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.25
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies 5 as the answer with clear step-by-step verification and a helpful mathematical connection to division, though it misses the classic trick answer that you can only subtract 5 from 25 once (after which you subtract from 20, 15, etc.)."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response provides a clear, step-by-step logical process for the standard mathematical interpretation, but it does not acknowledge the common alternative 'riddle' answer."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies 5 as the answer with clear step-by-step subtraction and a helpful division connection, though it misses the classic trick answer that you can subtract 5 from 25 only once (after which you're subtracting from 20, not 25)."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly answers the mathematical interpretation of the question with clear step-by-step logic but does not acknowledge the question's common ambiguity as a riddle."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies 5 as the answer with clear step-by-step verification and a helpful mathematical connection to division, though it misses the classic trick answer that you can only subtract 5 from 25 once (after which you subtract from 20, 15, etc.)."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response provides a clear, step-by-step logical process for the standard mathematical interpretation, but it does not acknowledge the common alternative 'riddle' answer."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies 5 as the answer with clear step-by-step subtraction and a helpful division connection, though it misses the classic trick answer that you can subtract 5 from 25 only once (after which you're subtracting from 20, not 25)."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly answers the mathematical interpretation of the question with clear step-by-step logic but does not acknowledge the question's common ambiguity as a riddle."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies both interpretations of the question - the riddle answer (once, since after that you're subtracting from 20) and the straightforward mathematical answer (five times), with clear step-by-step reasoning for each."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the ambiguity of the question, providing clear and accurate reasoning for both the literal (riddle) and mathematical interpretations."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies both the riddle interpretation (only once, since after the first subtraction you're no longer subtracting from 25) and the straightforward mathematical interpretation (five times until reaching zero), demonstrating thorough and accurate reasoning for both valid perspectives."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the question's ambiguity, providing and clearly explaining the two valid interpretations: the literal riddle and the mathematical calculation."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies both interpretations of the question - the riddle answer (once, since after that you're subtracting from 20) and the straightforward mathematical answer (five times), with clear step-by-step reasoning for each."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the ambiguity of the question, providing clear and accurate reasoning for both the literal (riddle) and mathematical interpretations."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies both the riddle interpretation (only once, since after the first subtraction you're no longer subtracting from 25) and the straightforward mathematical interpretation (five times until reaching zero), demonstrating thorough and accurate reasoning for both valid perspectives."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the question's ambiguity, providing and clearly explaining the two valid interpretations: the literal riddle and the mathematical calculation."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.75
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": false,
+                  "score": 2,
+                  "reasoning": "The response gives the trick answer 'one time' with flawed logic, but the actual correct answer is 5 times (25-5=20, 20-5=15, 15-5=10, 10-5=5, 5-5=0), and the classic riddle answer 'only once, after that you subtract from a smaller number' is a well-known joke/trick, not a mathematically sound answer."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it correctly identifies the literal, semantic trick in the question and provides a clear and logical explanation for its answer."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies that 5 can be subtracted from 25 exactly 5 times and provides a clear step-by-step verification, though it misses the classic trick interpretation of the question where the answer could be 'only once, because after that you're subtracting from 20.'"
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response provides a clear, step-by-step mathematical justification for the most common interpretation, but it does not address the question's potential ambiguity."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": false,
+              "score": 2,
+              "reasoning": "The response gives the trick answer 'one time' with flawed logic, but the actual correct answer is 5 times (25-5=20, 20-5=15, 15-5=10, 10-5=5, 5-5=0), and the classic riddle answer 'only once, after that you subtract from a smaller number' is a well-known joke/trick, not a mathematically sound answer."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it correctly identifies the literal, semantic trick in the question and provides a clear and logical explanation for its answer."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies that 5 can be subtracted from 25 exactly 5 times and provides a clear step-by-step verification, though it misses the classic trick interpretation of the question where the answer could be 'only once, because after that you're subtracting from 20.'"
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response provides a clear, step-by-step mathematical justification for the most common interpretation, but it does not address the question's potential ambiguity."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 3.75
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    }
+  }
+}
