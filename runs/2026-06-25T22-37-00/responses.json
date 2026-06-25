@@ -1,0 +1,788 @@
+{
+  "run_id": "2026-06-25T22-37-00",
+  "timestamp": "2026-06-25T22:37:00.390817+00:00",
+  "samples": 2,
+  "prompts": {
+    "logic-1": {
+      "prompt": "If all bloops are razzies and all razzies are lazzies, are all bloops lazzies?",
+      "category": "logic",
+      "responses": {
+        "openai/gpt-5.4": [
+          {
+            "content": "Yes.\n\nIf:\n- All bloops are razzies\n- All razzies are lazzies\n\nThen bloops are a subset of razzies, and razzies are a subset of lazzies. So all bloops must also be lazzies.",
+            "latency_ms": 3348,
+            "input_tokens": 46,
+            "output_tokens": 60
+          },
+          {
+            "content": "Yes.\n\nIf:\n- All bloops are razzies\n- All razzies are lazzies\n\nThen bloops are a subset of razzies, and razzies are a subset of lazzies, so all bloops are lazzies.",
+            "latency_ms": 1274,
+            "input_tokens": 46,
+            "output_tokens": 58
+          }
+        ],
+        "openai/gpt-5.4-mini": [
+          {
+            "content": "Yes. If all bloops are razzies, and all razzies are lazzies, then bloops are a subset of razzies, which are a subset of lazzies. Therefore, all bloops are lazzies.",
+            "latency_ms": 1173,
+            "input_tokens": 46,
+            "output_tokens": 54
+          },
+          {
+            "content": "Yes. If all bloops are razzies, and all razzies are lazzies, then bloops are a subset of razzies, which are a subset of lazzies. So all bloops are lazzies.",
+            "latency_ms": 1254,
+            "input_tokens": 46,
+            "output_tokens": 53
+          }
+        ],
+        "anthropic/claude-opus-4-6": [
+          {
+            "content": "## Step-by-Step Reasoning\n\n1. **All bloops are razzies.** This means every bloop is a member of the set of razzies.\n\n2. **All razzies are lazzies.** This means every razzie is a member of the set of lazzies.\n\n3. **Combining these:** If every bloop is a razzie, and every razzie is a lazzie, then every bloop must also be a lazzie.\n\nThis is a classic **syllogism** (transitive reasoning):\n\n> Bloops \u2286 Razzies \u2286 Lazzies \u2192 Bloops \u2286 Lazzies\n\n## Answer\n\n**Yes, all bloops are lazzies.**",
+            "latency_ms": 4506,
+            "input_tokens": 44,
+            "output_tokens": 173
+          },
+          {
+            "content": "# Step-by-Step Reasoning\n\n1. **All bloops are razzies.** This means that every bloop is a member of the set of razzies.\n\n2. **All razzies are lazzies.** This means that every razzie is a member of the set of lazzies.\n\n3. **Combining these:** If every bloop is a razzie, and every razzie is a lazzie, then every bloop must also be a lazzie.\n\nThis is a classic **syllogism** (transitive relationship):\n\n**Bloops \u2286 Razzies \u2286 Lazzies \u2192 Bloops \u2286 Lazzies**\n\n## Yes, all bloops are lazzies.",
+            "latency_ms": 6367,
+            "input_tokens": 44,
+            "output_tokens": 173
+          }
+        ],
+        "anthropic/claude-sonnet-4-6": [
+          {
+            "content": "## Step-by-Step Reasoning\n\n1. **Premise 1:** All bloops are razzies.\n2. **Premise 2:** All razzies are lazzies.\n3. **Conclusion:** Therefore, all bloops are lazzies.\n\n**Yes.** This follows from a basic logical syllogism (transitive property of set inclusion):\n\n- Since every bloop is a razzie, and every razzie is a lazzie, then every bloop must also be a lazzie.",
+            "latency_ms": 2832,
+            "input_tokens": 44,
+            "output_tokens": 116
+          },
+          {
+            "content": "## Step-by-Step Reasoning\n\n1. **Premise 1:** All bloops are razzies.\n2. **Premise 2:** All razzies are lazzies.\n3. **Conclusion:** Therefore, all bloops are lazzies.\n\n**Yes.** This follows from the **transitive property** of logic:\n\n- Since every bloop is a razzie, and every razzie is a lazzie, then every bloop must also be a lazzie.",
+            "latency_ms": 2761,
+            "input_tokens": 44,
+            "output_tokens": 111
+          }
+        ],
+        "anthropic/claude-haiku-4-5": [
+          {
+            "content": "# Yes, all bloops are lazzies.\n\nThis follows from **transitive logic**:\n\n1. All bloops are razzies\n2. All razzies are lazzies\n3. Therefore, all bloops are lazzies\n\nIf every bloop belongs to the category of razzies, and every razzie belongs to the category of lazzies, then every bloop must also belong to the category of lazzies.",
+            "latency_ms": 1463,
+            "input_tokens": 43,
+            "output_tokens": 99
+          },
+          {
+            "content": "# Yes, all bloops are lazzies.\n\nHere's the logical chain:\n\n1. All bloops are razzies (given)\n2. All razzies are lazzies (given)\n3. Therefore, all bloops are lazzies (by transitivity)\n\nThis follows the same logical structure as: \"All A are B, and all B are C, therefore all A are C.\"",
+            "latency_ms": 989,
+            "input_tokens": 43,
+            "output_tokens": 92
+          }
+        ],
+        "gemini/gemini-2.5-pro": [
+          {
+            "content": "Yes, based on the rules you've provided, all bloops are lazzies.\n\nHere is the step-by-step logic:\n\n1.  **Premise 1:** All bloops are razzies. (This means the entire group of \"bloops\" is inside the group of \"razzies\".)\n2.  **Premise 2:** All razzies are lazzies. (This means the entire group of \"razzies\" is inside the group of \"lazzies\".)\n\nSince the \"bloops\" group is completely inside the \"razzies\" group, and the \"razzies\" group is completely inside the \"lazzies\" group, it must follow that the \"bloops\" group is also completely inside the \"lazzies\" group.",
+            "latency_ms": 9648,
+            "input_tokens": 37,
+            "output_tokens": 1191
+          },
+          {
+            "content": "Yes, all bloops are lazzies.\n\nHere's a step-by-step breakdown of the logic:\n\n1.  **Premise 1:** Every single bloop is also a razzy. (The group of bloops is entirely inside the group of razzies).\n2.  **Premise 2:** Every single razzy is also a lazzy. (The group of razzies is entirely inside the group of lazzies).\n3.  **Conclusion:** Therefore, since the bloop group is inside the razzy group, and the razzy group is inside the lazzy group, it must be true that the bloop group is inside the lazzy group.\n\nThink of it like this:\n*   If all Poodles are Dogs...\n*   ...and all Dogs are Mammals...\n*   ...then all Poodles are Mammals.",
+            "latency_ms": 7703,
+            "input_tokens": 37,
+            "output_tokens": 975
+          }
+        ],
+        "gemini/gemini-2.5-flash": [
+          {
+            "content": "Yes, all bloops are lazzies.\n\nHere's the breakdown:\n1.  **All bloops are razzies:** This means if you have a bloop, it automatically falls into the category of razzies.\n2.  **All razzies are lazzies:** This means everything in the razzie category (which includes all the bloops) also falls into the lazzie category.\n\nTherefore, if something is a bloop, it's a razzie, and since all razzies are lazzies, it must also be a lazzie.",
+            "latency_ms": 3370,
+            "input_tokens": 37,
+            "output_tokens": 623
+          },
+          {
+            "content": "Yes, that is correct.\n\nHere's why:\n\n1.  **All bloops are razzies.** (This means every single bloop is also a razzie.)\n2.  **All razzies are lazzies.** (This means every single razzie is also a lazzie.)\n\nSince every bloop is a razzie, and every razzie is a lazzie, it logically follows that every bloop must also be a lazzie.",
+            "latency_ms": 3340,
+            "input_tokens": 37,
+            "output_tokens": 655
+          }
+        ],
+        "ollama/llama3": [
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          },
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          }
+        ]
+      }
+    },
+    "math-1": {
+      "prompt": "A bat and a ball cost $1.10 together. The bat costs $1 more than the ball. How much does the ball cost?",
+      "category": "math",
+      "responses": {
+        "openai/gpt-5.4": [
+          {
+            "content": "Let the ball cost \\(x\\) dollars.\n\nThen the bat costs \\(x + 1.00\\).\n\nTogether:\n\\[\nx + (x + 1.00) = 1.10\n\\]\n\\[\n2x + 1.00 = 1.10\n\\]\n\\[\n2x = 0.10\n\\]\n\\[\nx = 0.05\n\\]\n\nSo, **the ball costs \\$0.05**.",
+            "latency_ms": 1411,
+            "input_tokens": 49,
+            "output_tokens": 100
+          },
+          {
+            "content": "Let the ball cost \\(x\\) dollars.\n\nThen the bat costs \\(x + 1.00\\).\n\nTogether:\n\\[\nx + (x + 1.00) = 1.10\n\\]\n\\[\n2x + 1.00 = 1.10\n\\]\n\\[\n2x = 0.10\n\\]\n\\[\nx = 0.05\n\\]\n\nSo, **the ball costs 5 cents**.",
+            "latency_ms": 1255,
+            "input_tokens": 49,
+            "output_tokens": 99
+          }
+        ],
+        "openai/gpt-5.4-mini": [
+          {
+            "content": "Let the ball cost **x** dollars. Then the bat costs **x + 1** dollars.\n\nSo:\n\n**x + (x + 1) = 1.10**  \n**2x + 1 = 1.10**  \n**2x = 0.10**  \n**x = 0.05**\n\nSo the **ball costs $0.05 (5 cents)**.",
+            "latency_ms": 1090,
+            "input_tokens": 49,
+            "output_tokens": 87
+          },
+          {
+            "content": "Let the ball cost **x** dollars.  \nThen the bat costs **x + 1.00** dollars.\n\nTogether:\n\n**x + (x + 1.00) = 1.10**  \n**2x + 1.00 = 1.10**  \n**2x = 0.10**  \n**x = 0.05**\n\nSo, the **ball costs $0.05**.",
+            "latency_ms": 1335,
+            "input_tokens": 49,
+            "output_tokens": 92
+          }
+        ],
+        "anthropic/claude-opus-4-6": [
+          {
+            "content": "# The Bat and Ball Problem\n\nLet me work through this step by step.\n\n**Setting up the equation:**\n\nLet the ball cost **x** dollars.\n\nThe bat costs **$1 more** than the ball, so the bat costs **x + $1.00**.\n\nTogether they cost $1.10:\n\n$$x + (x + 1.00) = 1.10$$\n\n**Solving:**\n\n$$2x + 1.00 = 1.10$$\n$$2x = 0.10$$\n$$x = 0.05$$\n\n## The ball costs **$0.05** (5 cents).\n\n**Verification:** The bat costs $1.05, the ball costs $0.05.\n- Difference: $1.05 \u2212 $0.05 = **$1.00** \u2713\n- Total: $1.05 + $0.05 = **$1.10** \u2713\n\n> **Note:** The intuitive answer many people jump to is $0.10, but that would make the bat $1.10 and the total $1.20 \u2014 which is too much!",
+            "latency_ms": 6258,
+            "input_tokens": 49,
+            "output_tokens": 262
+          },
+          {
+            "content": "# The Bat and Ball Problem\n\nLet me work through this step by step.\n\n**Setting up the equation:**\n\nLet the ball cost **x** dollars.\n\nThe bat costs **$1 more** than the ball, so the bat costs **x + $1.00**.\n\nTogether they cost $1.10:\n\n$$x + (x + 1.00) = 1.10$$\n\n**Solving:**\n\n$$2x + 1.00 = 1.10$$\n\n$$2x = 0.10$$\n\n$$x = 0.05$$\n\n## The ball costs **$0.05** (5 cents).\n\n**Verification:** The bat costs $1.05, the ball costs $0.05.\n- Difference: $1.05 \u2212 $0.05 = **$1.00** \u2713\n- Total: $1.05 + $0.05 = **$1.10** \u2713\n\n> **Note:** The intuitive answer many people jump to is $0.10, but that's incorrect \u2014 if the ball were $0.10, the bat would be $1.10, and the total would be $1.20.",
+            "latency_ms": 6098,
+            "input_tokens": 49,
+            "output_tokens": 270
+          }
+        ],
+        "anthropic/claude-sonnet-4-6": [
+          {
+            "content": "## Step-by-Step Solution\n\nLet me define variables:\n- Let **b** = cost of the ball\n- Let **bat** = cost of the bat\n\n**Setting up the equations:**\n\n1. Together they cost $1.10: `bat + b = 1.10`\n2. The bat costs $1 more than the ball: `bat = b + 1.00`\n\n**Substituting equation 2 into equation 1:**\n\n(b + 1.00) + b = 1.10\n\n2b + 1.00 = 1.10\n\n2b = 0.10\n\n**b = $0.05**\n\n## Answer\n\nThe ball costs **$0.05 (5 cents)**.\n\n*(The bat costs $1.05, and indeed $1.05 + $0.05 = $1.10, and $1.05 is exactly $1 more than $0.05)*\n\n> **Note:** The intuitive answer many people jump to is $0.10, but that's incorrect \u2014 if the ball were $0.10, the bat would be $1.10, and together they'd cost $1.20, not $1.10.",
+            "latency_ms": 5235,
+            "input_tokens": 49,
+            "output_tokens": 275
+          },
+          {
+            "content": "## Solving the Problem\n\nLet me define variables and set up equations.\n\n**Let:**\n- Ball = x\n- Bat = y\n\n**Equations:**\n1. x + y = $1.10 (together)\n2. y = x + $1.00 (bat costs $1 more than ball)\n\n**Substituting equation 2 into equation 1:**\n\nx + (x + $1.00) = $1.10\n\n2x + $1.00 = $1.10\n\n2x = $0.10\n\n**x = $0.05**\n\n## Answer\n\nThe ball costs **$0.05 (5 cents)**.\n\n*(The bat costs $1.05, and together they cost $1.10 \u2713)*\n\n> **Note:** The intuitive answer of $0.10 is a common wrong answer \u2014 if the ball cost $0.10, the bat would cost $1.10, and together they'd cost $1.20, not $1.10.",
+            "latency_ms": 4407,
+            "input_tokens": 49,
+            "output_tokens": 233
+          }
+        ],
+        "anthropic/claude-haiku-4-5": [
+          {
+            "content": "# Solving the Ball and Bat Problem\n\nLet me set up equations for this problem.\n\n**Let:**\n- b = cost of the ball\n- B = cost of the bat\n\n**From the problem:**\n1) b + B = $1.10 (together they cost $1.10)\n2) B = b + $1.00 (bat costs $1 more than ball)\n\n**Substitute equation 2 into equation 1:**\n- b + (b + $1.00) = $1.10\n- 2b + $1.00 = $1.10\n- 2b = $0.10\n- b = **$0.05**\n\n**The ball costs $0.05 (5 cents)**\n\n*Check: Ball = $0.05, Bat = $1.05, Total = $1.10 \u2713*",
+            "latency_ms": 1704,
+            "input_tokens": 48,
+            "output_tokens": 202
+          },
+          {
+            "content": "# Finding the Ball's Cost\n\nLet me set up equations where:\n- b = cost of the ball\n- t = cost of the bat\n\n**Given information:**\n- t + b = $1.10\n- t = b + $1.00\n\n**Solving:**\n\nSubstitute the second equation into the first:\n- (b + $1.00) + b = $1.10\n- 2b + $1.00 = $1.10\n- 2b = $0.10\n- b = $0.05\n\n**The ball costs $0.05 (5 cents)**\n\nTo verify: Bat costs $1.05 + Ball costs $0.05 = $1.10 \u2713",
+            "latency_ms": 1990,
+            "input_tokens": 48,
+            "output_tokens": 168
+          }
+        ],
+        "gemini/gemini-2.5-pro": [
+          {
+            "content": "This is a classic brain teaser! Here's the step-by-step solution.\n\nThe ball costs **$0.05** (5 cents).\n\n---\n\n### Step-by-Step Explanation\n\nLet's break down why. The immediate impulse is to say the ball costs $0.10, but let's check that logic.\n\n*   If the ball was $0.10...\n*   And the bat costs $1.00 *more* than the ball...\n*   Then the bat would be $1.00 + $0.10 = $1.10.\n*   The total cost would be $1.10 (bat) + $0.10 (ball) = **$1.20**. That's incorrect.\n\n**Here's the correct way to solve it:**\n\n**Method 1: Using Logic**\n\n1.  Start with the total cost: **$1.10**\n2.  The price difference between the bat and the ball is **$1.00**. Let's set that $1.00 aside for a moment.\n3.  Subtract that $1.00 from the total: $1.10 - $1.00 = **$0.10**.\n4.  This remaining $0.10 is the combined cost of the ball and what's left of the bat's price. Since they are now equal in price (we took the \"more than\" part away), you can divide this by two.\n5.  $0.10 / 2 = **$0.05**.\n\nThis means the ball costs **$0.05**.\n\n**To check the answer:**\n\n*   **Ball:** $0.05\n*   **Bat:** $0.05 + $1.00 = $1.05\n*   **Total:** $1.05 + $0.05 = **$1.10**\n\nThis matches the problem perfectly.\n\n---\n\n**Method 2: Using Algebra**\n\n1.  Let 'b' be the cost of the bat and 'c' be the cost of the ball.\n2.  From the problem, we know:\n    *   `b + c = 1.10`\n    *   `b = c + 1.00`\n3.  Substitute the second equation into the first one:\n    *   `(c + 1.00) + c = 1.10`\n4.  Simplify and solve for 'c':\n    *   `2c + 1.00 = 1.10`\n    *   `2c = 0.10`\n    *   `c = 0.05`\n\nThe cost of the ball (c) is **$0.05**.",
+            "latency_ms": 14765,
+            "input_tokens": 41,
+            "output_tokens": 2034
+          },
+          {
+            "content": "This is a classic brain teaser! Let's walk through it step by step.\n\nThe ball costs **$0.05** (5 cents).\n\n---\n\n### Step-by-Step Explanation\n\nHere's why. The common mistake is to quickly subtract $1.00 from $1.10 and assume the ball is $0.10. But let's check that logic.\n\n**The Common (Incorrect) Guess:**\n*   If the ball costs $0.10...\n*   And the bat costs $1.00...\n*   The difference is $1.00 - $0.10 = $0.90.\n*   This is incorrect because the problem states the bat costs **$1.00 more** than the ball, not that the bat costs $1.00.\n\n**The Correct Logic:**\n1.  Let's think about the price difference. The bat costs exactly $1.00 more than the ball.\n2.  If we take the total cost of **$1.10** and subtract that extra **$1.00**, we are left with **$0.10**.\n3.  This remaining $0.10 represents the cost of two equal-priced items: the ball and the \"base price\" of the bat (before adding the extra dollar).\n4.  So, we just need to split that $0.10 in half: $0.10 / 2 = **$0.05**.\n5.  This means the cheaper item, the ball, costs **$0.05**.\n\n**Let's Check the Answer:**\n*   If the ball costs **$0.05**...\n*   And the bat costs $1.00 more than the ball ($0.05 + $1.00), the bat costs **$1.05**.\n*   Together, they cost: $1.05 (bat) + $0.05 (ball) = **$1.10**.\n*   This matches the information in the problem perfectly.\n\n### The Algebra Method\n\nYou can also solve this with a simple equation:\n\n*   Let **x** = the cost of the ball.\n*   The cost of the bat is **x + $1.00**.\n\nThe equation for the total cost is:\n(Cost of Ball) + (Cost of Bat) = $1.10\nx + (x + 1.00) = 1.10\n2x + 1.00 = 1.10\n2x = 1.10 - 1.00\n2x = 0.10\nx = 0.10 / 2\n**x = 0.05**\n\nSo, the ball costs **$0.05**.",
+            "latency_ms": 16009,
+            "input_tokens": 41,
+            "output_tokens": 2172
+          }
+        ],
+        "gemini/gemini-2.5-flash": [
+          {
+            "content": "Let's break this down:\n\n1.  **What we know:**\n    *   Bat + Ball = $1.10\n    *   Bat = Ball + $1.00\n\n2.  **Let's use variables:**\n    *   Let `B` be the cost of the bat.\n    *   Let `C` be the cost of the ball.\n\n3.  **Write the equations:**\n    *   `B + C = 1.10`\n    *   `B = C + 1.00`\n\n4.  **Substitute the second equation into the first:**\n    Since we know `B` is equal to `C + 1.00`, we can replace `B` in the first equation:\n    `(C + 1.00) + C = 1.10`\n\n5.  **Solve for C (the cost of the ball):**\n    *   Combine the `C` terms: `2C + 1.00 = 1.10`\n    *   Subtract `1.00` from both sides: `2C = 1.10 - 1.00`\n    *   `2C = 0.10`\n    *   Divide by `2`: `C = 0.10 / 2`\n    *   `C = 0.05`\n\nSo, the ball costs **$0.05** (5 cents).\n\n**To check:**\n*   If the ball is $0.05, then the bat is $0.05 + $1.00 = $1.05.\n*   Together, $1.05 + $0.05 = $1.10. (Correct!)",
+            "latency_ms": 4655,
+            "input_tokens": 41,
+            "output_tokens": 979
+          },
+          {
+            "content": "Let's break this down step by step:\n\n1.  **Define variables:**\n    *   Let `B` be the cost of the bat.\n    *   Let `X` be the cost of the ball.\n\n2.  **Write down the given information as equations:**\n    *   \"A bat and a ball cost $1.10 together\":\n        `B + X = 1.10`\n    *   \"The bat costs $1 more than the ball\":\n        `B = X + 1.00`\n\n3.  **Substitute the second equation into the first equation:**\n    Since we know `B = X + 1.00`, we can replace `B` in the first equation:\n    `(X + 1.00) + X = 1.10`\n\n4.  **Solve for X (the cost of the ball):**\n    *   Combine the `X` terms:\n        `2X + 1.00 = 1.10`\n    *   Subtract `1.00` from both sides:\n        `2X = 1.10 - 1.00`\n        `2X = 0.10`\n    *   Divide by `2`:\n        `X = 0.10 / 2`\n        `X = 0.05`\n\nSo, the ball costs **$0.05**.\n\nTo check:\n*   If the ball is $0.05, the bat is $0.05 + $1.00 = $1.05.\n*   Together, $1.05 + $0.05 = $1.10. This is correct!",
+            "latency_ms": 4468,
+            "input_tokens": 41,
+            "output_tokens": 987
+          }
+        ],
+        "ollama/llama3": [
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          },
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          }
+        ]
+      }
+    },
+    "spatial-1": {
+      "prompt": "I'm facing north. I turn right. I turn right again. I turn left. What direction am I facing?",
+      "category": "spatial",
+      "responses": {
+        "openai/gpt-5.4": [
+          {
+            "content": "You start facing **north**.\n\n- Turn right \u2192 **east**\n- Turn right again \u2192 **south**\n- Turn left \u2192 **east**\n\n**Answer: East**",
+            "latency_ms": 944,
+            "input_tokens": 43,
+            "output_tokens": 37
+          },
+          {
+            "content": "You start facing **north**.\n\n- Turn right \u2192 **east**\n- Turn right again \u2192 **south**\n- Turn left \u2192 **east**\n\n**Answer: East**",
+            "latency_ms": 1004,
+            "input_tokens": 43,
+            "output_tokens": 37
+          }
+        ],
+        "openai/gpt-5.4-mini": [
+          {
+            "content": "You start facing **north**.\n\n- Turn right \u2192 **east**\n- Turn right again \u2192 **south**\n- Turn left \u2192 **east**\n\n**Answer: East**",
+            "latency_ms": 1018,
+            "input_tokens": 43,
+            "output_tokens": 37
+          },
+          {
+            "content": "You\u2019re facing **south**.\n\nQuickly:\n- Start: **north**\n- Turn right \u2192 **east**\n- Turn right again \u2192 **south**\n- Turn left \u2192 **east**\n\nSo the final direction is **east**.",
+            "latency_ms": 886,
+            "input_tokens": 43,
+            "output_tokens": 50
+          }
+        ],
+        "anthropic/claude-opus-4-6": [
+          {
+            "content": "Let me work through this step by step.\n\n1. **Start**: Facing **North**\n2. **Turn right**: Now facing **East**\n3. **Turn right again**: Now facing **South**\n4. **Turn left**: Now facing **East**\n\nYou are facing **East**.",
+            "latency_ms": 3207,
+            "input_tokens": 42,
+            "output_tokens": 67
+          },
+          {
+            "content": "Let me work through this step by step.\n\n1. **Start**: Facing **North**\n2. **Turn right**: Now facing **East**\n3. **Turn right again**: Now facing **South**\n4. **Turn left**: Now facing **East**\n\nYou are facing **East**.",
+            "latency_ms": 2447,
+            "input_tokens": 42,
+            "output_tokens": 67
+          }
+        ],
+        "anthropic/claude-sonnet-4-6": [
+          {
+            "content": "Let me work through this step by step.\n\n1. **Start:** Facing **North**\n2. **Turn right:** Facing **East**\n3. **Turn right again:** Facing **South**\n4. **Turn left:** Facing **East**\n\nYou are facing **East**.",
+            "latency_ms": 1915,
+            "input_tokens": 42,
+            "output_tokens": 67
+          },
+          {
+            "content": "Let me work through this step by step.\n\n1. Start: Facing **North**\n2. Turn right: Facing **East**\n3. Turn right again: Facing **South**\n4. Turn left: Facing **East**\n\nYou are facing **East**.",
+            "latency_ms": 1869,
+            "input_tokens": 42,
+            "output_tokens": 63
+          }
+        ],
+        "anthropic/claude-haiku-4-5": [
+          {
+            "content": "# Step-by-step:\n\n1. **Starting direction:** North\n\n2. **Turn right:** North \u2192 East\n\n3. **Turn right again:** East \u2192 South\n\n4. **Turn left:** South \u2192 East\n\n**You are facing East.**",
+            "latency_ms": 1043,
+            "input_tokens": 41,
+            "output_tokens": 56
+          },
+          {
+            "content": "# Let me work through this step by step:\n\n1. **Starting position:** Facing North\n\n2. **Turn right:** North \u2192 East\n\n3. **Turn right again:** East \u2192 South\n\n4. **Turn left:** South \u2192 East\n\n**You are facing East.**",
+            "latency_ms": 990,
+            "input_tokens": 41,
+            "output_tokens": 61
+          }
+        ],
+        "gemini/gemini-2.5-pro": [
+          {
+            "content": "Let's break it down step-by-step:\n\n1.  You start facing **North**.\n2.  You turn right, so you are now facing **East**.\n3.  You turn right again, so you are now facing **South**.\n4.  You turn left, so you are now facing **East**.\n\nYou are facing **East**.",
+            "latency_ms": 6946,
+            "input_tokens": 36,
+            "output_tokens": 853
+          },
+          {
+            "content": "Let's break that down step-by-step:\n\n1.  You start facing **North**.\n2.  You turn right, so you are now facing **East**.\n3.  You turn right again, so you are now facing **South**.\n4.  You turn left, so you are now facing **East**.\n\nYou are facing **East**.",
+            "latency_ms": 5977,
+            "input_tokens": 36,
+            "output_tokens": 682
+          }
+        ],
+        "gemini/gemini-2.5-flash": [
+          {
+            "content": "Let's break it down step-by-step:\n\n1.  **Start:** You are facing **North**.\n2.  **Turn right:** From North, a right turn puts you facing **East**.\n3.  **Turn right again:** From East, a right turn puts you facing **South**.\n4.  **Turn left:** From South, a left turn puts you facing **East**.\n\nYou are facing **East**.",
+            "latency_ms": 1375,
+            "input_tokens": 36,
+            "output_tokens": 230
+          },
+          {
+            "content": "Let's break it down step-by-step:\n\n1.  **Starting:** You are facing **North**.\n2.  **Turn right:** From North, a right turn puts you facing **East**.\n3.  **Turn right again:** From East, a right turn puts you facing **South**.\n4.  **Turn left:** From South, a left turn puts you facing **East**.\n\nYou are facing **East**.",
+            "latency_ms": 1186,
+            "input_tokens": 36,
+            "output_tokens": 233
+          }
+        ],
+        "ollama/llama3": [
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          },
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          }
+        ]
+      }
+    },
+    "causality-1": {
+      "prompt": "A man pushes his car to a hotel and loses his fortune. What happened?",
+      "category": "causality",
+      "responses": {
+        "openai/gpt-5.4": [
+          {
+            "content": "He\u2019s playing Monopoly.\n\nHe landed on a property with a hotel on it, had to pay rent, and lost all his money.",
+            "latency_ms": 1613,
+            "input_tokens": 36,
+            "output_tokens": 30
+          },
+          {
+            "content": "He\u2019s playing **Monopoly**.\n\n- He **pushes his car** token\n- to a **hotel** space\n- and **loses his fortune** by having to pay a huge rent\n\nIt\u2019s a riddle.",
+            "latency_ms": 1160,
+            "input_tokens": 36,
+            "output_tokens": 51
+          }
+        ],
+        "openai/gpt-5.4-mini": [
+          {
+            "content": "He was playing **Monopoly**.\n\nThe \u201ccar\u201d is a game piece, the \u201chotel\u201d is a property on the board, and \u201closes his fortune\u201d means he ended up paying a lot of rent or going bankrupt.",
+            "latency_ms": 1021,
+            "input_tokens": 36,
+            "output_tokens": 51
+          },
+          {
+            "content": "He was playing **Monopoly**.\n\nIn the game, a player can \u201cpush\u201d a car token to a hotel property, and if it\u2019s someone else\u2019s hotel, he can lose a lot of money \u2014 even his \u201cfortune.\u201d",
+            "latency_ms": 1048,
+            "input_tokens": 36,
+            "output_tokens": 51
+          }
+        ],
+        "anthropic/claude-opus-4-6": [
+          {
+            "content": "This is a classic riddle! Let me think through it step by step.\n\nThe key is that the scenario doesn't involve a real car and a real hotel on a road. Instead, think about where you might:\n\n1. **Push a car** (a small game piece/token)\n2. **Land on a hotel**\n3. **Lose your fortune**\n\n**He's playing Monopoly!**\n\nHe landed on a space (like Boardwalk/Park Lane) that had a hotel on it, and had to pay a massive rent \u2014 losing all his money.",
+            "latency_ms": 5250,
+            "input_tokens": 35,
+            "output_tokens": 128
+          },
+          {
+            "content": "This is a classic riddle! Let me think through it step by step.\n\n- The man **pushes his car** \u2014 this doesn't necessarily mean a real automobile.\n- He arrives at a **hotel** \u2014 not necessarily a real building.\n- He **loses his fortune** \u2014 something causes him to go broke.\n\n**Answer:** He's playing **Monopoly**.\n\nIn the board game Monopoly, a player rolls the dice and moves their game piece (which could be the **car/automobile token**) along the board. When the piece lands on a space with a **hotel**, the player must pay a large rent fee \u2014 potentially losing all their money (their \"fortune\").",
+            "latency_ms": 5830,
+            "input_tokens": 35,
+            "output_tokens": 149
+          }
+        ],
+        "anthropic/claude-sonnet-4-6": [
+          {
+            "content": "This is a classic lateral thinking puzzle / riddle!\n\nThe answer is: **He's playing Monopoly.**\n\nHe pushed his car (the car token) to the hotel (a hotel piece on the board) and had to pay rent, which wiped out all his money (\"lost his fortune\"). \ud83c\udfb2",
+            "latency_ms": 2568,
+            "input_tokens": 35,
+            "output_tokens": 70
+          },
+          {
+            "content": "This is a classic lateral thinking puzzle / riddle.\n\nThe answer is: **He's playing Monopoly.**\n\nHe pushed his car (the car token) to the hotel (a hotel piece on a property), which meant he had to pay rent \u2014 and it cost him all his money (his fortune).",
+            "latency_ms": 2591,
+            "input_tokens": 35,
+            "output_tokens": 67
+          }
+        ],
+        "anthropic/claude-haiku-4-5": [
+          {
+            "content": "# The Answer\n\nThis is a riddle! The man is playing **Monopoly** (the board game).\n\nHere's what happens:\n- He pushes his car token around the board\n- He lands on a hotel (property with a hotel on it)\n- He has to pay rent to the owner\n- He loses his fortune (game money) because the rent is too expensive\n\nIt's a play on words where \"pushes his car to a hotel\" sounds like a real-life scenario, but it's actually describing moving a game piece in Monopoly.",
+            "latency_ms": 1959,
+            "input_tokens": 34,
+            "output_tokens": 124
+          },
+          {
+            "content": "# The Answer\n\nThis is a classic riddle! The man is playing **Monopoly**.\n\nWhen you push your game piece (car) around the board and it lands on a property with a hotel, you have to pay a large amount of rent to the owner\u2014thus losing much of your fortune (game money).",
+            "latency_ms": 1686,
+            "input_tokens": 34,
+            "output_tokens": 69
+          }
+        ],
+        "gemini/gemini-2.5-pro": [
+          {
+            "content": "This is a classic riddle! Here is the step-by-step solution:\n\n1.  **The \"car\" isn't a real car.** It's a small, metal token.\n2.  **The \"hotel\" isn't a real building.** It's a small, plastic piece.\n3.  **The man isn't on a real street.** He's sitting at a table.\n\n**Answer:** He was playing the board game **Monopoly**. His game piece was the car, and he landed on an opponent's property (like Boardwalk or Park Place) that had a hotel on it. The rent was so high he went bankrupt and lost all his money.",
+            "latency_ms": 9274,
+            "input_tokens": 27,
+            "output_tokens": 1083
+          },
+          {
+            "content": "This is a classic riddle! Here's the step-by-step solution:\n\n1.  The man is not pushing a real car.\n2.  He is playing the board game **Monopoly**.\n3.  His game piece is the small metal car.\n4.  He lands on a property (like Boardwalk or Park Place) where another player has built a **hotel**.\n5.  The rent is so high that he has to pay all his money, thus \"losing his fortune.\"",
+            "latency_ms": 9366,
+            "input_tokens": 27,
+            "output_tokens": 1059
+          }
+        ],
+        "gemini/gemini-2.5-flash": [
+          {
+            "content": "He was playing a **coin pusher machine** at the hotel's arcade or casino. He kept \"pushing\" coins into the machine and lost his fortune trying to win!",
+            "latency_ms": 9890,
+            "input_tokens": 27,
+            "output_tokens": 1813
+          },
+          {
+            "content": "He was playing **poker** at a casino in the hotel.\n\n\"Pushes his car\" is a play on words, meaning he **pushed his cards** (or bet all his chips) and went \"all-in\" on a poker hand. Unfortunately, he lost the hand and his fortune.",
+            "latency_ms": 8259,
+            "input_tokens": 27,
+            "output_tokens": 1545
+          }
+        ],
+        "ollama/llama3": [
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          },
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          }
+        ]
+      }
+    },
+    "code-1": {
+      "prompt": "What does this function return for input 5? def f(n): return n if n <= 1 else f(n-1) + f(n-2)",
+      "category": "code",
+      "responses": {
+        "openai/gpt-5.4": [
+          {
+            "content": "The function computes Fibonacci numbers with:\n\n- `f(0) = 0`\n- `f(1) = 1`\n- `f(n) = f(n-1) + f(n-2)`\n\nSo:\n\n- `f(2) = 1`\n- `f(3) = 2`\n- `f(4) = 3`\n- `f(5) = 5`\n\n**Answer: 5**",
+            "latency_ms": 1418,
+            "input_tokens": 53,
+            "output_tokens": 96
+          },
+          {
+            "content": "It returns **5**.\n\nThis function computes Fibonacci numbers:\n\n- `f(0) = 0`\n- `f(1) = 1`\n- `f(2) = 1`\n- `f(3) = 2`\n- `f(4) = 3`\n- `f(5) = 5`\n\nSo for input `5`, the result is **5**.",
+            "latency_ms": 1364,
+            "input_tokens": 53,
+            "output_tokens": 88
+          }
+        ],
+        "openai/gpt-5.4-mini": [
+          {
+            "content": "It returns **5**.\n\nStep by step:\n- \\(f(5) = f(4) + f(3)\\)\n- \\(f(4) = f(3) + f(2)\\)\n- \\(f(3) = f(2) + f(1)\\)\n- Base cases: \\(f(1) = 1\\), and \\(f(0) = 0\\) since \\(0 \\le 1\\)\n\nSo the sequence is:\n- \\(f(0)=0\\)\n- \\(f(1)=1\\)\n- \\(f(2)=1\\)\n- \\(f(3)=2\\)\n- \\(f(4)=3\\)\n- \\(f(5)=5\\)\n\nSo the function returns **5** for input 5.",
+            "latency_ms": 1290,
+            "input_tokens": 53,
+            "output_tokens": 169
+          },
+          {
+            "content": "For `n = 5`, the function computes the Fibonacci-like sequence with:\n\n- `f(0) = 0`\n- `f(1) = 1`\n- `f(n) = f(n-1) + f(n-2)` for `n > 1`\n\nSo:\n\n- `f(2) = 1`\n- `f(3) = 2`\n- `f(4) = 3`\n- `f(5) = 5`\n\n**Return value: `5`**",
+            "latency_ms": 1235,
+            "input_tokens": 53,
+            "output_tokens": 113
+          }
+        ],
+        "anthropic/claude-opus-4-6": [
+          {
+            "content": "# Tracing the Recursive Function\n\nThis is the **Fibonacci sequence** function. Let me trace through it step by step for `f(5)`:\n\n## Step-by-step evaluation:\n\n```\nf(5) = f(4) + f(3)\n\nf(4) = f(3) + f(2)\nf(3) = f(2) + f(1)\n\nf(2) = f(1) + f(0)\nf(1) = 1  (base case: n <= 1)\nf(0) = 0  (base case: n <= 1)\n```\n\n## Building back up:\n\n| Call | Result |\n|------|--------|\n| f(0) | 0 |\n| f(1) | 1 |\n| f(2) | f(1) + f(0) = 1 + 0 = **1** |\n| f(3) | f(2) + f(1) = 1 + 1 = **2** |\n| f(4) | f(3) + f(2) = 2 + 1 = **3** |\n| f(5) | f(4) + f(3) = 3 + 2 = **5** |\n\n## The function returns **5** for input 5.",
+            "latency_ms": 5859,
+            "input_tokens": 55,
+            "output_tokens": 315
+          },
+          {
+            "content": "# Tracing the Function for `f(5)`\n\nThis is a recursive function that computes the **Fibonacci sequence**. Let me trace through it step by step.\n\n## Base Case\n- `f(0) = 0` (since 0 \u2264 1, return n)\n- `f(1) = 1` (since 1 \u2264 1, return n)\n\n## Recursive Calls\n\n| Call | Expansion | Result |\n|------|-----------|--------|\n| `f(2)` | `f(1) + f(0)` | `1 + 0 = 1` |\n| `f(3)` | `f(2) + f(1)` | `1 + 1 = 2` |\n| `f(4)` | `f(3) + f(2)` | `2 + 1 = 3` |\n| `f(5)` | `f(4) + f(3)` | `3 + 2 = 5` |\n\n## Answer\n\n**`f(5)` returns `5`**\n\nThis corresponds to the 5th Fibonacci number (0, 1, 1, 2, 3, **5**, ...).",
+            "latency_ms": 5199,
+            "input_tokens": 55,
+            "output_tokens": 298
+          }
+        ],
+        "anthropic/claude-sonnet-4-6": [
+          {
+            "content": "## Tracing the Function\n\nThis is a **recursive Fibonacci function**. Let me trace it for input `5`:\n\n```\nf(5) = f(4) + f(3)\nf(4) = f(3) + f(2)\nf(3) = f(2) + f(1)\nf(2) = f(1) + f(0)\nf(1) = 1\nf(0) = 0\n```\n\n**Building back up:**\n```\nf(2) = 1 + 0 = 1\nf(3) = 1 + 1 = 2\nf(4) = 2 + 1 = 3\nf(5) = 3 + 2 = 5\n```\n\n## Result: **5**\n\nThe function returns the **nth Fibonacci number**, and for input `5`, it returns `5`.",
+            "latency_ms": 3630,
+            "input_tokens": 55,
+            "output_tokens": 212
+          },
+          {
+            "content": "## Step-by-Step Trace\n\nThis is a recursive Fibonacci function. Let me trace it for `f(5)`:\n\n```\nf(5) = f(4) + f(3)\nf(4) = f(3) + f(2)\nf(3) = f(2) + f(1)\nf(2) = f(1) + f(0)\n     = 1 + 0 = 1\nf(3) = 1 + 1 = 2\nf(4) = 2 + 1 = 3  (f(2)=1)\nf(3) = 2\nf(5) = 3 + 2 = 5\n```\n\n## Result\n\n**`f(5)` returns `5`**\n\nThis is the Fibonacci sequence: 0, 1, 1, 2, 3, **5**, ...",
+            "latency_ms": 3673,
+            "input_tokens": 55,
+            "output_tokens": 216
+          }
+        ],
+        "anthropic/claude-haiku-4-5": [
+          {
+            "content": "# Tracing f(5)\n\nThis is a recursive function that calculates Fibonacci numbers. Let me trace through it step by step:\n\n```\nf(5) = f(4) + f(3)\n  f(4) = f(3) + f(2)\n    f(3) = f(2) + f(1)\n      f(2) = f(1) + f(0)\n        f(1) = 1 (base case)\n        f(0) = 0 (base case)\n      f(2) = 1 + 0 = 1\n    f(3) = 1 + 1 = 2\n  f(4) = 2 + 1 = 3\nf(5) = 3 + 2 = 5\n```\n\n**The function returns `5`**",
+            "latency_ms": 1455,
+            "input_tokens": 54,
+            "output_tokens": 204
+          },
+          {
+            "content": "# Tracing f(5)\n\nThis is the Fibonacci function. Let me trace through it step by step:\n\n```\nf(5) = f(4) + f(3)\n  f(4) = f(3) + f(2)\n    f(3) = f(2) + f(1)\n      f(2) = f(1) + f(0)\n        f(1) = 1\n        f(0) = 0\n      f(2) = 1 + 0 = 1\n      f(1) = 1\n    f(3) = 1 + 1 = 2\n    f(2) = f(1) + f(0) = 1 + 0 = 1\n  f(4) = 2 + 1 = 3\n  f(3) = f(2) + f(1) = 1 + 1 = 2\nf(5) = 3 + 2 = 5\n```\n\n**The function returns `5`**",
+            "latency_ms": 1651,
+            "input_tokens": 54,
+            "output_tokens": 252
+          }
+        ],
+        "gemini/gemini-2.5-pro": [
+          {
+            "content": "This function calculates the nth Fibonacci number, where `f(0)=0` and `f(1)=1`. Let's trace the execution for the input `f(5)` step by step.\n\nThe function is defined as:\n`def f(n): return n if n <= 1 else f(n-1) + f(n-2)`\n\n1.  **f(5)** is called. Since `5` is not `<= 1`, it will return `f(4) + f(3)`.\n\n2.  To calculate `f(4) + f(3)`, we first need to calculate **f(4)**.\n    *   `f(4)` will return `f(3) + f(2)`.\n\n3.  To calculate `f(3) + f(2)`, we first need to calculate **f(3)**.\n    *   `f(3)` will return `f(2) + f(1)`.\n\n4.  To calculate `f(2) + f(1)`, we first need to calculate **f(2)**.\n    *   `f(2)` will return `f(1) + f(0)`.\n    *   `f(1)` hits the base case (`n <= 1`), so it returns **1**.\n    *   `f(0)` hits the base case (`n <= 1`), so it returns **0**.\n    *   Therefore, `f(2)` returns `1 + 0 = **1**`.\n\n5.  Now we can finish the calculation for `f(3)` from step 3.\n    *   `f(3)` was `f(2) + f(1)`.\n    *   We just found `f(2)` is **1**.\n    *   `f(1)` hits the base case and returns **1**.\n    *   Therefore, `f(3)` returns `1 + 1 = **2**`.\n\n6.  Now we can finish the calculation for `f(4)` from step 2.\n    *   `f(4)` was `f(3) + f(2)`.\n    *   We just found `f(3)` is **2**.\n    *   We already know `f(2)` is **1**.\n    *   Therefore, `f(4)` returns `2 + 1 = **3**`.\n\n7.  Finally, we can finish the original calculation for `f(5)` from step 1.\n    *   `f(5)` was `f(4) + f(3)`.\n    *   We just found `f(4)` is **3**.\n    *   We already know `f(3)` is **2**.\n    *   Therefore, `f(5)` returns `3 + 2 = **5**`.\n\nThe function returns **5**.",
+            "latency_ms": 15905,
+            "input_tokens": 47,
+            "output_tokens": 2362
+          },
+          {
+            "content": "Of course. Let's trace the execution of the function step by step for the input `n = 5`.\n\nThe function is:\n```python\ndef f(n):\n    return n if n <= 1 else f(n-1) + f(n-2)\n```\nThis is a recursive function. This means the function calls itself. Let's break down the calculation for `f(5)`.\n\n*   **Base Cases:** The function stops calling itself when `n` is less than or equal to 1.\n    *   `f(0)` will return `0`.\n    *   `f(1)` will return `1`.\n\n### Step-by-Step Calculation\n\n1.  **`f(5)` is called:**\n    *   Since 5 > 1, it must calculate `f(4) + f(3)`.\n\n2.  To do that, it first needs to calculate **`f(4)`**:\n    *   Since 4 > 1, `f(4)` must calculate `f(3) + f(2)`.\n\n3.  Now it needs to calculate **`f(3)`**:\n    *   Since 3 > 1, `f(3)` must calculate `f(2) + f(1)`.\n\n4.  Now it needs **`f(2)`**:\n    *   Since 2 > 1, `f(2)` must calculate `f(1) + f(0)`.\n    *   We know the base cases: `f(1)` returns `1` and `f(0)` returns `0`.\n    *   So, `f(2)` = 1 + 0 = **1**.\n\n5.  Now we can go back and solve for **`f(3)`**:\n    *   `f(3)` = `f(2)` + `f(1)`.\n    *   We just found `f(2)` = 1, and we know `f(1)` = 1.\n    *   So, `f(3)` = 1 + 1 = **2**.\n\n6.  Now we can solve for **`f(4)`**:\n    *   `f(4)` = `f(3)` + `f(2)`.\n    *   We just found `f(3)` = 2 and `f(2)` = 1.\n    *   So, `f(4)` = 2 + 1 = **3**.\n\n7.  Finally, we can solve for our original call, **`f(5)`**:\n    *   `f(5)` = `f(4)` + `f(3)`.\n    *   We just found `f(4)` = 3 and `f(3)` = 2.\n    *   So, `f(5)` = 3 + 2 = **5**.\n\n### Summary\nThis function calculates the nth number in the Fibonacci sequence (starting with 0, 1, 1, 2, 3, 5, ...).\n\n*   `f(0) = 0`\n*   `f(1) = 1`\n*   `f(2) = f(1) + f(0) = 1`\n*   `f(3) = f(2) + f(1) = 1 + 1 = 2`\n*   `f(4) = f(3) + f(2) = 2 + 1 = 3`\n*   `f(5) = f(4) + f(3) = 3 + 2 = 5`\n\nThe function returns **5**.",
+            "latency_ms": 16893,
+            "input_tokens": 47,
+            "output_tokens": 2377
+          }
+        ],
+        "gemini/gemini-2.5-flash": [
+          {
+            "content": "The given function `f(n)` is a recursive definition of the Fibonacci sequence.\n\nHere's how to trace the execution for `f(5)`:\n\n1.  **f(5)**:\n    Since `5 > 1`, it returns `f(4) + f(3)`\n\n2.  **f(4)**:\n    Since `4 > 1`, it returns `f(3) + f(2)`\n\n3.  **f(3)** (first occurrence):\n    Since `3 > 1`, it returns `f(2) + f(1)`\n\n4.  **f(2)** (first occurrence):\n    Since `2 > 1`, it returns `f(1) + f(0)`\n\n5.  **f(1)**:\n    Since `1 <= 1`, it returns `1`\n\n6.  **f(0)**:\n    Since `0 <= 1`, it returns `0`\n\nNow, substitute the results back up:\n\n*   **f(2)** = `f(1) + f(0)` = `1 + 0` = `1`\n*   **f(3)** = `f(2) + f(1)` = `1 + 1` = `2`\n*   **f(4)** = `f(3) + f(2)` = `2 + 1` = `3`\n*   **f(5)** = `f(4) + f(3)` = `3 + 2` = `5`\n\nThe function returns **5** for input 5.",
+            "latency_ms": 5429,
+            "input_tokens": 47,
+            "output_tokens": 1194
+          },
+          {
+            "content": "Let's trace the execution of the function `f(n)` for `n = 5` step by step.\n\nThe function is defined as:\n```python\ndef f(n):\n    return n if n <= 1 else f(n-1) + f(n-2)\n```\n\n1.  **f(5)**:\n    *   Since `5` is not `<= 1`, it goes to the `else` branch.\n    *   `f(5)` = `f(4) + f(3)`\n\n2.  **f(4)** (to calculate `f(5)`):\n    *   Since `4` is not `<= 1`, it goes to the `else` branch.\n    *   `f(4)` = `f(3) + f(2)`\n\n3.  **f(3)** (to calculate `f(4)`):\n    *   Since `3` is not `<= 1`, it goes to the `else` branch.\n    *   `f(3)` = `f(2) + f(1)`\n\n4.  **f(2)** (to calculate `f(3)`):\n    *   Since `2` is not `<= 1`, it goes to the `else` branch.\n    *   `f(2)` = `f(1) + f(0)`\n\n5.  **f(1)** (to calculate `f(2)`):\n    *   Since `1` is `<= 1`, it returns `1`.\n    *   So, `f(1) = 1`\n\n6.  **f(0)** (to calculate `f(2)`):\n    *   Since `0` is `<= 1`, it returns `0`.\n    *   So, `f(0) = 0`\n\nNow, let's substitute back the values:\n\n*   **f(2)** = `f(1) + f(0)` = `1 + 0` = `1`\n*   **f(3)** = `f(2) + f(1)` = `1 + 1` = `2`\n*   **f(4)** = `f(3) + f(2)` = `2 + 1` = `3`\n*   **f(5)** = `f(4) + f(3)` = `3 + 2` = `5`\n\nThe function returns **5** for input 5.\n(This function calculates the Fibonacci sequence where f(n) gives the n-th Fibonacci number, starting F(0)=0, F(1)=1, F(2)=1, F(3)=2, F(4)=3, F(5)=5).",
+            "latency_ms": 6656,
+            "input_tokens": 47,
+            "output_tokens": 1626
+          }
+        ],
+        "ollama/llama3": [
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          },
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          }
+        ]
+      }
+    },
+    "ambiguity-1": {
+      "prompt": "The trophy doesn't fit in the suitcase because it's too big. What is too big?",
+      "category": "ambiguity",
+      "responses": {
+        "openai/gpt-5.4": [
+          {
+            "content": "\u201cToo big\u201d refers to **the trophy**.\n\nReason: if something doesn\u2019t fit *in* the suitcase because it\u2019s too big, the thing being put in is too big, not the suitcase.",
+            "latency_ms": 1342,
+            "input_tokens": 37,
+            "output_tokens": 45
+          },
+          {
+            "content": "\u201cIt\u201d refers to **the trophy**.\n\nSo, **the trophy is too big** to fit in the suitcase.",
+            "latency_ms": 989,
+            "input_tokens": 37,
+            "output_tokens": 27
+          }
+        ],
+        "openai/gpt-5.4-mini": [
+          {
+            "content": "The **trophy** is too big.",
+            "latency_ms": 723,
+            "input_tokens": 37,
+            "output_tokens": 12
+          },
+          {
+            "content": "\u201cTrophy\u201d is too big.",
+            "latency_ms": 640,
+            "input_tokens": 37,
+            "output_tokens": 10
+          }
+        ],
+        "anthropic/claude-opus-4-6": [
+          {
+            "content": "Let me think through this step by step.\n\nThe sentence is: \"The trophy doesn't fit in the suitcase because it's too big.\"\n\nThe question is what \"it\" refers to \u2014 what is too big?\n\nIf the **suitcase** were too big, that wouldn't explain why the trophy doesn't fit. A bigger suitcase would make it *easier* to fit the trophy.\n\nIf the **trophy** is too big, that logically explains why it doesn't fit in the suitcase.\n\nTherefore, **the trophy** is too big.",
+            "latency_ms": 3536,
+            "input_tokens": 39,
+            "output_tokens": 125
+          },
+          {
+            "content": "Let me think through this step by step.\n\nThe sentence is: \"The trophy doesn't fit in the suitcase because it's too big.\"\n\nThe pronoun \"it\" could refer to either \"the trophy\" or \"the suitcase.\" Let me consider the meaning:\n\n- If the **trophy** is too big, it wouldn't fit in the suitcase. This makes sense.\n- If the **suitcase** is too big, that wouldn't explain why the trophy doesn't fit \u2014 in fact, a bigger suitcase would make it *easier* to fit.\n\nTherefore, **the trophy** is too big.",
+            "latency_ms": 3448,
+            "input_tokens": 39,
+            "output_tokens": 139
+          }
+        ],
+        "anthropic/claude-sonnet-4-6": [
+          {
+            "content": "The word \"it's\" in this sentence refers to **the trophy**. The trophy is too big to fit in the suitcase.",
+            "latency_ms": 1442,
+            "input_tokens": 39,
+            "output_tokens": 32
+          },
+          {
+            "content": "The word \"it's\" in this sentence refers to **the trophy**. The trophy is too big to fit in the suitcase.",
+            "latency_ms": 1521,
+            "input_tokens": 39,
+            "output_tokens": 32
+          }
+        ],
+        "anthropic/claude-haiku-4-5": [
+          {
+            "content": "# The trophy is too big.\n\nThe pronoun \"it's\" refers to the trophy, which is the subject causing the problem\u2014it doesn't fit because the trophy is too large for the suitcase.",
+            "latency_ms": 907,
+            "input_tokens": 38,
+            "output_tokens": 47
+          },
+          {
+            "content": "# The trophy is too big.\n\nThe pronoun \"it's\" refers to the trophy, which is the subject that doesn't fit due to its size.",
+            "latency_ms": 907,
+            "input_tokens": 38,
+            "output_tokens": 36
+          }
+        ],
+        "gemini/gemini-2.5-pro": [
+          {
+            "content": "Based on the sentence, **the trophy** is too big.",
+            "latency_ms": 5136,
+            "input_tokens": 32,
+            "output_tokens": 555
+          },
+          {
+            "content": "Based on the sentence, **the trophy** is too big.",
+            "latency_ms": 4996,
+            "input_tokens": 32,
+            "output_tokens": 570
+          }
+        ],
+        "gemini/gemini-2.5-flash": [
+          {
+            "content": "The **trophy** is too big.",
+            "latency_ms": 1846,
+            "input_tokens": 32,
+            "output_tokens": 302
+          },
+          {
+            "content": "The trophy is too big.",
+            "latency_ms": 1827,
+            "input_tokens": 32,
+            "output_tokens": 270
+          }
+        ],
+        "ollama/llama3": [
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          },
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          }
+        ]
+      }
+    },
+    "common-sense-1": {
+      "prompt": "How many times can you subtract 5 from 25?",
+      "category": "common_sense",
+      "responses": {
+        "openai/gpt-5.4": [
+          {
+            "content": "Only **once**.\n\nAfter you subtract 5 from 25 the first time, you\u2019re no longer subtracting from 25 \u2014 you\u2019re subtracting from 20.",
+            "latency_ms": 1841,
+            "input_tokens": 32,
+            "output_tokens": 38
+          },
+          {
+            "content": "Only once.\n\nAfter you subtract 5 from 25, it becomes 20, so after that you\u2019re no longer subtracting 5 from 25.",
+            "latency_ms": 1550,
+            "input_tokens": 32,
+            "output_tokens": 35
+          }
+        ],
+        "openai/gpt-5.4-mini": [
+          {
+            "content": "Only **once**.\n\nAfter you subtract 5 from 25, you get **20**. The question says \u201csubtract 5 from 25,\u201d which starts with 25 only once. If you mean \u201chow many times can you keep subtracting 5 before reaching zero,\u201d then the answer would be **5 times**.",
+            "latency_ms": 1117,
+            "input_tokens": 32,
+            "output_tokens": 70
+          },
+          {
+            "content": "Once.\n\nAfter you subtract 5 from 25, you get 20, so you can\u2019t still subtract 5 from **25** again.",
+            "latency_ms": 936,
+            "input_tokens": 32,
+            "output_tokens": 33
+          }
+        ],
+        "anthropic/claude-opus-4-6": [
+          {
+            "content": "This is a classic trick question! Let me think through it carefully.\n\n**The answer is 1 time.**\n\nHere's why: You can only subtract 5 from **25** once. After that, you're no longer subtracting 5 from 25 \u2014 you're subtracting 5 from **20**, then from **15**, and so on.\n\nSo while you can perform the operation of subtracting 5 repeatedly (getting 20, 15, 10, 5, 0), you can only subtract 5 from **25** exactly **once**.",
+            "latency_ms": 3872,
+            "input_tokens": 31,
+            "output_tokens": 132
+          },
+          {
+            "content": "This is a classic trick question! Let me think through it carefully.\n\n**The answer is 1 time.**\n\nHere's why: You can only subtract 5 from **25** once. After the first subtraction, you no longer have 25 \u2014 you have 20. The next time, you'd be subtracting 5 from 20, not from 25.\n\nThe question asks how many times you can subtract 5 **from 25** specifically, and that can only happen once.",
+            "latency_ms": 3892,
+            "input_tokens": 31,
+            "output_tokens": 113
+          }
+        ],
+        "anthropic/claude-sonnet-4-6": [
+          {
+            "content": "Let me think about this step by step.\n\n- 25 - 5 = 20 (1st time)\n- 20 - 5 = 15 (2nd time)\n- 15 - 5 = 10 (3rd time)\n- 10 - 5 = 5 (4th time)\n- 5 - 5 = 0 (5th time)\n\nYou can subtract 5 from 25 **5 times**.\n\n*(Note: There's a classic trick version of this question \u2014 \"after the first subtraction, you're subtracting from 20, not 25\" \u2014 but mathematically, the straightforward answer is **5 times**.)*",
+            "latency_ms": 3564,
+            "input_tokens": 31,
+            "output_tokens": 168
+          },
+          {
+            "error": "litellm.RateLimitError: AnthropicException - {\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed your organization's rate limit of 2,000,000 input tokens per minute (org: 82a12da9-4765-4033-8373-606812298aac, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.\"},\"request_id\":\"req_011CcQnWdpuS9Hg3YA1oLtsH\"}"
+          }
+        ],
+        "anthropic/claude-haiku-4-5": [
+          {
+            "content": "# Subtracting 5 from 25\n\nLet me work through this step-by-step:\n\n- 25 - 5 = 20\n- 20 - 5 = 15\n- 15 - 5 = 10\n- 10 - 5 = 5\n- 5 - 5 = 0\n\n**You can subtract 5 from 25 a total of 5 times.**\n\n(This is the same as dividing: 25 \u00f7 5 = 5)",
+            "latency_ms": 1244,
+            "input_tokens": 30,
+            "output_tokens": 130
+          },
+          {
+            "content": "# Subtracting 5 from 25\n\nLet me work through this step by step:\n\n- 25 - 5 = 20\n- 20 - 5 = 15\n- 15 - 5 = 10\n- 10 - 5 = 5\n- 5 - 5 = 0\n\n**You can subtract 5 from 25 a total of 5 times.**\n\n(This is the same as dividing: 25 \u00f7 5 = 5)",
+            "latency_ms": 1176,
+            "input_tokens": 30,
+            "output_tokens": 128
+          }
+        ],
+        "gemini/gemini-2.5-pro": [
+          {
+            "content": "This is a classic riddle! There are two ways to answer it.\n\n**The Riddle Answer:**\n\nYou can only subtract 5 from 25 **once**.\n\nAfter you subtract 5 the first time, you are no longer subtracting from 25, you are subtracting from 20.\n\n***\n\n**The Mathematical Answer:**\n\nIf the question is \"How many times can you subtract 5 from 25 until you reach zero?\", the answer is **5 times**.\n\n1.  25 - 5 = 20\n2.  20 - 5 = 15\n3.  15 - 5 = 10\n4.  10 - 5 = 5\n5.  5 - 5 = 0",
+            "latency_ms": 6580,
+            "input_tokens": 24,
+            "output_tokens": 821
+          },
+          {
+            "content": "This is a bit of a classic trick question! Here are two ways to answer it, depending on how you interpret the question.\n\n**The Literal Answer:**\n\nYou can only subtract 5 from 25 **one time**.\n\nAfter you subtract 5 from 25 the first time, you are no longer subtracting from 25; you are subtracting from 20.\n\n---\n\n**The Mathematical Answer:**\n\nIf the question is \"How many times can you subtract 5 from 25 until you get to zero?\", the answer is **5 times**.\n\nHere's the breakdown:\n1.  25 - 5 = 20\n2.  20 - 5 = 15\n3.  15 - 5 = 10\n4.  10 - 5 = 5\n5.  5 - 5 = 0\n\nThis is the same as asking, \"What is 25 divided by 5?\" which is 5.",
+            "latency_ms": 6897,
+            "input_tokens": 24,
+            "output_tokens": 839
+          }
+        ],
+        "gemini/gemini-2.5-flash": [
+          {
+            "content": "This is a bit of a trick question!\n\nYou can only subtract 5 from 25 **one time**.\n\nAfter you subtract 5 from 25 (25 - 5 = 20), you no longer have 25. You have 20. The next time you subtract, you're subtracting 5 from 20, not from 25.",
+            "latency_ms": 4898,
+            "input_tokens": 24,
+            "output_tokens": 939
+          },
+          {
+            "content": "This is a classic trick question!\n\n*   Mathematically, you can subtract 5 from 25 **5 times** (25 / 5 = 5) until you reach zero.\n\n*   However, the trick answer is **once**. After you subtract 5 the first time, you are no longer subtracting from 25; you are subtracting from 20.",
+            "latency_ms": 2582,
+            "input_tokens": 24,
+            "output_tokens": 471
+          }
+        ],
+        "ollama/llama3": [
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          },
+          {
+            "error": "litellm.APIConnectionError: OllamaException - [Errno 111] Connection refused"
+          }
+        ]
+      }
+    }
+  }
+}
