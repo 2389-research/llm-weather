@@ -1,0 +1,2616 @@
+{
+  "run_id": "2026-08-16T05-11-07",
+  "prompts": {
+    "logic-1": {
+      "prompt": "If all bloops are razzies and all razzies are lazzies, are all bloops lazzies?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive syllogistic reasoning, clearly explains each step, uses set notation to illustrate the relationship, and arrives at the correct conclusion that all bloops are lazzies."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning is sound and the conclusion is correct, but the explanation is slightly repetitive by stating the same logical point in multiple formats."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive reasoning/syllogism logic, clearly explains each step, and arrives at the correct conclusion that all bloops are lazzies."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is exceptionally clear, correctly identifying the logical structure as a syllogism and using a perfect step-by-step breakdown to explain the transitive relationship."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive syllogistic reasoning, clearly explains each step, uses set notation to illustrate the relationship, and arrives at the correct conclusion that all bloops are lazzies."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is sound and the conclusion is correct, but the explanation is slightly repetitive by stating the same logical point in multiple formats."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive reasoning/syllogism logic, clearly explains each step, and arrives at the correct conclusion that all bloops are lazzies."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is exceptionally clear, correctly identifying the logical structure as a syllogism and using a perfect step-by-step breakdown to explain the transitive relationship."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.75
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies the transitive property of categorical syllogism logic, clearly identifying both premises and deriving the valid conclusion that all bloops are lazzies."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly answers the question with a clear step-by-step breakdown and accurately identifies the transitive property, providing a perfect and concise logical explanation."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive logic, clearly identifies both premises, draws the valid conclusion, and even references the formal logical principle (A\u2192B, B\u2192C, therefore A\u2192C)."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response is perfectly correct, provides a clear step-by-step deduction, and accurately identifies the formal logical principle (the transitive property) that guarantees the conclusion."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies the transitive property of categorical syllogism logic, clearly identifying both premises and deriving the valid conclusion that all bloops are lazzies."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly answers the question with a clear step-by-step breakdown and accurately identifies the transitive property, providing a perfect and concise logical explanation."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic, clearly identifies both premises, draws the valid conclusion, and even references the formal logical principle (A\u2192B, B\u2192C, therefore A\u2192C)."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is perfectly correct, provides a clear step-by-step deduction, and accurately identifies the formal logical principle (the transitive property) that guarantees the conclusion."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive reasoning, clearly explains each logical step, and accurately uses set theory to justify the conclusion."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it correctly identifies the conclusion, states the logical steps, and explains the underlying principle of transitivity using a perfect set theory analogy."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies the transitive property of logical implication, clearly explaining each step of the syllogism to reach the valid conclusion that all bloops are lazzies."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly answers the question and provides a perfectly clear, concise, and accurate explanation of the underlying transitive logic."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive reasoning, clearly explains each logical step, and accurately uses set theory to justify the conclusion."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it correctly identifies the conclusion, states the logical steps, and explains the underlying principle of transitivity using a perfect set theory analogy."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies the transitive property of logical implication, clearly explaining each step of the syllogism to reach the valid conclusion that all bloops are lazzies."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly answers the question and provides a perfectly clear, concise, and accurate explanation of the underlying transitive logic."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive logic, clearly explains each premise, uses an intuitive real-world analogy, and arrives at the correct conclusion that all bloops are lazzies."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it clearly breaks down the transitive logic and uses a perfect real-world analogy to make the abstract concept concrete."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive logic, clearly explains each premise and the conclusion, and provides an excellent real-world analogy to reinforce the reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is flawless, breaking down the transitive logic step-by-step and clarifying it with a perfect real-world analogy."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic, clearly explains each premise, uses an intuitive real-world analogy, and arrives at the correct conclusion that all bloops are lazzies."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it clearly breaks down the transitive logic and uses a perfect real-world analogy to make the abstract concept concrete."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic, clearly explains each premise and the conclusion, and provides an excellent real-world analogy to reinforce the reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is flawless, breaking down the transitive logic step-by-step and clarifying it with a perfect real-world analogy."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly applies transitive logic, clearly explaining each step of the syllogism to reach the valid conclusion that all bloops are lazzies."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response is correct, and the reasoning is excellent because it clearly and concisely breaks down the logical steps in a way that is flawless and easy to understand."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the transitive property of logic, accurately concludes that all bloops are lazzies, and clearly explains the reasoning using a structured syllogism."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response is excellent because it not only provides the correct answer but also perfectly explains the underlying logical principle of transitivity in a clear and easy-to-understand way."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly applies transitive logic, clearly explaining each step of the syllogism to reach the valid conclusion that all bloops are lazzies."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is correct, and the reasoning is excellent because it clearly and concisely breaks down the logical steps in a way that is flawless and easy to understand."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the transitive property of logic, accurately concludes that all bloops are lazzies, and clearly explains the reasoning using a structured syllogism."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is excellent because it not only provides the correct answer but also perfectly explains the underlying logical principle of transitivity in a clear and easy-to-understand way."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "math-1": {
+      "prompt": "A bat and a ball cost $1.10 together. The bat costs $1 more than the ball. How much does the ball cost?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up and solves the algebraic equation, arrives at the right answer of $0.05, verifies both conditions, and even addresses the common intuitive mistake of answering $0.10."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent as it not only provides a clear, step-by-step algebraic solution with verification, but also anticipates and addresses the common intuitive error."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up algebraic equations, solves them accurately to get $0.05, verifies the answer, and even addresses the common intuitive mistake of $0.10 with a clear explanation of why it's wrong."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up the algebraic equation, shows clear step-by-step work, verifies the solution, and explains the common intuitive error."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up and solves the algebraic equation, arrives at the right answer of $0.05, verifies both conditions, and even addresses the common intuitive mistake of answering $0.10."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent as it not only provides a clear, step-by-step algebraic solution with verification, but also anticipates and addresses the common intuitive error."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up algebraic equations, solves them accurately to get $0.05, verifies the answer, and even addresses the common intuitive mistake of $0.10 with a clear explanation of why it's wrong."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up the algebraic equation, shows clear step-by-step work, verifies the solution, and explains the common intuitive error."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up and solves the system of equations, arrives at the right answer of $0.05, verifies the solution, and even addresses the common intuitive mistake of answering $0.10."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response provides a flawless step-by-step algebraic solution, checks its work, and insightfully explains why the common intuitive answer is incorrect."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly solves the problem using algebraic substitution, arrives at the right answer of $0.05, verifies the solution, and proactively addresses the common intuitive mistake of $0.10."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response uses a flawless algebraic method, clearly explains each step, verifies the result, and correctly identifies the common intuitive error."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up and solves the system of equations, arrives at the right answer of $0.05, verifies the solution, and even addresses the common intuitive mistake of answering $0.10."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides a flawless step-by-step algebraic solution, checks its work, and insightfully explains why the common intuitive answer is incorrect."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly solves the problem using algebraic substitution, arrives at the right answer of $0.05, verifies the solution, and proactively addresses the common intuitive mistake of $0.10."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response uses a flawless algebraic method, clearly explains each step, verifies the result, and correctly identifies the common intuitive error."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up the algebraic equation, solves it accurately to get $0.05, and verifies both conditions (total price and price difference) are satisfied."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response demonstrates excellent reasoning by clearly defining variables, setting up the correct algebraic equation, showing a step-by-step solution, and confirming the result with a verification."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up a system of equations, solves them algebraically to get $0.05, and verifies the answer satisfies both conditions, avoiding the common intuitive error of answering $0.10."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up the algebraic equations, solves them step-by-step with clear logic, and verifies the final answer against both conditions of the problem."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up the algebraic equation, solves it accurately to get $0.05, and verifies both conditions (total price and price difference) are satisfied."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response demonstrates excellent reasoning by clearly defining variables, setting up the correct algebraic equation, showing a step-by-step solution, and confirming the result with a verification."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up a system of equations, solves them algebraically to get $0.05, and verifies the answer satisfies both conditions, avoiding the common intuitive error of answering $0.10."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up the algebraic equations, solves them step-by-step with clear logic, and verifies the final answer against both conditions of the problem."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the answer as $0.05, addresses the common cognitive trap of answering $0.10, provides a clear algebraic solution with two equations and two unknowns, and verifies the answer by substituting back into the original conditions."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response is excellent because it not only provides a clear and correct algebraic proof but also proactively addresses and explains the common intuitive mistake."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the answer as $0.05, addresses the common intuitive mistake of $0.10, uses proper algebraic setup with two equations, shows clear step-by-step substitution and solving, and verifies the answer by checking both conditions of the problem."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it provides a clear algebraic proof, verifies the answer, and insightfully addresses the common intuitive mistake associated with the problem."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the answer as $0.05, addresses the common cognitive trap of answering $0.10, provides a clear algebraic solution with two equations and two unknowns, and verifies the answer by substituting back into the original conditions."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is excellent because it not only provides a clear and correct algebraic proof but also proactively addresses and explains the common intuitive mistake."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the answer as $0.05, addresses the common intuitive mistake of $0.10, uses proper algebraic setup with two equations, shows clear step-by-step substitution and solving, and verifies the answer by checking both conditions of the problem."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it provides a clear algebraic proof, verifies the answer, and insightfully addresses the common intuitive mistake associated with the problem."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up a system of two equations, solves via substitution with clear step-by-step algebra, arrives at the correct answer of $0.05, and verifies the solution by checking both original conditions."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response flawlessly translates the problem into algebraic equations, solves them with clear step-by-step logic, and verifies the result for complete accuracy."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly sets up two equations, applies substitution systematically, and arrives at the correct answer of $0.05, with each step clearly explained."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response flawlessly translates the word problem into a system of algebraic equations and solves it with a clear, logical, step-by-step process."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up a system of two equations, solves via substitution with clear step-by-step algebra, arrives at the correct answer of $0.05, and verifies the solution by checking both original conditions."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response flawlessly translates the problem into algebraic equations, solves them with clear step-by-step logic, and verifies the result for complete accuracy."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly sets up two equations, applies substitution systematically, and arrives at the correct answer of $0.05, with each step clearly explained."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response flawlessly translates the word problem into a system of algebraic equations and solves it with a clear, logical, step-by-step process."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "spatial-1": {
+      "prompt": "I'm facing north. I turn right. I turn right again. I turn left. What direction am I facing?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly traces each turn step by step, arriving at the correct final answer of East."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly breaks down the problem into a clear, step-by-step logical sequence that is easy to follow and arrives at the correct conclusion."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent, breaking the problem down into a clear, sequential, and perfectly accurate series of steps that are easy to follow."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces each turn step by step, arriving at the correct final answer of East."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly breaks down the problem into a clear, step-by-step logical sequence that is easy to follow and arrives at the correct conclusion."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent, breaking the problem down into a clear, sequential, and perfectly accurate series of steps that are easy to follow."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly traces each turn step by step, arriving at the correct final answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response perfectly traces the directional changes through a clear, accurate, step-by-step process that is easy to follow."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly traces each turn step by step, arriving at the correct final direction of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the starting direction and accurately traces each turn in a clear, step-by-step manner to arrive at the correct final direction."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces each turn step by step, arriving at the correct final answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response perfectly traces the directional changes through a clear, accurate, step-by-step process that is easy to follow."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces each turn step by step, arriving at the correct final direction of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the starting direction and accurately traces each turn in a clear, step-by-step manner to arrive at the correct final direction."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step by step, arriving at the correct final answer of east with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the final direction by breaking the problem down into a flawless, easy-to-follow, step-by-step process."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step-by-step, arriving at the correct final answer of east with clear and accurate reasoning throughout."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly solves the problem by breaking it down into a clear, logical, and perfectly executed step-by-step process."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step by step, arriving at the correct final answer of east with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the final direction by breaking the problem down into a flawless, easy-to-follow, step-by-step process."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, arriving at the correct final answer of east with clear and accurate reasoning throughout."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly solves the problem by breaking it down into a clear, logical, and perfectly executed step-by-step process."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step-by-step, arriving at the correct final answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response methodically breaks down the problem into a series of simple, accurate steps that are logically sound and easy to follow."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks the direction through each turn using a clear, step-by-step logical process that is easy to follow."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, arriving at the correct final answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response methodically breaks down the problem into a series of simple, accurate steps that are logically sound and easy to follow."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step by step, arriving at the right answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks the direction through each turn using a clear, step-by-step logical process that is easy to follow."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step-by-step, arriving at the right answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly breaks down the problem into a clear, logical, and accurate sequence of steps that is easy to follow."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly tracks each turn step-by-step, arriving at the correct final answer of East with clear and accurate reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly breaks down the problem into a clear, step-by-step process, with each step logically and accurately following from the previous one."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, arriving at the right answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly breaks down the problem into a clear, logical, and accurate sequence of steps that is easy to follow."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly tracks each turn step-by-step, arriving at the correct final answer of East with clear and accurate reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly breaks down the problem into a clear, step-by-step process, with each step logically and accurately following from the previous one."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "causality-1": {
+      "prompt": "A man pushes his car to a hotel and loses his fortune. What happened?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the Monopoly solution, clearly explains all three elements of the riddle (car token, hotel property, losing fortune through rent), and demonstrates solid logical reasoning throughout."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies that the question is a riddle, methodically breaks down each ambiguous term ('car', 'hotel', 'loses his fortune'), and maps them to the correct context of a Monopoly game to provide a complete and logical solution."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the Monopoly solution and clearly explains all three elements of the riddle (car token, hotel property, losing fortune through rent payment) with logical step-by-step reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the classic answer and provides excellent, step-by-step reasoning that explains the lateral thinking required to solve the riddle."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Monopoly solution, clearly explains all three elements of the riddle (car token, hotel property, losing fortune through rent), and demonstrates solid logical reasoning throughout."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies that the question is a riddle, methodically breaks down each ambiguous term ('car', 'hotel', 'loses his fortune'), and maps them to the correct context of a Monopoly game to provide a complete and logical solution."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Monopoly solution and clearly explains all three elements of the riddle (car token, hotel property, losing fortune through rent payment) with logical step-by-step reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic answer and provides excellent, step-by-step reasoning that explains the lateral thinking required to solve the riddle."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the Monopoly puzzle solution and clearly explains the mechanism - pushing the car token to a hotel-owned property and paying unaffordable rent."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent because it correctly identifies the classic solution and provides a perfectly clear and concise explanation that maps every element of the riddle to the rules of the board game."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Monopoly answer and explains the mechanics clearly, though the explanation is slightly verbose for what is a straightforward riddle."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the classic answer to this lateral thinking puzzle and provides a clear, concise explanation that connects every element of the question to the game of Monopoly."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Monopoly puzzle solution and clearly explains the mechanism - pushing the car token to a hotel-owned property and paying unaffordable rent."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent because it correctly identifies the classic solution and provides a perfectly clear and concise explanation that maps every element of the riddle to the rules of the board game."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly answer and explains the mechanics clearly, though the explanation is slightly verbose for what is a straightforward riddle."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic answer to this lateral thinking puzzle and provides a clear, concise explanation that connects every element of the question to the game of Monopoly."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.75
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Monopoly answer and explains the key mechanics (car token, hotel, losing fortune/going bankrupt), though the explanation of 'pushing' pieces is slightly off since players roll dice and move tokens rather than physically pushing them, and it misses the specific detail that landing on a hotel dramatically increases rent costs."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly solves the riddle and provides excellent reasoning by deconstructing the riddle's key phrases and mapping them directly to the rules and components of the game Monopoly."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Monopoly answer and explains the key elements (car piece, hotel, losing fortune/money), with clear reasoning about the double meanings, though the formatting is slightly over-elaborate for a simple riddle."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the classic answer and provides excellent reasoning by explaining how each part of the riddle (pushes car, hotel, fortune) directly corresponds to the mechanics of the Monopoly board game."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly answer and explains the key mechanics (car token, hotel, losing fortune/going bankrupt), though the explanation of 'pushing' pieces is slightly off since players roll dice and move tokens rather than physically pushing them, and it misses the specific detail that landing on a hotel dramatically increases rent costs."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly solves the riddle and provides excellent reasoning by deconstructing the riddle's key phrases and mapping them directly to the rules and components of the game Monopoly."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly answer and explains the key elements (car piece, hotel, losing fortune/money), with clear reasoning about the double meanings, though the formatting is slightly over-elaborate for a simple riddle."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic answer and provides excellent reasoning by explaining how each part of the riddle (pushes car, hotel, fortune) directly corresponds to the mechanics of the Monopoly board game."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Monopoly solution and explains all key elements (car piece, hotel, losing fortune through rent), though it's slightly verbose for what is a well-known riddle."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the classic solution and clearly explains how each part of the riddle maps to the rules and components of the board game Monopoly."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the Monopoly solution and clearly explains each metaphorical element of the riddle with accurate, logical reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the classic answer and provides an excellent, step-by-step breakdown that logically connects every element of the riddle to the Monopoly game scenario."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Monopoly solution and explains all key elements (car piece, hotel, losing fortune through rent), though it's slightly verbose for what is a well-known riddle."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic solution and clearly explains how each part of the riddle maps to the rules and components of the board game Monopoly."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Monopoly solution and clearly explains each metaphorical element of the riddle with accurate, logical reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic answer and provides an excellent, step-by-step breakdown that logically connects every element of the riddle to the Monopoly game scenario."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.75
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the Monopoly solution and clearly explains all three elements of the riddle: the car as a game piece, the hotel as a property, and losing a fortune as going bankrupt from paying rent."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the classic solution to this lateral thinking puzzle and perfectly explains how each element of the riddle maps to the game of Monopoly."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the Monopoly solution and provides a clear, well-structured explanation of each element of the riddle (car as game piece, pushing as moving, hotel as property with rent, and losing fortune as going bankrupt in the game)."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the classic answer to this lateral thinking puzzle and provides a perfectly clear and logical explanation for how each element of the riddle maps to the game of Monopoly."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Monopoly solution and clearly explains all three elements of the riddle: the car as a game piece, the hotel as a property, and losing a fortune as going bankrupt from paying rent."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic solution to this lateral thinking puzzle and perfectly explains how each element of the riddle maps to the game of Monopoly."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Monopoly solution and provides a clear, well-structured explanation of each element of the riddle (car as game piece, pushing as moving, hotel as property with rent, and losing fortune as going bankrupt in the game)."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the classic answer to this lateral thinking puzzle and provides a perfectly clear and logical explanation for how each element of the riddle maps to the game of Monopoly."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "code-1": {
+      "prompt": "What does this function return for input 5? def f(n): return n if n <= 1 else f(n-1) + f(n-2)",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the Fibonacci implementation, traces through all recursive calls systematically, applies base cases accurately, and arrives at the correct answer of 5."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the function and provides two valid methods for evaluation, though the full recursive expansion is presented in a confusing linear format."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces all recursive calls with proper base cases, and arrives at the correct answer of 5."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning is excellent and easy to follow, but it presents an efficient bottom-up calculation rather than a literal trace of every redundant recursive call."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the Fibonacci implementation, traces through all recursive calls systematically, applies base cases accurately, and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the function and provides two valid methods for evaluation, though the full recursive expansion is presented in a confusing linear format."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces all recursive calls with proper base cases, and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is excellent and easy to follow, but it presents an efficient bottom-up calculation rather than a literal trace of every redundant recursive call."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the function as a Fibonacci sequence, systematically traces the recursion from base cases upward, and arrives at the correct answer of 5."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the function and traces the calculation logically, but the trace simplifies the actual recursive call stack by not showing repeated computations."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the Fibonacci function, traces through the recursion accurately, and arrives at the correct answer of 5, though the visual trace could be slightly cleaner in showing f(2) reuse."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning correctly traces the recursive calls to find the right answer, but the layout of the trace is slightly jumbled and could be clearer."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as a Fibonacci sequence, systematically traces the recursion from base cases upward, and arrives at the correct answer of 5."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the function and traces the calculation logically, but the trace simplifies the actual recursive call stack by not showing repeated computations."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the Fibonacci function, traces through the recursion accurately, and arrives at the correct answer of 5, though the visual trace could be slightly cleaner in showing f(2) reuse."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning correctly traces the recursive calls to find the right answer, but the layout of the trace is slightly jumbled and could be clearer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.25
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the function as computing Fibonacci numbers, provides a clear and accurate step-by-step trace of the recursion, arrives at the correct answer of 5, and adds helpful context about the Fibonacci sequence."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning is clear and correct, but the trace simplifies the execution by not showing that some sub-problems, like f(3), are wastefully computed more than once."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces through the recursive calls, and arrives at the correct answer of 5, though the Fibonacci sequence listed at the end is slightly misleading (0-indexed vs 1-indexed) since f(5)=5 is the 6th term if starting from f(0)=0."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The step-by-step trace correctly expands the recursive calls to reach the right answer, but the complex, nested bracketing makes the process slightly difficult to follow."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as computing Fibonacci numbers, provides a clear and accurate step-by-step trace of the recursion, arrives at the correct answer of 5, and adds helpful context about the Fibonacci sequence."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is clear and correct, but the trace simplifies the execution by not showing that some sub-problems, like f(3), are wastefully computed more than once."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces through the recursive calls, and arrives at the correct answer of 5, though the Fibonacci sequence listed at the end is slightly misleading (0-indexed vs 1-indexed) since f(5)=5 is the 6th term if starting from f(0)=0."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The step-by-step trace correctly expands the recursive calls to reach the right answer, but the complex, nested bracketing makes the process slightly difficult to follow."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.25
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly traces the recursive function step-by-step, accurately identifies the base cases, works back up to compute f(5)=5, and correctly identifies it as a Fibonacci sequence implementation."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly deduces the final answer with a clear step-by-step breakdown, but its trace simplifies the execution by not showing the redundant recursive calls the code would actually make."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces every recursive call step by step, and arrives at the correct answer of 5 with clear and well-structured reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response provides a clear and correct step-by-step trace of the logic, although it simplifies the actual execution flow by not showing that values like f(3) are wastefully recomputed."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces the recursive function step-by-step, accurately identifies the base cases, works back up to compute f(5)=5, and correctly identifies it as a Fibonacci sequence implementation."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly deduces the final answer with a clear step-by-step breakdown, but its trace simplifies the execution by not showing the redundant recursive calls the code would actually make."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the function as Fibonacci, accurately traces every recursive call step by step, and arrives at the correct answer of 5 with clear and well-structured reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response provides a clear and correct step-by-step trace of the logic, although it simplifies the actual execution flow by not showing that values like f(3) are wastefully recomputed."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly traces the recursive execution step by step, identifies the function as computing Fibonacci numbers, and arrives at the correct answer of 5 with clear and thorough reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response provides a flawless and comprehensive step-by-step trace of the recursive function, correctly calculating intermediate values and substituting them back to arrive at the correct final answer."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly traces the recursive execution step by step, accurately computes f(5)=5, and correctly identifies the function as computing the Fibonacci sequence."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response provides a perfect, step-by-step breakdown of the recursive calls, clearly identifying the base cases and correctly substituting the results back to find the final answer."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces the recursive execution step by step, identifies the function as computing Fibonacci numbers, and arrives at the correct answer of 5 with clear and thorough reasoning."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides a flawless and comprehensive step-by-step trace of the recursive function, correctly calculating intermediate values and substituting them back to arrive at the correct final answer."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly traces the recursive execution step by step, accurately computes f(5)=5, and correctly identifies the function as computing the Fibonacci sequence."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response provides a perfect, step-by-step breakdown of the recursive calls, clearly identifying the base cases and correctly substituting the results back to find the final answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "ambiguity-1": {
+      "prompt": "The trophy doesn't fit in the suitcase because it's too big. What is too big?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the trophy as too big through clear logical elimination, properly testing both interpretations and explaining why only one is semantically coherent."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The reasoning is excellent as it correctly identifies the ambiguous pronoun, systematically considers both possible interpretations, and uses flawless real-world logic to arrive at the only sensible conclusion."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the trophy as too big and provides clear logical reasoning by eliminating the alternative interpretation (suitcase being too big would help, not hinder) before arriving at the correct answer."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response clearly identifies the ambiguity, considers both possibilities, and uses a flawless process of elimination to arrive at the correct answer."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the trophy as too big through clear logical elimination, properly testing both interpretations and explaining why only one is semantically coherent."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The reasoning is excellent as it correctly identifies the ambiguous pronoun, systematically considers both possible interpretations, and uses flawless real-world logic to arrive at the only sensible conclusion."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the trophy as too big and provides clear logical reasoning by eliminating the alternative interpretation (suitcase being too big would help, not hinder) before arriving at the correct answer."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response clearly identifies the ambiguity, considers both possibilities, and uses a flawless process of elimination to arrive at the correct answer."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trophy as too big and provides a clear, accurate explanation of the pronoun reference, though it's slightly redundant in its phrasing."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly resolves the pronoun ambiguity using contextual logic and provides a clear explanation, though it could be improved by also explaining why the alternative (the suitcase) is illogical."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trophy as too big with clear reasoning, though the explanation is somewhat redundant by restating the same point twice."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response is correct and clarifies the original sentence's meaning, but it doesn't explain the underlying logic of why 'it' must refer to the trophy and not the suitcase."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big and provides a clear, accurate explanation of the pronoun reference, though it's slightly redundant in its phrasing."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly resolves the pronoun ambiguity using contextual logic and provides a clear explanation, though it could be improved by also explaining why the alternative (the suitcase) is illogical."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big with clear reasoning, though the explanation is somewhat redundant by restating the same point twice."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response is correct and clarifies the original sentence's meaning, but it doesn't explain the underlying logic of why 'it' must refer to the trophy and not the suitcase."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.0
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trophy as too big and provides a clear explanation, though the grammatical reasoning could be more precise since 'it' is ambiguous by nature and context rather than strict subject reference resolves the ambiguity."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the antecedent of the pronoun and provides a clear grammatical explanation, though it doesn't explicitly rule out the alternative interpretation."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The answer is correct and the reasoning is sound, correctly identifying that 'it' refers to the trophy as the item that doesn't fit, though the explanation could be more precise about how pronoun reference disambiguation works in context."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning correctly identifies the pronoun's antecedent and provides a logical explanation, but it does not explicitly address and dismiss the alternative, illogical interpretation."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big and provides a clear explanation, though the grammatical reasoning could be more precise since 'it' is ambiguous by nature and context rather than strict subject reference resolves the ambiguity."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the antecedent of the pronoun and provides a clear grammatical explanation, though it doesn't explicitly rule out the alternative interpretation."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The answer is correct and the reasoning is sound, correctly identifying that 'it' refers to the trophy as the item that doesn't fit, though the explanation could be more precise about how pronoun reference disambiguation works in context."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning correctly identifies the pronoun's antecedent and provides a logical explanation, but it does not explicitly address and dismiss the alternative, illogical interpretation."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies 'the trophy' as the referent of 'it's too big,' since the trophy is what cannot fit into the suitcase, making it the logical subject that is too big."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly uses context to resolve the ambiguous pronoun, but it doesn't explain the reasoning or rule out the illogical alternative."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trophy as too big, which is the logical interpretation since the trophy not fitting in the suitcase implies the trophy's size is the issue, though the explanation could have briefly noted the pronoun resolution reasoning."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response is correct, but the reasoning is implicit rather than explained, as it doesn't detail why the trophy must be the oversized object and not the suitcase."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies 'the trophy' as the referent of 'it's too big,' since the trophy is what cannot fit into the suitcase, making it the logical subject that is too big."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly uses context to resolve the ambiguous pronoun, but it doesn't explain the reasoning or rule out the illogical alternative."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big, which is the logical interpretation since the trophy not fitting in the suitcase implies the trophy's size is the issue, though the explanation could have briefly noted the pronoun resolution reasoning."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response is correct, but the reasoning is implicit rather than explained, as it doesn't detail why the trophy must be the oversized object and not the suitcase."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.25
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trophy as too big, which is the logical interpretation since the trophy doesn't fit in the suitcase, implying the trophy exceeds the suitcase's capacity."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly resolves the pronoun ambiguity by applying real-world knowledge that an object is too big to fit inside a container, not the other way around."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies that the trophy is too big, as the pronoun 'it' refers to the trophy being the reason it doesn't fit in the suitcase."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly resolves the pronoun's ambiguity by understanding the causal logic of the sentence."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trophy as too big, which is the logical interpretation since the trophy doesn't fit in the suitcase, implying the trophy exceeds the suitcase's capacity."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly resolves the pronoun ambiguity by applying real-world knowledge that an object is too big to fit inside a container, not the other way around."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies that the trophy is too big, as the pronoun 'it' refers to the trophy being the reason it doesn't fit in the suitcase."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly resolves the pronoun's ambiguity by understanding the causal logic of the sentence."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.5
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    },
+    "common-sense-1": {
+      "prompt": "How many times can you subtract 5 from 25?",
+      "evaluations": {
+        "openai/gpt-5.4": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "openai/gpt-5.4-mini": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        },
+        "anthropic/claude-opus-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies and explains the trick question, recognizing that 'from 25' is the key qualifier, though it could be more concise."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the ambiguity in the question and provides a perfectly clear and logical explanation for the 'trick' answer based on a literal interpretation."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies and explains the trick answer (1 time) with clear logic, though it's a bit verbose for a simple trick question."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning is clear and logically sound, correctly identifying the literal interpretation of the phrase 'from 25' which is the key to this classic riddle."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies and explains the trick question, recognizing that 'from 25' is the key qualifier, though it could be more concise."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the ambiguity in the question and provides a perfectly clear and logical explanation for the 'trick' answer based on a literal interpretation."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies and explains the trick answer (1 time) with clear logic, though it's a bit verbose for a simple trick question."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is clear and logically sound, correctly identifying the literal interpretation of the phrase 'from 25' which is the key to this classic riddle."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.25
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly calculates that 5 can be subtracted from 25 five times, shows clear step-by-step work, and even acknowledges the classic trick interpretation of the question, though it slightly undersells the trick answer which could be considered the 'intended' clever response."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response is excellent because it provides a clear, step-by-step mathematical solution while also acknowledging and explaining the common alternative 'trick' answer to the question."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly calculates 5 times with clear step-by-step work and even acknowledges the classic trick interpretation of the question, though the trick answer (only once, since after that you're subtracting from 20) could have been more clearly explained as an alternative valid answer."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning is very good as it clearly demonstrates the mathematical process step-by-step and also astutely addresses the common trick-question interpretation."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly calculates that 5 can be subtracted from 25 five times, shows clear step-by-step work, and even acknowledges the classic trick interpretation of the question, though it slightly undersells the trick answer which could be considered the 'intended' clever response."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is excellent because it provides a clear, step-by-step mathematical solution while also acknowledging and explaining the common alternative 'trick' answer to the question."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly calculates 5 times with clear step-by-step work and even acknowledges the classic trick interpretation of the question, though the trick answer (only once, since after that you're subtracting from 20) could have been more clearly explained as an alternative valid answer."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is very good as it clearly demonstrates the mathematical process step-by-step and also astutely addresses the common trick-question interpretation."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.25
+        },
+        "anthropic/claude-haiku-4-5": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly calculates that 5 can be subtracted from 25 exactly 5 times, shows clear step-by-step work, and helpfully notes the division equivalence, though it misses the classic trick answer that you can only subtract 5 from 25 once (after which you're subtracting from 20)."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response provides a clear, step-by-step demonstration and correctly links the concept to division, but it doesn't acknowledge the common 'trick' interpretation of the question."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the answer as 5 through clear step-by-step subtraction, and helpfully notes the equivalent division operation, though it misses the classic trick answer ('only once, because after that you're subtracting from 20') which may have been the intended interpretation of the question."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning is clear and correct by showing the step-by-step process, but it fails to acknowledge the alternative 'trick question' interpretation where the answer would be once."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly calculates that 5 can be subtracted from 25 exactly 5 times, shows clear step-by-step work, and helpfully notes the division equivalence, though it misses the classic trick answer that you can only subtract 5 from 25 once (after which you're subtracting from 20)."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response provides a clear, step-by-step demonstration and correctly links the concept to division, but it doesn't acknowledge the common 'trick' interpretation of the question."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the answer as 5 through clear step-by-step subtraction, and helpfully notes the equivalent division operation, though it misses the classic trick answer ('only once, because after that you're subtracting from 20') which may have been the intended interpretation of the question."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is clear and correct by showing the step-by-step process, but it fails to acknowledge the alternative 'trick question' interpretation where the answer would be once."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.0
+        },
+        "gemini/gemini-2.5-pro": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies both interpretations of the question, providing the riddle answer (once, since after the first subtraction you're no longer working with 25) and the mathematical answer (5 times, dividing 25 by 5), with clear step-by-step demonstration of the latter."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response demonstrates excellent reasoning by identifying the question's central ambiguity and providing two distinct, well-explained answers that correspond to a literal and a mathematical interpretation."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies both interpretations of the question - the classic riddle answer (only once, since after the first subtraction you're no longer subtracting from 25) and the mathematical answer (5 times, dividing 25 by 5), demonstrating thorough and accurate reasoning for both perspectives."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response correctly identifies the question's ambiguity and provides a clear, well-reasoned explanation for both the literal (riddle) and mathematical interpretations."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies both interpretations of the question, providing the riddle answer (once, since after the first subtraction you're no longer working with 25) and the mathematical answer (5 times, dividing 25 by 5), with clear step-by-step demonstration of the latter."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response demonstrates excellent reasoning by identifying the question's central ambiguity and providing two distinct, well-explained answers that correspond to a literal and a mathematical interpretation."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies both interpretations of the question - the classic riddle answer (only once, since after the first subtraction you're no longer subtracting from 25) and the mathematical answer (5 times, dividing 25 by 5), demonstrating thorough and accurate reasoning for both perspectives."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response correctly identifies the question's ambiguity and provides a clear, well-reasoned explanation for both the literal (riddle) and mathematical interpretations."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 5.0
+        },
+        "gemini/gemini-2.5-flash": {
+          "samples": [
+            {
+              "sample_index": 0,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies the trick interpretation of the question and explains why you can only subtract 5 from 25 once, though it could also acknowledge the straightforward mathematical answer of 5 times (25/5=5) to show full understanding of both interpretations."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The reasoning is logical and clearly explains the 'trick' aspect of the question, but it fails to acknowledge the other common mathematical interpretation."
+                }
+              }
+            },
+            {
+              "sample_index": 1,
+              "verdicts": {
+                "openai/gpt-5.4": {
+                  "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+                },
+                "anthropic/claude-sonnet-4-6": {
+                  "correct": true,
+                  "score": 4,
+                  "reasoning": "The response correctly identifies both interpretations of the question - the straightforward mathematical answer of 5 times and the trick answer of only once (since after the first subtraction you're no longer subtracting from 25), with clear step-by-step work shown."
+                },
+                "gemini/gemini-2.5-pro": {
+                  "correct": true,
+                  "score": 5,
+                  "reasoning": "The response is excellent because it correctly identifies the question's ambiguity, thoroughly explains both the mathematical and the literal/trick interpretations, and provides clear, step-by-step logic for each."
+                }
+              }
+            }
+          ],
+          "judges": {
+            "openai/gpt-5.4:s0": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies the trick interpretation of the question and explains why you can only subtract 5 from 25 once, though it could also acknowledge the straightforward mathematical answer of 5 times (25/5=5) to show full understanding of both interpretations."
+            },
+            "gemini/gemini-2.5-pro:s0": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The reasoning is logical and clearly explains the 'trick' aspect of the question, but it fails to acknowledge the other common mathematical interpretation."
+            },
+            "openai/gpt-5.4:s1": {
+              "error": "litellm.RateLimitError: RateLimitError: OpenAIException - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+            },
+            "anthropic/claude-sonnet-4-6:s1": {
+              "correct": true,
+              "score": 4,
+              "reasoning": "The response correctly identifies both interpretations of the question - the straightforward mathematical answer of 5 times and the trick answer of only once (since after the first subtraction you're no longer subtracting from 25), with clear step-by-step work shown."
+            },
+            "gemini/gemini-2.5-pro:s1": {
+              "correct": true,
+              "score": 5,
+              "reasoning": "The response is excellent because it correctly identifies the question's ambiguity, thoroughly explains both the mathematical and the literal/trick interpretations, and provides clear, step-by-step logic for each."
+            }
+          },
+          "majority_correct": true,
+          "avg_score": 4.25
+        },
+        "ollama/llama3": {
+          "samples": [],
+          "judges": {},
+          "majority_correct": null,
+          "avg_score": null
+        }
+      }
+    }
+  }
+}
